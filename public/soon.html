@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pushtoconverter - Bu Araç Çok Yakında!</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose': {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be185d'
+                        },
+                        'pink': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Work Sans', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
+                        'scale-in': 'scaleIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px) scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'translateY(0) scale(1)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg border-b border-rose-200/50 sticky top-0 z-[100] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div>
+                    <a href="/" class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Pushtoconverter</a>
+                </div>
+                <nav>
+                    <a href="#" data-page="tools" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="soon.nav_all_tools">Tüm Araçlar</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div class="w-full max-w-4xl mx-auto">
+            
+            <!-- Hero Section -->
+            <div class="text-center mb-16 animate-fade-in-up">
+                <!-- Animated Icon -->
+                <div class="relative mx-auto mb-8 w-32 h-32">
+                    <!-- Outer ring -->
+                    <div class="absolute inset-0 rounded-full border-4 border-rose-200/30 animate-spin-slow"></div>
+                    <!-- Middle ring -->
+                    <div class="absolute inset-2 rounded-full border-4 border-pink-200/50 animate-spin-slow" style="animation-direction: reverse; animation-duration: 6s;"></div>
+                    <!-- Inner icon -->
+                    <div class="absolute inset-4 flex items-center justify-center bg-gradient-to-br from-rose-500 to-pink-500 rounded-full shadow-2xl animate-float">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <h1 class="font-heading text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+                    <span data-i18n="soon.title">Bu Araç</span><br>
+                    <span class="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow" data-i18n="soon.title_highlight">Çok Yakında!</span>
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed" data-i18n="soon.subtitle">
+                    Bu özellik üzerinde sıkı bir şekilde çalışıyoruz ve en kısa sürede kullanımınıza sunmak için sabırsızlanıyoruz. Gelişmeler için bizi takip etmeye devam edin!
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#" data-page="home" class="group bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform">
+                        <span class="flex items-center justify-center space-x-2">
+                            <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+                            </svg>
+                            <span data-i18n="soon.back_button">Ana Sayfaya Dön</span>
+                        </span>
+                    </a>
+                    
+                    <a href="#" data-page="tools" class="group bg-white/80 backdrop-blur-sm text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-rose-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform border border-gray-200/50">
+                        <span class="flex items-center justify-center space-x-2">
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                            <span data-i18n="soon.nav_all_tools">Tüm Araçlar</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-transparent py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="border-t border-rose-200/50 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-600 text-base" data-i18n="footer.copyright">&copy; 2024 Pushtoconverter. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- i18n Script -->
+    <script src="/js/i18n.js"></script>
+    
+    <!-- Navigation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle navigation links
+            document.querySelectorAll('a[data-page]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    const currentPath = window.location.pathname;
+                    const language = currentPath.split('/')[1] || 'tr';
+                    
+                    let targetUrl = '';
+                    if (page === 'home') {
+                        targetUrl = `/${language}`;
+                    } else if (page === 'tools') {
+                        targetUrl = `/${language}/tools`;
+                    }
+                    
+                    if (targetUrl) {
+                        window.location.href = targetUrl;
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+# Fail2ban configuration for P2Convert
+# Advanced security settings
+
+[DEFAULT]
+# Default settings
+bantime = 3600
+findtime = 600
+maxretry = 5
+backend = systemd
+usedns = warn
+logencoding = auto
+enabled = false
+filter = %(__name__)s
+destemail = admin@yourdomain.com
+sender = fail2ban@yourdomain.com
+mta = sendmail
+protocol = tcp
+chain = <known/chain>
+port = 0:65535
+fail2ban_agent = Fail2Ban/%(fail2ban_version)s
+
+# Ignore local IPs
+ignoreip = 127.0.0.1/8 ::1 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16
+
+# SSH protection
+[sshd]
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+bantime = 3600
+findtime = 600
+
+# Nginx protection
+[nginx-http-auth]
+enabled = true
+filter = nginx-http-auth
+logpath = /var/log/nginx/error.log
+maxretry = 3
+bantime = 3600
+
+[nginx-limit-req]
+enabled = true
+filter = nginx-limit-req
+logpath = /var/log/nginx/error.log
+maxretry = 10
+bantime = 600
+
+# P2Convert specific protection
+[p2convert-api]
+enabled = true
+filter = p2convert-api
+logpath = /var/log/nginx/p2convert_access.log
+maxretry = 10
+bantime = 1800
+findtime = 300
+
+[p2convert-upload]
+enabled = true
+filter = p2convert-upload
+logpath = /var/log/nginx/p2convert_access.log
+maxretry = 5
+bantime = 3600
+findtime = 600
+
+# Redis protection
+[redis]
+enabled = true
+filter = redis
+logpath = /var/log/redis/redis-server.log
+maxretry = 3
+bantime = 3600
+
+# Generic web attacks
+[apache-auth]
+enabled = false
+
+[apache-badbots]
+enabled = false
+
+[apache-noscript]
+enabled = false
+
+[apache-overflows]
+enabled = false
+
+[apache-nohome]
+enabled = false
+
+[apache-botsearch]
+enabled = false
+
+[apache-fakegooglebot]
+enabled = false
+
+[apache-modsecurity]
+enabled = false
+
+[apache-shellshock]
+enabled = false
+
+[apache-dos]
+enabled = false
+
+# Custom P2Convert filters
+[p2convert-ddos]
+enabled = true
+filter = p2convert-ddos
+logpath = /var/log/nginx/p2convert_access.log
+maxretry = 20
+bantime = 1800
+findtime = 300
+
+[p2convert-scanning]
+enabled = true
+filter = p2convert-scanning
+logpath = /var/log/nginx/p2convert_access.log
+maxretry = 5
+bantime = 7200
+findtime = 600

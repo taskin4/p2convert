@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Main Pages for each language -->
+    <url>
+        <loc>https://pushtoconverter.com/en/</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://pushtoconverter.com/tr/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://pushtoconverter.com/de/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://pushtoconverter.com/ru/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pushtoconverter.com/fr/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://pushtoconverter.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://pushtoconverter.com/it/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://pushtoconverter.com/ja/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://pushtoconverter.com/pt/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://pushtoconverter.com/zh/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://pushtoconverter.com/"/>
+    </url>
+    
+    <url>
+        <loc>https://pushtoconverter.com/tr/</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://pushtoconverter.com/de/</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Tools Page -->
+    <url>
+        <loc>https://pushtoconverter.com/en/tools</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://pushtoconverter.com/tr/tools</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Support Pages -->
+    <url>
+        <loc>https://pushtoconverter.com/en/help</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://pushtoconverter.com/en/contact</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://pushtoconverter.com/en/faq</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://pushtoconverter.com/en/privacy</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://pushtoconverter.com/en/terms</loc>
+        <lastmod>2024-09-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+</urlset>
+
+

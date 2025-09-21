@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP4 to MP3 Converter - Pushtoconverter</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Convert your MP4 video files to high-quality MP3 audio for free. Fast, secure, and easy-to-use online MP4 to MP3 converter by Pushtoconverter.">
+    <meta name="keywords" content="mp4 to mp3, convert mp4 to mp3, mp4 to mp3 converter, video to audio, extract audio, online converter, free converter">
+    <meta name="author" content="Pushtoconverter">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pushtoconverter.com/mp4-to-mp3">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="MP4 to MP3 Converter - Pushtoconverter">
+    <meta property="og:description" content="Easily convert MP4 files to MP3 format online. Free, fast, and secure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pushtoconverter.com/mp4-to-mp3">
+    <meta property="og:image" content="https://pushtoconverter.com/images/og-image-mp4-to-mp3.jpg">
+    <meta property="og:site_name" content="Pushtoconverter">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MP4 to MP3 Converter - Pushtoconverter">
+    <meta name="twitter:description" content="Convert your MP4 video files to high-quality MP3 audio for free with our online tool.">
+    <meta name="twitter:image" content="https://pushtoconverter.com/images/twitter-card-mp4-to-mp3.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/tool-i18n.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose': {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be185d'
+                        },
+                        'pink': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Work Sans', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+                        'scale-in': 'scaleIn 0.4s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-out {
+            animation: fadeOut 0.3s ease-out forwards;
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0; transform: scale(0.95); }
+        }
+        
+        /* Toast Notification Styles */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            max-width: 400px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .toast.hide {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        
+        .toast-error {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border: 1px solid #fca5a5;
+            color: #dc2626;
+        }
+        
+        .toast-warning {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            color: #d97706;
+        }
+        
+        .toast-success {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 1px solid #10b981;
+            color: #059669;
+        }
+        
+        .toast-info {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 1px solid #3b82f6;
+            color: #2563eb;
+        }
+        
+        .toast-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .toast-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+        }
+        
+        .toast-message {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .toast-close {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        .toast-close:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 640px) {
+            .toast {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+                transform: translateY(-100%);
+            }
+            
+            .toast.show {
+                transform: translateY(0);
+            }
+            
+            .toast.hide {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+<body class="font-body bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen">
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+    
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-rose-200/50 sticky top-0 z-[100] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="animate-fade-in-down" data-page="home">
+                    <h1 class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Pushtoconverter</h1>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.tools" data-page="tools">Tools</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.features" data-page="features">Features</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.about" data-page="about">About</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.contact" data-page="contact">Contact</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.faq" data-page="faq">FAQ</a>
+                </nav>
+                <!-- Language Switcher -->
+                <div class="hidden md:block relative" id="languageSwitcher">
+                    <!-- Language switcher will be populated by JavaScript -->
+                </div>
+                <button class="md:hidden p-2 rounded-lg hover:bg-rose-50 transition-colors" id="mobileMenuBtn">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-rose-200/50" id="mobileMenu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.tools" data-page="tools">Tools</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.features" data-page="features">Features</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.about" data-page="about">About</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.contact" data-page="contact">Contact</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.faq" data-page="faq">FAQ</a>
+                <!-- Mobile Language Switcher -->
+                <div class="pt-3 border-t border-rose-200/50">
+                    <div class="text-sm text-gray-500 mb-2">Language / Dil</div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="/tr/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Türkçe</a>
+                        <a href="/en/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">English</a>
+                        <a href="/de/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Deutsch</a>
+                        <a href="/ru/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Русский</a>
+                        <a href="/fr/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Français</a>
+                        <a href="/es/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Español</a>
+                        <a href="/it/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Italiano</a>
+                        <a href="/ja/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">日本語</a>
+                        <a href="/pt/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Português</a>
+                        <a href="/zh/mp4-to-mp3" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Converter Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="animate-fade-in-up opacity-0">
+                    <h2 class="font-heading text-5xl md:text-6xl font-bold text-gray-900 mb-4" data-i18n="tool.title">MP4'ten MP3'e Dönüştürücü</h2>
+                    <p class="text-xl text-gray-600 mb-10" data-i18n="tool.subtitle">Videolarınızdan sesi kolayca çıkarın. MP4 dosyalarınızı yüksek kaliteli MP3 ses formatına dönüştürün.</p>
+                </div>
+
+                <div id="converter-box" class="animate-scale-in opacity-0 bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-rose-200 shadow-xl p-8 md:p-12 transition-all duration-300">
+                    <div id="upload-area" class="border-4 border-dashed border-rose-200 rounded-2xl p-10 text-center cursor-pointer hover:border-rose-400 hover:bg-rose-50 transition-all duration-300">
+                        <input type="file" id="file-input" accept=".mp4" class="hidden" multiple>
+                        <div class="flex flex-col items-center text-gray-600">
+                             <svg class="w-20 h-20 text-rose-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                            </svg>
+                            <h3 class="font-semibold text-2xl text-gray-800 mb-2" data-i18n="tool.drag_drop">Dosyaları buraya sürükleyip bırakın</h3>
+                            <p class="text-gray-500 mb-6" data-i18n="tool.or">veya</p>
+                            <button id="browse-btn" class="bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-3 rounded-xl font-semibold hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="tool.browse_files">
+                                Dosya Seç
+                            </button>
+                            <p class="text-sm text-gray-500 mt-4" data-i18n="tool.max_file_size">Maksimum dosya boyutu: 100MB</p>
+                        </div>
+                    </div>
+
+                    <div id="file-list" class="mt-8 text-left opacity-0 transition-opacity duration-500 hidden">
+                        <!-- Dosya listesi JavaScript ile doldurulacak -->
+                    </div>
+
+                    <div id="actions" class="mt-8 text-center opacity-0 transition-opacity duration-500 hidden">
+                        <div id="actions-wrapper" class="flex justify-center items-center gap-4 flex-wrap">
+                            <button id="convert-btn" disabled class="w-full md:w-auto bg-gradient-to-r from-rose-500 to-pink-500 text-white px-12 py-4 rounded-xl font-semibold text-lg hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100" data-i18n="tool.waiting_upload">
+                                Yükleme bekleniyor...
+                            </button>
+                            <!-- Reset button will be added here dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white/60 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 opacity-0 animate-fade-in-up">
+                    <h3 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-i18n="tool.how_it_works.title">MP4'ü MP3'e Nasıl Dönüştürülür?</h3>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="tool.how_it_works.subtitle">Sadece üç basit adımda videolarınızı sese dönüştürün.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="text-center group opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="relative inline-block">
+                            <div class="w-24 h-24 bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-all duration-300">
+                                <span class="font-heading text-4xl font-bold text-rose-500">1</span>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-2xl font-semibold text-gray-900 mb-4" data-i18n="tool.how_it_works.step1.title">MP4 Dosyanızı Seçin</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="tool.how_it_works.step1.description">"Dosya Seç" düğmesine tıklayın veya videonuzu yükleme alanına sürükleyip bırakın.</p>
+                    </div>
+                    <div class="text-center group opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="relative inline-block">
+                             <div class="w-24 h-24 bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-all duration-300">
+                                <span class="font-heading text-4xl font-bold text-rose-500">2</span>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-2xl font-semibold text-gray-900 mb-4" data-i18n="tool.how_it_works.step2.title">Dönüştür'e Tıklayın</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="tool.how_it_works.step2.description">"Dönüştür" düğmesine basarak videonuzdan sesi çıkarma işlemini başlatın.</p>
+                    </div>
+                    <div class="text-center group opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="relative inline-block">
+                             <div class="w-24 h-24 bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-all duration-300">
+                                <span class="font-heading text-4xl font-bold text-rose-500">3</span>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-2xl font-semibold text-gray-900 mb-4" data-i18n="tool.how_it_works.step3.title">MP3'ünüzü İndirin</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="tool.how_it_works.step3.description">Dönüştürme tamamlandığında, yeni MP3 dosyanızı indirmek için "İndir" düğmesi görünecektir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 opacity-0 animate-fade-in-up">
+                    <h3 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-i18n="tool.faq.title">Sıkça Sorulan Sorular</h3>
+                </div>
+                <div class="space-y-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="bg-white/70 rounded-2xl p-6 border border-rose-100">
+                        <h4 class="font-semibold text-lg text-gray-800 mb-2" data-i18n="tool.faq.q1">Bu aracı kullanmak güvenli mi?</h4>
+                        <p class="text-gray-600" data-i18n="tool.faq.a1">Evet, kesinlikle. Gizliliğiniz bizim için önemlidir. Yüklenen tüm dosyalar sunucularımızdan 1 saat sonra otomatik olarak silinir.</p>
+                    </div>
+                    <div class="bg-white/70 rounded-2xl p-6 border border-rose-100">
+                        <h4 class="font-semibold text-lg text-gray-800 mb-2" data-i18n="tool.faq.q2">Dönüştürme işlemi ne kadar sürer?</h4>
+                        <p class="text-gray-600" data-i18n="tool.faq.a2">Dönüştürme hızı dosya boyutuna bağlıdır, ancak güçlü sunucularımız sayesinde çoğu dosya bir dakikadan az sürede işlenir.</p>
+                    </div>
+                    <div class="bg-white/70 rounded-2xl p-6 border border-rose-100">
+                        <h4 class="font-semibold text-lg text-gray-800 mb-2" data-i18n="tool.faq.q3">Ses kalitesi düşer mi?</h4>
+                        <p class="text-gray-600" data-i18n="tool.faq.a3">Mümkün olan en iyi ses kalitesini korumak için gelişmiş kodlayıcılar kullanıyoruz. Kalite kaybı fark edilmeyecek kadar azdır.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="relative bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-20 -right-20 w-40 h-40 bg-rose-200/20 rounded-full animate-float"></div>
+            <div class="absolute -bottom-20 -left-20 w-32 h-32 bg-pink-200/20 rounded-full animate-float" style="animation-delay: 3s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-20 h-20 bg-rose-300/10 rounded-full animate-float" style="animation-delay: 1.5s;"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <!-- Main footer content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Brand section -->
+                <div class="md:col-span-1">
+                    <div class="mb-6">
+                        <h5 class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Pushtoconverter</h5>
+                    </div>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6" data-i18n="footer.description">The ultimate file conversion platform with 40+ powerful tools. Fast, secure, and completely free.</p>
+                </div>
+                
+                <!-- Popular Tools -->
+                <div>
+                    <h6 class="font-heading text-lg font-semibold text-gray-900 mb-6" data-i18n="footer.links.tools">Popular Tools</h6>
+                    <ul class="space-y-3">
+                        <li><a href="/mp4-to-mp3" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            MP4 to MP3
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            PDF to Word
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            JPG to PNG
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            MP3 to WAV
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            PNG to JPG
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h6 class="font-heading text-lg font-semibold text-gray-900 mb-6" data-i18n="footer.support.title">Support</h6>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="help">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.help">Help Center</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="contact">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.contact">Contact Us</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="privacy">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.privacy">Privacy Policy</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="terms">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.terms">Terms of Service</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="faq">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.faq">FAQ</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <!-- Bottom section -->
+            <div class="border-t border-rose-200/50 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-600 text-base" data-i18n="footer.copyright">&copy; 2024 Pushtoconverter. All rights reserved.</p>
+        </div>
+        </div>
+    </div>
+    </footer>
+
+<script>
+        // Toast Notification System
+        class ToastNotification {
+            constructor() {
+                this.container = document.getElementById('toastContainer');
+                this.toasts = [];
+            }
+
+            show(message, type = 'info', duration = 5000) {
+                const toast = this.createToast(message, type);
+                this.container.appendChild(toast);
+                this.toasts.push(toast);
+
+                // Show animation
+                setTimeout(() => {
+                    toast.classList.add('show');
+                }, 100);
+
+                // Auto hide
+                if (duration > 0) {
+                    setTimeout(() => {
+                        this.hide(toast);
+                    }, duration);
+                }
+
+                return toast;
+            }
+
+            createToast(message, type) {
+                const toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+                
+                const icons = {
+                    error: `<svg class="toast-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>`,
+                    warning: `<svg class="toast-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>`,
+                    success: `<svg class="toast-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>`,
+                    info: `<svg class="toast-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>`
+                };
+
+                toast.innerHTML = `
+                    <div class="toast-content">
+                        ${icons[type] || icons.info}
+                        <div class="toast-message">${message}</div>
+                        <svg class="toast-close" fill="currentColor" viewBox="0 0 20 20" onclick="toastNotification.hide(this.closest('.toast'))">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                `;
+
+                return toast;
+            }
+
+            hide(toast) {
+                if (!toast) return;
+                
+                toast.classList.remove('show');
+                toast.classList.add('hide');
+                
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                    const index = this.toasts.indexOf(toast);
+                    if (index > -1) {
+                        this.toasts.splice(index, 1);
+                    }
+                }, 300);
+            }
+
+            clear() {
+                this.toasts.forEach(toast => this.hide(toast));
+            }
+        }
+
+        // Initialize toast notification system
+        const toastNotification = new ToastNotification();
+
+        // Initialize tool i18n system
+        const toolI18n = new ToolI18n('mp4-to-mp3');
+        
+        // Wait for i18n to initialize before setting up file handling
+        toolI18n.init().then(() => {
+            setupFileHandling();
+        });
+        
+        function setupFileHandling() {
+
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('file-input');
+        const browseBtn = document.getElementById('browse-btn');
+        const fileListDiv = document.getElementById('file-list');
+        const convertBtn = document.getElementById('convert-btn');
+        const actionsDiv = document.getElementById('actions');
+        
+        let filesToProcess = [];
+        
+        // Make filesToProcess global for language switching
+        window.filesToProcess = filesToProcess;
+
+        browseBtn.addEventListener('click', () => fileInput.click());
+        uploadArea.addEventListener('click', (e) => {
+            if (e.target.id === 'upload-area' || e.target.closest('#upload-area > div')) {
+                 fileInput.click()
+            }
+        });
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('border-rose-400', 'bg-rose-50', 'scale-105');
+        });
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('border-rose-400', 'bg-rose-50', 'scale-105');
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('border-rose-400', 'bg-rose-50', 'scale-105');
+            const files = e.dataTransfer.files;
+            handleFiles(files);
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            const files = e.target.files;
+            handleFiles(files);
+        });
+
+        function handleFiles(files) {
+            const newFiles = [...files].filter(file => file.type === 'video/mp4');
+            if (newFiles.length === 0) {
+                toastNotification.show(toolI18n.t('tool.toast.invalid_file'), "error");
+                return;
+            }
+            
+            // Check file size (100MB limit)
+            const oversizedFiles = newFiles.filter(file => file.size > 100 * 1024 * 1024);
+            if (oversizedFiles.length > 0) {
+                toastNotification.show(toolI18n.t('tool.toast.file_too_large'), "warning");
+                return;
+            }
+            
+            filesToProcess.push(...newFiles);
+
+            if (filesToProcess.length > 0) {
+                if (!uploadArea.classList.contains('hidden')) {
+                    uploadArea.classList.add('fade-out');
+                    setTimeout(() => {
+                        uploadArea.classList.add('hidden');
+                        fileListDiv.classList.remove('hidden');
+                        actionsDiv.classList.remove('hidden');
+                        setTimeout(() => {
+                           fileListDiv.classList.add('opacity-100');
+                           actionsDiv.classList.add('opacity-100');
+                        }, 50);
+                    }, 300);
+                }
+                
+                renderFileList();
+                startUploads();
+            }
+        }
+
+        function renderFileList() {
+            fileListDiv.innerHTML = '';
+            filesToProcess.forEach((file, index) => {
+                const fileElement = document.createElement('div');
+                fileElement.id = `file-${index}`;
+                fileElement.className = 'file-item bg-white p-4 rounded-xl border border-rose-100 flex items-center justify-between mb-4 shadow-sm opacity-0 animate-fade-in-up';
+                fileElement.style.animationDelay = `${index * 100}ms`;
+                
+                fileElement.innerHTML = `
+                    <div class="flex items-center overflow-hidden flex-1">
+                        <svg class="w-8 h-8 text-rose-500 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        <div class="overflow-hidden">
+                            <p class="text-gray-800 font-medium truncate">${file.name}</p>
+                            <p class="text-sm text-gray-500">${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                        </div>
+                    </div>
+                    <div class="status-container flex items-center justify-end w-48 ml-4">
+                        <!-- Durumlar buraya eklenecek -->
+                    </div>
+                    <button onclick="removeFile(${index})" class="remove-btn text-gray-400 hover:text-red-500 p-1 rounded-full transition-colors ml-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                `;
+                fileListDiv.appendChild(fileElement);
+            });
+        }
+
+        function startUploads() {
+            let allReady = true;
+            filesToProcess.forEach(file => {
+                if (!file.uploaded) allReady = false;
+            });
+
+            if (allReady && filesToProcess.length > 0) {
+                 convertBtn.disabled = false;
+                            convertBtn.textContent = toolI18n.t('tool.ui.convert_files').replace('{count}', filesToProcess.length);
+                 return;
+            }
+
+            convertBtn.disabled = true;
+            convertBtn.textContent = toolI18n.t('tool.ui.uploading');
+
+            const uploadPromises = filesToProcess.map((file, index) => {
+                if (!file.uploading && !file.uploaded) {
+                    file.uploading = true;
+                    return simulateUpload(index).then(() => {
+                        file.uploading = false;
+                        file.uploaded = true;
+                    });
+                }
+                return Promise.resolve();
+            });
+
+            Promise.all(uploadPromises).then(() => {
+                let stillUploading = filesToProcess.some(f => f.uploading);
+                if (!stillUploading && filesToProcess.length > 0) {
+                     convertBtn.disabled = false;
+                            convertBtn.textContent = toolI18n.t('tool.ui.convert_files').replace('{count}', filesToProcess.length);
+                     toastNotification.show(`${filesToProcess.length} ${toolI18n.t('tool.toast.upload_success')}`, "success");
+                }
+            });
+        }
+
+        function simulateUpload(index) {
+            return new Promise(resolve => {
+                const fileElement = document.getElementById(`file-${index}`);
+                if (!fileElement) return resolve();
+                const statusContainer = fileElement.querySelector('.status-container');
+                statusContainer.innerHTML = `
+                    <div class="upload-status w-full">
+                        <div class="flex justify-between items-center text-xs text-gray-500 mb-1">
+                            <span>${toolI18n.t('tool.ui.uploading')}</span>
+                            <span class="upload-progress-text font-medium">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="upload-progress-bar bg-blue-500 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div></div>
+                    </div>`;
+
+                const progressBar = fileElement.querySelector('.upload-progress-bar');
+                const progressText = fileElement.querySelector('.upload-progress-text');
+                
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += Math.floor(Math.random() * 10) + 5;
+                    if (progress > 100) progress = 100;
+                    
+                    progressBar.style.width = progress + '%';
+                    progressText.textContent = progress + '%';
+                    
+                    if (progress === 100) {
+                        clearInterval(interval);
+                        statusContainer.innerHTML = `
+                            <div class="ready-status flex items-center text-green-500 animate-scale-in">
+                                <svg class="w-6 h-6 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="font-medium text-sm">${toolI18n.t('tool.ui.ready')}</span>
+                            </div>`;
+                        resolve();
+                    }
+                }, 150);
+            });
+        }
+        
+        window.removeFile = function(index) {
+            const fileElement = document.getElementById(`file-${index}`);
+            fileElement.classList.add('fade-out');
+            
+            setTimeout(() => {
+                filesToProcess.splice(index, 1);
+                
+                if (filesToProcess.length === 0) {
+                    fileListDiv.classList.remove('opacity-100');
+                    actionsDiv.classList.remove('opacity-100');
+                    setTimeout(() => {
+                         fileListDiv.classList.add('hidden');
+                         actionsDiv.classList.add('hidden');
+                         uploadArea.classList.remove('hidden', 'fade-out');
+                         uploadArea.classList.add('animate-scale-in');
+                         resetConverterState();
+                    }, 300);
+                } else {
+                    renderFileList();
+                    startUploads(); 
+                }
+            }, 300);
+        }
+
+        convertBtn.addEventListener('click', () => {
+            if (filesToProcess.length > 0 && !convertBtn.disabled) {
+                convertBtn.disabled = true;
+                convertBtn.innerHTML = toolI18n.t('tool.ui.converting');
+                document.querySelectorAll('.remove-btn').forEach(btn => btn.style.display = 'none');
+                
+                toastNotification.show(toolI18n.t('tool.toast.conversion_started'), "info");
+                
+                const conversionPromises = filesToProcess.map((file, index) => simulateConversion(index));
+
+                Promise.all(conversionPromises).then(() => {
+                    checkAllConversionsComplete();
+                });
+            }
+        });
+
+        function simulateConversion(index) {
+            return new Promise(resolve => {
+                const fileElement = document.getElementById(`file-${index}`);
+                const statusContainer = fileElement.querySelector('.status-container');
+                
+                statusContainer.innerHTML = `
+                    <div class="convert-status w-full animate-scale-in">
+                        <div class="flex justify-between items-center text-xs text-gray-500 mb-1">
+                            <span>${toolI18n.t('tool.ui.converting')}</span>
+                            <span class="convert-progress-text font-medium">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="convert-progress-bar bg-rose-500 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div></div>
+                    </div>`;
+                
+                const progressBar = fileElement.querySelector('.convert-progress-bar');
+                const progressText = fileElement.querySelector('.convert-progress-text');
+                
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += Math.floor(Math.random() * 10) + 5;
+                    if (progress > 100) progress = 100;
+
+                    progressBar.style.width = progress + '%';
+                    progressText.textContent = progress + '%';
+                    
+                    if (progress === 100) {
+                                clearInterval(interval);
+                        setTimeout(() => {
+                            statusContainer.innerHTML = `
+                               <a href="#" class="download-btn bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors text-sm flex items-center animate-scale-in">
+                                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                   <span>${toolI18n.t('tool.ui.download')}</span>
+                               </a>`;
+                            resolve();
+                        }, 500);
+                    }
+                }, 250);
+            });
+        }
+
+        function checkAllConversionsComplete() {
+            const completedCount = document.querySelectorAll('.download-btn').length;
+            if (filesToProcess.length > 0 && completedCount === filesToProcess.length) {
+                showCompletionUI();
+            }
+        }
+
+        function showCompletionUI() {
+            const convertBtn = document.getElementById('convert-btn');
+            const actionsWrapper = document.getElementById('actions-wrapper');
+
+            convertBtn.textContent = toolI18n.t('tool.ui.completed');
+            convertBtn.classList.add('!bg-green-500'); 
+            convertBtn.classList.remove('bg-gradient-to-r', 'from-rose-500', 'to-pink-500');
+            
+            toastNotification.show(toolI18n.t('tool.toast.conversion_complete'), "success", 7000);
+
+            if (document.getElementById('reset-btn')) return;
+
+            const resetBtn = document.createElement('button');
+            resetBtn.id = 'reset-btn';
+            resetBtn.innerHTML = `<span class="flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 9a9 9 0 0114.13-5.12M20 15a9 9 0 01-14.13 5.12"></path></svg>
+                <span>${toolI18n.t('tool.ui.new_convert')}</span></span>`;
+            resetBtn.className = 'w-full md:w-auto bg-gray-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 shadow-lg transform opacity-0 translate-x-10 transition-all duration-500 ease-in-out';
+            resetBtn.onclick = resetConverter;
+
+            actionsWrapper.appendChild(resetBtn);
+            
+            setTimeout(() => {
+                convertBtn.classList.add('-translate-x-1');
+                resetBtn.classList.remove('opacity-0', 'translate-x-10');
+            }, 50);
+        }
+
+        function resetConverter() {
+            fileListDiv.classList.add('fade-out');
+            actionsDiv.classList.add('fade-out');
+
+            setTimeout(() => {
+                filesToProcess = [];
+                                fileInput.value = '';
+                
+                fileListDiv.classList.add('hidden');
+                actionsDiv.classList.add('hidden');
+                fileListDiv.classList.remove('fade-out', 'opacity-100');
+                actionsDiv.classList.remove('fade-out', 'opacity-100');
+
+                uploadArea.classList.remove('hidden', 'fade-out');
+                uploadArea.classList.add('animate-scale-in');
+
+                resetConverterState();
+            }, 300);
+        }
+
+        function resetConverterState() {
+             const actionsWrapper = document.getElementById('actions-wrapper');
+             const convertBtn = document.getElementById('convert-btn');
+             const resetBtn = document.getElementById('reset-btn');
+             if (resetBtn) {
+                 actionsWrapper.removeChild(resetBtn);
+             }
+             convertBtn.disabled = true;
+             convertBtn.textContent = toolI18n.t('tool.ui.waiting_upload');
+             convertBtn.classList.remove('!bg-green-500', '-translate-x-1');
+             convertBtn.classList.add('bg-gradient-to-r', 'from-rose-500', 'to-pink-500');
+        }
+        
+        } // End of setupFileHandling function
+
+        // Mobil menü
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language switcher functionality
+        document.querySelectorAll('[data-lang]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                const currentPath = window.location.pathname;
+                
+                // Remove existing language prefix if any
+                let pathWithoutLang = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+                
+                // If path is just "/" after removing language prefix, keep it as is
+                if (pathWithoutLang === '/') {
+                    pathWithoutLang = '';
+                }
+                
+                // Add new language prefix
+                const newPath = `/${lang}${pathWithoutLang}`;
+                
+                window.location.href = newPath;
+            });
+        });
+
+        // Dynamic URL handling for navigation links
+        document.querySelectorAll('[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = this.getAttribute('data-page');
+                const currentLang = window.location.pathname.split('/')[1] || 'en';
+                
+                if (page === 'home') {
+                    window.location.href = `/${currentLang}`;
+                } else if (page === 'features' || page === 'about') {
+                    window.location.href = `/${currentLang}#${page}`;
+            } else {
+                    window.location.href = `/${currentLang}/${page}`;
+                }
+            });
+        });
+        
+        // Giriş animasyonları için Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate-fade-in-up, .animate-scale-in, .animate-fade-in-down').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP4 to MP3 Converter - Pushtoconverter</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Convert your MP4 video files to high-quality MP3 audio for free. Fast, secure, and easy-to-use online MP4 to MP3 converter by Pushtoconverter.">
+    <meta name="keywords" content="mp4 to mp3, convert mp4 to mp3, mp4 to mp3 converter, video to audio, extract audio, online converter, free converter">
+    <meta name="author" content="Pushtoconverter">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pushtoconverter.com/mp4-to-mp3">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="MP4 to MP3 Converter - Pushtoconverter">
+    <meta property="og:description" content="Easily convert MP4 files to MP3 format online. Free, fast, and secure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pushtoconverter.com/mp4-to-mp3">
+    <meta property="og:image" content="https://pushtoconverter.com/images/og-image-mp4-to-mp3.jpg">
+    <meta property="og:site_name" content="Pushtoconverter">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MP4 to MP3 Converter - Pushtoconverter">
+    <meta name="twitter:description" content="Convert your MP4 video files to high-quality MP3 audio for free with our online tool.">
+    <meta name="twitter:image" content="https://pushtoconverter.com/images/twitter-card-mp4-to-mp3.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/i18n.js"></script>
+    <script src="/js/tool-i18n.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose': {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be185d'
+                        },
+                        'pink': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Work Sans', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+                        'scale-in': 'scaleIn 0.4s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-out {
+            animation: fadeOut 0.3s ease-out forwards;
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0; transform: scale(0.95); }
+        }
+    </style>
+</head>
+<body class="font-body bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-rose-200/50 sticky top-0 z-[100] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="animate-fade-in-down" data-page="home">
+                    <h1 class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Pushtoconverter</h1>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.tools" data-page="tools">Tools</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.features" data-page="features">Features</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.about" data-page="about">About</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.contact" data-page="contact">Contact</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.faq" data-page="faq">FAQ</a>
+                </nav>
+                <!-- Language Switcher -->
+                <div class="hidden md:block relative" id="languageSwitcher">
+                    <!-- Language switcher will be populated by JavaScript -->
+                </div>
+                <button class="md:hidden p-2 rounded-lg hover:bg-rose-50 transition-colors" id="mobileMenuBtn">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-rose-200/50" id="mobileMenu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.tools" data-page="tools">Tools</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.features" data-page="features">Features</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.about" data-page="about">About</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.contact" data-page="contact">Contact</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.faq" data-page="faq">FAQ</a>
+                <!-- Mobile Language Switcher -->
+                <div class="pt-3 border-t border-rose-200/50">
+                    <div class="text-sm text-gray-500 mb-2">Language / Dil</div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="tr">Türkçe</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="en">English</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="de">Deutsch</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="ru">Русский</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="fr">Français</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="es">Español</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="it">Italiano</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="ja">日本語</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="pt">Português</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="zh">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Converter Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="animate-fade-in-up opacity-0">
+                    <h2 class="font-heading text-5xl md:text-6xl font-bold text-gray-900 mb-4" data-i18n="tool.title">MP4'ten MP3'e Dönüştürücü</h2>
+                    <p class="text-xl text-gray-600 mb-10" data-i18n="tool.subtitle">Videolarınızdan sesi kolayca çıkarın. MP4 dosyalarınızı yüksek kaliteli MP3 ses formatına dönüştürün.</p>
+                </div>
+
+                <div id="converter-box" class="animate-scale-in opacity-0 bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-rose-200 shadow-xl p-8 md:p-12 transition-all duration-300">
+                    <div id="upload-area" class="border-4 border-dashed border-rose-200 rounded-2xl p-10 text-center cursor-pointer hover:border-rose-400 hover:bg-rose-50 transition-all duration-300">
+                        <input type="file" id="file-input" accept=".mp4" class="hidden" multiple>
+                        <div class="flex flex-col items-center text-gray-600">
+                             <svg class="w-20 h-20 text-rose-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                            </svg>
+                            <h3 class="font-semibold text-2xl text-gray-800 mb-2" data-i18n="tool.drag_drop">Dosyaları buraya sürükleyip bırakın</h3>
+                            <p class="text-gray-500 mb-6" data-i18n="tool.or">veya</p>
+                            <button id="browse-btn" class="bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-3 rounded-xl font-semibold hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="tool.browse_files">
+                                Dosya Seç
+                            </button>
+                            <p class="text-sm text-gray-500 mt-4" data-i18n="tool.max_file_size">Maksimum dosya boyutu: 100MB</p>
+                        </div>
+                    </div>
+
+                    <div id="file-list" class="mt-8 text-left opacity-0 transition-opacity duration-500 hidden">
+                        <!-- Dosya listesi JavaScript ile doldurulacak -->
+                    </div>
+
+                    <div id="actions" class="mt-8 text-center opacity-0 transition-opacity duration-500 hidden">
+                        <div id="actions-wrapper" class="flex justify-center items-center gap-4 flex-wrap">
+                            <button id="convert-btn" disabled class="w-full md:w-auto bg-gradient-to-r from-rose-500 to-pink-500 text-white px-12 py-4 rounded-xl font-semibold text-lg hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100" data-i18n="tool.waiting_upload">
+                                Yükleme bekleniyor...
+                            </button>
+                            <!-- Reset button will be added here dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white/60 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 opacity-0 animate-fade-in-up">
+                    <h3 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-i18n="tool.how_it_works.title">MP4'ü MP3'e Nasıl Dönüştürülür?</h3>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="tool.how_it_works.subtitle">Sadece üç basit adımda videolarınızı sese dönüştürün.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="text-center group opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="relative inline-block">
+                            <div class="w-24 h-24 bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-all duration-300">
+                                <span class="font-heading text-4xl font-bold text-rose-500">1</span>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-2xl font-semibold text-gray-900 mb-4" data-i18n="tool.how_it_works.step1.title">MP4 Dosyanızı Seçin</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="tool.how_it_works.step1.description">"Dosya Seç" düğmesine tıklayın veya videonuzu yükleme alanına sürükleyip bırakın.</p>
+                    </div>
+                    <div class="text-center group opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="relative inline-block">
+                             <div class="w-24 h-24 bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-all duration-300">
+                                <span class="font-heading text-4xl font-bold text-rose-500">2</span>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-2xl font-semibold text-gray-900 mb-4" data-i18n="tool.how_it_works.step2.title">Dönüştür'e Tıklayın</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="tool.how_it_works.step2.description">"Dönüştür" düğmesine basarak videonuzdan sesi çıkarma işlemini başlatın.</p>
+                    </div>
+                    <div class="text-center group opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="relative inline-block">
+                             <div class="w-24 h-24 bg-gradient-to-br from-rose-100 to-pink-100 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-all duration-300">
+                                <span class="font-heading text-4xl font-bold text-rose-500">3</span>
+                            </div>
+                        </div>
+                        <h4 class="font-heading text-2xl font-semibold text-gray-900 mb-4" data-i18n="tool.how_it_works.step3.title">MP3'ünüzü İndirin</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed" data-i18n="tool.how_it_works.step3.description">Dönüştürme tamamlandığında, yeni MP3 dosyanızı indirmek için "İndir" düğmesi görünecektir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 opacity-0 animate-fade-in-up">
+                    <h3 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-i18n="tool.faq.title">Sıkça Sorulan Sorular</h3>
+                </div>
+                <div class="space-y-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="bg-white/70 rounded-2xl p-6 border border-rose-100">
+                        <h4 class="font-semibold text-lg text-gray-800 mb-2" data-i18n="tool.faq.q1">Bu aracı kullanmak güvenli mi?</h4>
+                        <p class="text-gray-600" data-i18n="tool.faq.a1">Evet, kesinlikle. Gizliliğiniz bizim için önemlidir. Yüklenen tüm dosyalar sunucularımızdan 1 saat sonra otomatik olarak silinir.</p>
+                    </div>
+                    <div class="bg-white/70 rounded-2xl p-6 border border-rose-100">
+                        <h4 class="font-semibold text-lg text-gray-800 mb-2" data-i18n="tool.faq.q2">Dönüştürme işlemi ne kadar sürer?</h4>
+                        <p class="text-gray-600" data-i18n="tool.faq.a2">Dönüştürme hızı dosya boyutuna bağlıdır, ancak güçlü sunucularımız sayesinde çoğu dosya bir dakikadan az sürede işlenir.</p>
+                    </div>
+                    <div class="bg-white/70 rounded-2xl p-6 border border-rose-100">
+                        <h4 class="font-semibold text-lg text-gray-800 mb-2" data-i18n="tool.faq.q3">Ses kalitesi düşer mi?</h4>
+                        <p class="text-gray-600" data-i18n="tool.faq.a3">Mümkün olan en iyi ses kalitesini korumak için gelişmiş kodlayıcılar kullanıyoruz. Kalite kaybı fark edilmeyecek kadar azdır.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="relative bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-20 -right-20 w-40 h-40 bg-rose-200/20 rounded-full animate-float"></div>
+            <div class="absolute -bottom-20 -left-20 w-32 h-32 bg-pink-200/20 rounded-full animate-float" style="animation-delay: 3s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-20 h-20 bg-rose-300/10 rounded-full animate-float" style="animation-delay: 1.5s;"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <!-- Main footer content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Brand section -->
+                <div class="md:col-span-1">
+                    <div class="mb-6">
+                        <h5 class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Pushtoconverter</h5>
+                    </div>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6" data-i18n="footer.description">The ultimate file conversion platform with 40+ powerful tools. Fast, secure, and completely free.</p>
+                </div>
+                
+                <!-- Popular Tools -->
+                <div>
+                    <h6 class="font-heading text-lg font-semibold text-gray-900 mb-6" data-i18n="footer.links.tools">Popular Tools</h6>
+                    <ul class="space-y-3">
+                        <li><a href="/mp4-to-mp3" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            MP4 to MP3
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            PDF to Word
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            JPG to PNG
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            MP3 to WAV
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            PNG to JPG
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h6 class="font-heading text-lg font-semibold text-gray-900 mb-6" data-i18n="footer.support.title">Support</h6>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="help">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.help">Help Center</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="contact">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.contact">Contact Us</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="privacy">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.privacy">Privacy Policy</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="terms">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.terms">Terms of Service</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="faq">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.faq">FAQ</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <!-- Bottom section -->
+            <div class="border-t border-rose-200/50 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-600 text-base" data-i18n="footer.copyright">&copy; 2024 Pushtoconverter. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('file-input');
+        const browseBtn = document.getElementById('browse-btn');
+        const fileListDiv = document.getElementById('file-list');
+        const convertBtn = document.getElementById('convert-btn');
+        const actionsDiv = document.getElementById('actions');
+        
+        let filesToProcess = [];
+
+        browseBtn.addEventListener('click', () => fileInput.click());
+        uploadArea.addEventListener('click', (e) => {
+            if (e.target.id === 'upload-area' || e.target.closest('#upload-area > div')) {
+                 fileInput.click()
+            }
+        });
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('border-rose-400', 'bg-rose-50', 'scale-105');
+        });
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('border-rose-400', 'bg-rose-50', 'scale-105');
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('border-rose-400', 'bg-rose-50', 'scale-105');
+            const files = e.dataTransfer.files;
+            handleFiles(files);
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            const files = e.target.files;
+            handleFiles(files);
+        });
+
+        function handleFiles(files) {
+            const newFiles = [...files].filter(file => file.type === 'video/mp4');
+            if (newFiles.length === 0) {
+                 alert("Lütfen geçerli bir MP4 dosyası seçin.");
+                 return;
+            }
+            
+            filesToProcess.push(...newFiles);
+
+            if (filesToProcess.length > 0) {
+                if (!uploadArea.classList.contains('hidden')) {
+                    uploadArea.classList.add('fade-out');
+                    setTimeout(() => {
+                        uploadArea.classList.add('hidden');
+                        fileListDiv.classList.remove('hidden');
+                        actionsDiv.classList.remove('hidden');
+                        setTimeout(() => {
+                           fileListDiv.classList.add('opacity-100');
+                           actionsDiv.classList.add('opacity-100');
+                        }, 50);
+                    }, 300);
+                }
+                
+                renderFileList();
+                startUploads();
+            }
+        }
+
+        function renderFileList() {
+            fileListDiv.innerHTML = '';
+            filesToProcess.forEach((file, index) => {
+                const fileElement = document.createElement('div');
+                fileElement.id = `file-${index}`;
+                fileElement.className = 'file-item bg-white p-4 rounded-xl border border-rose-100 flex items-center justify-between mb-4 shadow-sm opacity-0 animate-fade-in-up';
+                fileElement.style.animationDelay = `${index * 100}ms`;
+                
+                fileElement.innerHTML = `
+                    <div class="flex items-center overflow-hidden flex-1">
+                        <svg class="w-8 h-8 text-rose-500 mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        <div class="overflow-hidden">
+                            <p class="text-gray-800 font-medium truncate">${file.name}</p>
+                            <p class="text-sm text-gray-500">${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                        </div>
+                    </div>
+                    <div class="status-container flex items-center justify-end w-48 ml-4">
+                        <!-- Durumlar buraya eklenecek -->
+                    </div>
+                    <button onclick="removeFile(${index})" class="remove-btn text-gray-400 hover:text-red-500 p-1 rounded-full transition-colors ml-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                `;
+                fileListDiv.appendChild(fileElement);
+            });
+        }
+
+        function startUploads() {
+            let allReady = true;
+            filesToProcess.forEach(file => {
+                if (!file.uploaded) allReady = false;
+            });
+
+            if (allReady && filesToProcess.length > 0) {
+                 convertBtn.disabled = false;
+                 convertBtn.textContent = `Dönüştür (${filesToProcess.length} Dosya)`;
+                 return;
+            }
+
+            convertBtn.disabled = true;
+            convertBtn.textContent = 'Yükleniyor...';
+
+            const uploadPromises = filesToProcess.map((file, index) => {
+                if (!file.uploading && !file.uploaded) {
+                    file.uploading = true;
+                    return simulateUpload(index).then(() => {
+                        file.uploading = false;
+                        file.uploaded = true;
+                    });
+                }
+                return Promise.resolve();
+            });
+
+            Promise.all(uploadPromises).then(() => {
+                let stillUploading = filesToProcess.some(f => f.uploading);
+                if (!stillUploading && filesToProcess.length > 0) {
+                     convertBtn.disabled = false;
+                     convertBtn.textContent = `Dönüştür (${filesToProcess.length} Dosya)`;
+                }
+            });
+        }
+
+        function simulateUpload(index) {
+            return new Promise(resolve => {
+                const fileElement = document.getElementById(`file-${index}`);
+                if (!fileElement) return resolve();
+                const statusContainer = fileElement.querySelector('.status-container');
+                statusContainer.innerHTML = `
+                    <div class="upload-status w-full">
+                        <div class="flex justify-between items-center text-xs text-gray-500 mb-1">
+                            <span>Yükleniyor...</span>
+                            <span class="upload-progress-text font-medium">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="upload-progress-bar bg-blue-500 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div></div>
+                    </div>`;
+
+                const progressBar = fileElement.querySelector('.upload-progress-bar');
+                const progressText = fileElement.querySelector('.upload-progress-text');
+                
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += Math.floor(Math.random() * 10) + 5;
+                    if (progress > 100) progress = 100;
+                    
+                    progressBar.style.width = progress + '%';
+                    progressText.textContent = progress + '%';
+                    
+                    if (progress === 100) {
+                        clearInterval(interval);
+                        statusContainer.innerHTML = `
+                            <div class="ready-status flex items-center text-green-500 animate-scale-in">
+                                <svg class="w-6 h-6 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="font-medium text-sm">Hazır</span>
+                            </div>`;
+                        resolve();
+                    }
+                }, 150);
+            });
+        }
+        
+        window.removeFile = function(index) {
+            const fileElement = document.getElementById(`file-${index}`);
+            fileElement.classList.add('fade-out');
+            
+            setTimeout(() => {
+                filesToProcess.splice(index, 1);
+                
+                if (filesToProcess.length === 0) {
+                    fileListDiv.classList.remove('opacity-100');
+                    actionsDiv.classList.remove('opacity-100');
+                    setTimeout(() => {
+                         fileListDiv.classList.add('hidden');
+                         actionsDiv.classList.add('hidden');
+                         uploadArea.classList.remove('hidden', 'fade-out');
+                         uploadArea.classList.add('animate-scale-in');
+                         resetConverterState();
+                    }, 300);
+                } else {
+                    renderFileList();
+                    startUploads(); 
+                }
+            }, 300);
+        }
+
+        convertBtn.addEventListener('click', () => {
+            if (filesToProcess.length > 0 && !convertBtn.disabled) {
+                convertBtn.disabled = true;
+                convertBtn.innerHTML = 'Dönüştürülüyor...';
+                document.querySelectorAll('.remove-btn').forEach(btn => btn.style.display = 'none');
+                
+                const conversionPromises = filesToProcess.map((file, index) => simulateConversion(index));
+
+                Promise.all(conversionPromises).then(() => {
+                    checkAllConversionsComplete();
+                });
+            }
+        });
+
+        function simulateConversion(index) {
+            return new Promise(resolve => {
+                const fileElement = document.getElementById(`file-${index}`);
+                const statusContainer = fileElement.querySelector('.status-container');
+                
+                statusContainer.innerHTML = `
+                    <div class="convert-status w-full animate-scale-in">
+                        <div class="flex justify-between items-center text-xs text-gray-500 mb-1">
+                            <span>Dönüştürülüyor...</span>
+                            <span class="convert-progress-text font-medium">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="convert-progress-bar bg-rose-500 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div></div>
+                    </div>`;
+                
+                const progressBar = fileElement.querySelector('.convert-progress-bar');
+                const progressText = fileElement.querySelector('.convert-progress-text');
+                
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += Math.floor(Math.random() * 10) + 5;
+                    if (progress > 100) progress = 100;
+
+                    progressBar.style.width = progress + '%';
+                    progressText.textContent = progress + '%';
+                    
+                    if (progress === 100) {
+                                clearInterval(interval);
+                        setTimeout(() => {
+                            statusContainer.innerHTML = `
+                               <a href="#" class="download-btn bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors text-sm flex items-center animate-scale-in">
+                                   <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                   İndir
+                               </a>`;
+                            resolve();
+                        }, 500);
+                    }
+                }, 250);
+            });
+        }
+
+        function checkAllConversionsComplete() {
+            const completedCount = document.querySelectorAll('.download-btn').length;
+            if (filesToProcess.length > 0 && completedCount === filesToProcess.length) {
+                showCompletionUI();
+            }
+        }
+
+        function showCompletionUI() {
+            const convertBtn = document.getElementById('convert-btn');
+            const actionsWrapper = document.getElementById('actions-wrapper');
+
+            convertBtn.textContent = 'Tamamlandı!';
+            convertBtn.classList.add('!bg-green-500'); 
+            convertBtn.classList.remove('bg-gradient-to-r', 'from-rose-500', 'to-pink-500');
+
+            if (document.getElementById('reset-btn')) return;
+
+            const resetBtn = document.createElement('button');
+            resetBtn.id = 'reset-btn';
+            resetBtn.innerHTML = `<span class="flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 9a9 9 0 0114.13-5.12M20 15a9 9 0 01-14.13 5.12"></path></svg>
+                Yeni Dosya Dönüştür</span>`;
+            resetBtn.className = 'w-full md:w-auto bg-gray-700 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 shadow-lg transform opacity-0 translate-x-10 transition-all duration-500 ease-in-out';
+            resetBtn.onclick = resetConverter;
+
+            actionsWrapper.appendChild(resetBtn);
+            
+            setTimeout(() => {
+                convertBtn.classList.add('-translate-x-1');
+                resetBtn.classList.remove('opacity-0', 'translate-x-10');
+            }, 50);
+        }
+
+        function resetConverter() {
+            fileListDiv.classList.add('fade-out');
+            actionsDiv.classList.add('fade-out');
+
+            setTimeout(() => {
+                filesToProcess = [];
+                                fileInput.value = '';
+                
+                fileListDiv.classList.add('hidden');
+                actionsDiv.classList.add('hidden');
+                fileListDiv.classList.remove('fade-out', 'opacity-100');
+                actionsDiv.classList.remove('fade-out', 'opacity-100');
+
+                uploadArea.classList.remove('hidden', 'fade-out');
+                uploadArea.classList.add('animate-scale-in');
+
+                resetConverterState();
+            }, 300);
+        }
+
+        function resetConverterState() {
+             const actionsWrapper = document.getElementById('actions-wrapper');
+             const convertBtn = document.getElementById('convert-btn');
+             const resetBtn = document.getElementById('reset-btn');
+             if (resetBtn) {
+                 actionsWrapper.removeChild(resetBtn);
+             }
+             convertBtn.disabled = true;
+             convertBtn.textContent = 'Yükleme bekleniyor...';
+             convertBtn.classList.remove('!bg-green-500', '-translate-x-1');
+             convertBtn.classList.add('bg-gradient-to-r', 'from-rose-500', 'to-pink-500');
+        }
+
+        // Mobil menü
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language switcher functionality
+        document.querySelectorAll('[data-lang]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                const currentPath = window.location.pathname;
+                
+                // Remove existing language prefix if any
+                let pathWithoutLang = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+                
+                // If path is just "/" after removing language prefix, keep it as is
+                if (pathWithoutLang === '/') {
+                    pathWithoutLang = '';
+                }
+                
+                // Add new language prefix
+                const newPath = `/${lang}${pathWithoutLang}`;
+                
+                window.location.href = newPath;
+            });
+        });
+
+        // Dynamic URL handling for navigation links
+        document.querySelectorAll('[data-page]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = this.getAttribute('data-page');
+                const currentLang = window.location.pathname.split('/')[1] || 'en';
+                
+                if (page === 'home') {
+                    window.location.href = `/${currentLang}`;
+                } else if (page === 'features' || page === 'about') {
+                    window.location.href = `/${currentLang}#${page}`;
+            } else {
+                    window.location.href = `/${currentLang}/${page}`;
+                }
+            });
+        });
+        
+        // Giriş animasyonları için Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate-fade-in-up, .animate-scale-in, .animate-fade-in-down').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+</script>
+</body>
+</html>
+

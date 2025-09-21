@@ -1,0 +1,444 @@
+{
+  "site": {
+    "title": "Pushtoconverter - 無料オンラインファイル変換ツール",
+    "description": "ファイルを無料で変換しましょう。MP4からMP3へ、PDFからWordへ、そしてそれ以上にも。"
+  },
+  "header": {
+    "brand": "Pushtoconverter",
+    "nav": {
+      "tools": "ツール",
+      "features": "機能",
+      "about": "概要",
+      "contact": "お問い合わせ",
+      "faq": "よくある質問"
+    },
+    "language": "言語:"
+  },
+  "hero": {
+    "title": "あらゆるファイルを<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow\">即座に</span>変換",
+    "subtitle": "<strong class=\"text-rose-600\">40種類以上の強力な変換ツール</strong>を一つの場所でご利用いただけます。高速・安全・完全無料。登録不要です。",
+    "search_placeholder": "変換ツールを検索... (例: MP4からMP3へ)",
+    "button_primary": "すべてのツールを表示",
+    "button_secondary": "詳細を見る",
+    "stats": {
+      "files_converted": "変換済みファイル",
+      "tools_available": "利用可能なツール",
+      "free_forever": "永久無料"
+    }
+  },
+  "stats": {
+    "users": "ユーザー数（百万）",
+    "conversions": "変換数（百万）",
+    "formats": "対応フォーマット",
+    "countries": "対応国"
+  },
+  "tools": {
+    "title": "人気の変換ツール",
+    "subtitle": "世界中の何百万人ものユーザーに信頼されている、当社の人気ファイル変換ツールからお選びください。",
+    "categories": {
+      "video": "動画変換",
+      "audio": "音声変換",
+      "image": "画像変換",
+      "document": "文書変換",
+      "archive": "アーカイブ変換"
+    },
+    "items": {
+      "mp4_to_mp3": "MP4からMP3へ",
+      "mp4_to_avi": "MP4からAVIへ",
+      "avi_to_mp4": "AVIからMP4へ",
+      "mov_to_mp4": "MOVからMP4へ",
+      "wmv_to_mp4": "WMVからMP4へ",
+      "flv_to_mp4": "FLVからMP4へ",
+      "webm_to_mp4": "WebMからMP4へ",
+      "mkv_to_mp4": "MKVからMP4へ",
+      "mp3_to_wav": "MP3からWAVへ",
+      "wav_to_mp3": "WAVからMP3へ",
+      "flac_to_mp3": "FLACからMP3へ",
+      "aac_to_mp3": "AACからMP3へ",
+      "ogg_to_mp3": "OGGからMP3へ",
+      "wma_to_mp3": "WMAからMP3へ",
+      "m4a_to_mp3": "M4AからMP3へ",
+      "jpg_to_png": "JPGからPNGへ",
+      "png_to_jpg": "PNGからJPGへ",
+      "bmp_to_png": "BMPからPNGへ",
+      "gif_to_mp4": "GIFからMP4へ",
+      "webp_to_png": "WebPからPNGへ",
+      "tiff_to_jpg": "TIFFからJPGへ",
+      "svg_to_png": "SVGからPNGへ",
+      "pdf_to_word": "PDFからWordへ",
+      "word_to_pdf": "WordからPDFへ",
+      "excel_to_csv": "ExcelからCSVへ",
+      "ppt_to_pdf": "PPTからPDFへ",
+      "powerpoint_to_pdf": "PowerPointからPDFへ",
+      "pdf_to_excel": "PDFからExcelへ",
+      "pdf_to_powerpoint": "PDFからPowerPointへ",
+      "zip_to_rar": "ZIPからRARへ",
+      "rar_to_zip": "RARからZIPへ",
+      "7z_to_zip": "7ZからZIPへ",
+      "tar_to_zip": "TARからZIPへ"
+    },
+    "ready_title": "ファイルの変換準備はできましたか？",
+    "ready_subtitle": "ファイル変換にPushtoconverterを信頼する何百万人ものユーザーに加わりましょう。高速・安全・いつでも無料です。",
+    "view_all_button": "40+のツールを表示",
+    "hero_title": "すべての変換<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow\">ツール</span>",
+    "hero_subtitle": "<strong class=\"text-rose-600\">40種類以上の変換ツール</strong>の完全なコレクションをご覧ください。どんなファイル変換タスクにもぴったりのツールが見つかります。",
+    "complete_title": "ツールの完全コレクション",
+    "complete_subtitle": "ファイル変換ツールの完全なコレクションを探索しましょう。任意のツールをクリックして、ファイルの変換を開始してください。",
+    "back_to_home": "ホームに戻る",
+    "learn_more": "詳細を見る",
+    "most_popular": "最も人気",
+    "help_title": "ツールの選択で困っていますか？",
+    "help_subtitle": "機能の詳細をご覧になり、人気ツールから始めるには、ホームページをご訪問ください。",
+    "back_to_homepage": "ホームページに戻る",
+    "labels": {
+      "fast_conversion": "高速変換",
+      "high_quality": "高品質",
+      "universal_format": "ユニバーサルフォーマット",
+      "most_loved": "最も愛されている"
+    },
+    "descriptions": {
+      "mp4_to_mp3": "動画ファイルから高品質の音声を抽出",
+      "mp4_to_avi": "品質を保ちながらMP4をAVI形式に変換",
+      "mov_to_mp4": "QuickTimeファイルをユニバーサルなMP4に変換",
+      "avi_to_mp4": "AVIを最新のMP4形式に変換",
+      "mp3_to_wav": "MP3をWAV形式に変換",
+      "wav_to_mp3": "WAVをMP3に圧縮",
+      "flac_to_mp3": "ロスレス音声をMP3に変換",
+      "aac_to_mp3": "AACをMP3形式に変換",
+      "jpg_to_png": "JPEGをPNG形式に変換",
+      "png_to_jpg": "PNGをJPEG形式に変換",
+      "webp_to_png": "WebPをPNG形式に変換",
+      "svg_to_png": "ベクターをラスターに変換",
+      "pdf_to_word": "PDFをDOCX形式に変換",
+      "word_to_pdf": "DOCXをPDF形式に変換",
+      "excel_to_csv": "XLSXをCSV形式に変換",
+      "ppt_to_pdf": "PowerPointをPDFに変換"
+    }
+  },
+  "features": {
+    "title": "なぜPushtoconverterを選ぶべきなのか？",
+    "subtitle": "最先端の変換技術とユーザー中心のアプローチで、その違いを体験してください。",
+    "items": {
+      "free": {
+        "title": "完全無料",
+        "description": "隠れた料金なし、登録不要、プレミアム品質の無制限変換",
+        "detail": "永久無料"
+      },
+      "fast": {
+        "title": "超高速",
+        "description": "高度なアルゴリズムを搭載した最適化された処理エンジンで、数秒でファイルを変換",
+        "detail": "平均：3秒"
+      },
+      "secure": {
+        "title": "100%安全",
+        "description": "エンドツーエンド暗号化でファイルを安全に処理し、変換後は自動的に削除",
+        "detail": "SSL暗号化"
+      },
+      "no_limits": {
+        "title": "無制限",
+        "description": "ファイルサイズや変換回数に制限はありません。"
+      }
+    }
+  },
+  "footer": {
+    "brand": "Pushtoconverter",
+    "description": "40種類以上の強力なツールを備えた究極のファイル変換プラットフォーム。高速・安全・完全無料。",
+    "links": {
+      "tools": "人気ツール",
+      "features": "機能",
+      "about": "概要",
+      "contact": "お問い合わせ",
+      "faq": "よくある質問"
+    },
+    "support": {
+      "title": "サポート",
+      "help": "ヘルプセンター",
+      "contact": "お問い合わせ",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約",
+      "faq": "よくある質問"
+    },
+    "copyright": "© 2024 Pushtoconverter. All rights reserved."
+  },
+  "privacy": {
+    "title": "プライバシー<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent\">ポリシー</span>",
+    "subtitle": "お客様のプライバシーは当社にとって重要です。情報の収集・利用・保護方法についてご確認ください。",
+    "last_updated": "最終更新日：2024年12月",
+    "sections": {
+      "collect": {
+        "title": "収集する情報",
+        "description": "Pushtoconverterはプライバシーを重視して設計されています。サービス提供に必要な最小限の情報のみを収集します：",
+        "item1": "変換のためにアップロードされたファイル（一時的、処理専用）",
+        "item2": "基本的な利用統計（匿名化済み）",
+        "item3": "IPアドレスおよびブラウザ情報（セキュリティ目的）"
+      },
+      "use": {
+        "title": "情報の利用方法",
+        "description": "収集した情報は以下の目的でのみ利用します：",
+        "item1": "お客様のファイル変換作業を実行するため",
+        "item2": "サービス品質の向上のため",
+        "item3": "セキュリティの確保と不正利用の防止のため",
+        "item4": "必要に応じてカスタマーサポートを提供するため"
+      },
+      "security": {
+        "title": "ファイルのセキュリティ",
+        "description": "アップロードされたファイルは最高レベルのセキュリティで処理されます：",
+        "item1": "すべてのファイル転送はSSL/TLSを使用して暗号化",
+        "item2": "ファイルは変換後自動的に削除（24時間以内）",
+        "item3": "お客様のファイルを永続的に保存することはありません",
+        "item4": "ファイルは安全で隔離された環境で処理されます"
+      },
+      "sharing": {
+        "title": "データの共有",
+        "description": "お客様の個人情報を第三者に販売、交換、または共有することはありません。例外は以下の通りです：",
+        "item1": "法的要件（裁判所命令、法執行機関）",
+        "item2": "当社プラットフォームの運営を支援するサービスプロバイダー（厳格な機密保持のもと）"
+      },
+      "cookies": {
+        "title": "クッキーとトラッキング",
+        "description": "必須機能のために最小限のクッキーを使用しています：",
+        "item1": "ファイル処理のためのセッションクッキー",
+        "item2": "分析用クッキー（匿名化済み）",
+        "item3": "広告用のトラッキングクッキーは使用しません"
+      },
+      "rights": {
+        "title": "お客様の権利",
+        "description": "お客様には以下の権利があります：",
+        "item1": "当社が保有するデータに関する情報を要求する権利",
+        "item2": "データの削除を要求する権利",
+        "item3": "必須でないデータ収集を拒否する権利",
+        "item4": "プライバシーに関する懸念を当社に連絡する権利"
+      },
+      "contact": {
+        "title": "お問い合わせ",
+        "description": "このプライバシーポリシーについてご質問がある場合は、お問い合わせください：",
+        "email_label": "メールアドレス：",
+        "subject_label": "件名：",
+        "subject": "プライバシーポリシーに関するお問い合わせ"
+      },
+      "changes": {
+        "title": "本ポリシーの変更",
+        "description": "本プライバシーポリシーは随時更新される場合があります。重要な変更がある場合は、このページに新しいポリシーを掲載し、「最終更新日」を更新することでユーザーに通知します。"
+      }
+    }
+  },
+  "terms": {
+    "title": "利用<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent\">規約</span>",
+    "subtitle": "ファイル変換サービスをご利用になる前に、以下の規約をよくお読みください。",
+    "last_updated": "最終更新日：2024年12月",
+    "sections": {
+      "acceptance": {
+        "title": "規約の受諾",
+        "description": "Pushtoconverterにアクセスおよび利用することにより、お客様は本契約の条項および条件に同意し、拘束されることに同意します。"
+      },
+      "service": {
+        "title": "サービスの説明",
+        "description": "Pushtoconverterはオンラインファイル変換サービスを提供します。動画、音声、画像、文書フォーマットを含むさまざまなフォーマット間でファイルを変換するためのさまざまなツールを提供しています。"
+      },
+      "responsibilities": {
+        "title": "ユーザーの責任",
+        "description": "当社サービスのユーザーとして、お客様は以下に同意するものとします：",
+        "item1": "サービスを合法的な目的でのみ使用すること",
+        "item2": "悪意のあるコードや違法なコンテンツを含むファイルをアップロードしないこと",
+        "item3": "知的財産権を尊重すること",
+        "item4": "当社システムのリバースエンジニアリングや侵害を試みないこと",
+        "item5": "許可なく商業的な再販のためにサービスを使用しないこと"
+      },
+      "upload": {
+        "title": "ファイルのアップロードと処理",
+        "description": "ファイルのアップロードに関して：",
+        "item1": "ファイルあたりの最大ファイルサイズは100MB",
+        "item2": "ファイルは24時間後に自動的に削除",
+        "item3": "すべてのファイルタイプの変換成功を保証するものではありません",
+        "item4": "アップロードされたファイルを変換する権利があることを確認するのはお客様の責任です"
+      },
+      "availability": {
+        "title": "サービスの可用性",
+        "description": "当社はサービスの高い可用性を維持するよう努めていますが、継続的なアクセスを保証するものではありません。サービスの可用性に一時的に影響を与えるメンテナンス、更新、または変更を行う場合があります。"
+      },
+      "liability": {
+        "title": "責任の制限",
+        "description": "Pushtoconverterは、利益、データ、使用、営業権、その他の無形の損失を含む、間接的、偶発的、特別、派生的、または懲罰的な損害について一切責任を負いません。"
+      },
+      "property": {
+        "title": "知的財産",
+        "description": "サービスおよびそのオリジナルコンテンツ、機能、機能性はPushtoconverterの所有物であり、国際的な著作権、商標、特許、営業秘密、およびその他の知的財産権法によって保護されています。"
+      },
+      "termination": {
+        "title": "終了",
+        "description": "当社は、規約に違反する場合を含め、いかなる理由でも、事前の通知や責任を負うことなく、お客様のサービスへのアクセスを直ちに終了または停止する権利を有します。"
+      },
+      "changes": {
+        "title": "規約の変更",
+        "description": "当社は、これらの規約を随時変更または置き換える権利を留保します。重要な改訂がある場合は、新しい規約が発効する前に少なくとも30日間の通知を提供するよう努めます。"
+      },
+      "contact": {
+        "title": "お問い合わせ情報",
+        "description": "本利用規約についてご質問がある場合は、お問い合わせください：",
+        "email_label": "メールアドレス：",
+        "subject_label": "件名：",
+        "subject": "利用規約に関するお問い合わせ"
+      }
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "title_us": "ください",
+    "subtitle": "ご質問、ご意見、サポートが必要ですか？ぜひお聞かせください！",
+    "form": {
+      "name": "お名前",
+      "name_placeholder": "あなたの名前",
+      "email": "メールアドレス",
+      "email_placeholder": "email@example.com",
+      "subject": "件名",
+      "subject_select": "件名を選択",
+      "general": "一般のお問い合わせ",
+      "support": "テクニカルサポート",
+      "bug": "バグ報告",
+      "feature": "機能リクエスト",
+      "business": "ビジネスのお問い合わせ",
+      "message": "メッセージ",
+      "message_placeholder": "どのようにお手伝いできるか教えてください...",
+      "send": "メッセージを送信"
+    },
+    "info": {
+      "email_title": "メールサポート",
+      "response_title": "返信時間",
+      "response_time": "24時間以内",
+      "help_title": "ヘルプセンター",
+      "help_link": "よくある質問をご覧ください"
+    }
+  },
+  "about": {
+    "title": "Pushtoconverterについて",
+    "description1": "Pushtoconverterは、シームレスで効率的なファイル変換のためのオンラインプラットフォームです。すべてのファイル変換ニーズに対して、高速で安全かつ使いやすい体験を提供することに専念しています。当社のミッションは、ファイル変換プロセスを簡素化し、どこにいても誰でも利用できるようにすることです。",
+    "description2": "40種類以上の専門的なツールにより、文書や画像から音声や動画まで、幅広いフォーマットに対応しています。常にサービスを改善し、新機能を追加して、最高の変換体験を提供できるよう努めています。"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "ご質問、ご意見、サポートが必要ですか？ぜひお聞かせください！",
+    "email_button": "メールを送信"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "success": "成功",
+    "download": "ダウンロード",
+    "convert": "変換",
+    "upload": "アップロード",
+    "select_file": "ファイルを選択",
+    "drag_drop": "ここにファイルをドラッグ＆ドロップ"
+  },
+  "faq": {
+    "title": "よくある",
+    "title_questions": "質問",
+    "subtitle": "ファイル変換サービスに関する最も一般的な質問の回答をご覧ください。",
+    "q1": "Pushtoconverterでファイルを変換するにはどうすればよいですか？",
+    "a1": "ファイル変換はとても簡単です！ホームページから必要なツールを選択し、ファイルをアップロードして「変換」をクリックするだけです。処理は自動的に行われ、変換されたファイルは数秒でダウンロード可能になります。",
+    "q2": "Pushtoconverterは本当に無料ですか？",
+    "a2": "はい！Pushtoconverterは完全無料です。料金は一切かかりませんし、登録も不要、隠れたコストもありません。すべての変換ツールが永久に無料です。",
+    "q3": "私のデータは安全ですか？",
+    "a3": "もちろんです！お客様のプライバシーを重視しています。すべてのファイルはSSL暗号化で安全に処理され、変換後は当社サーバーから自動的に削除されます。お客様の個人ファイルを保存または共有することはありません。",
+    "q4": "どのようなファイル形式に対応していますか？",
+    "a4": "動画（MP4、AVI、MOV）、音声（MP3、WAV、FLAC）、画像（JPG、PNG、WEBP）、文書（PDF、DOCX、XLSX）を含む40種類以上の異なるファイル形式に対応しています。完全なリストはツールページをご覧ください。",
+    "q5": "ファイルサイズの制限はありますか？",
+    "a5": "はい、ファイルあたりの最大ファイルサイズは100MBです。これにより、すべてのユーザーに対して高速な処理と最適なパフォーマンスを保証します。大きなファイルはアップロード前に圧縮することをお勧めします。",
+    "q6": "変換されたファイルはどのくらいの間利用可能ですか？",
+    "a6": "変換されたファイルは変換後24時間ダウンロード可能です。この期間を過ぎると、セキュリティを確保しストレージスペースを解放するために、当社サーバーから自動的に削除されます。",
+    "q7": "Pushtoconverterをモバイルデバイスで使用できますか？",
+    "a7": "はい！当社のウェブサイトは完全にレスポンシブ設計で、スマートフォン、タブレット、デスクトップコンピューターで完璧に動作します。インターネット接続のある任意のデバイスからファイルを変換できます。",
+    "q8": "変換に失敗した場合はどうすればよいですか？",
+    "a8": "変換に失敗した場合は、ファイルが対応フォーマットであり、100MB未満であることを確認してください。問題が解決しない場合は、ページを更新するか、サポートチームにお問い合わせください。",
+    "contact_title": "ご質問はまだありますか？",
+    "contact_subtitle": "お探しの回答が見つかりませんか？サポートチームがお手伝いします！",
+    "contact_button": "サポートに連絡"
+  },
+  "help": {
+    "title": "ヘルプ",
+    "title_center": "センター",
+    "subtitle": "ファイル変換ツールの使用方法についてのヘルプを入手し、一般的な問題の解決策を見つけてください。",
+    "faq_title": "よくある質問",
+    "faq_subtitle": "一般的な質問の回答をご覧ください",
+    "contact_title": "サポートに連絡",
+    "contact_subtitle": "サポートチームからヘルプを入手",
+    "getting_started": "はじめに",
+    "convert_title": "ファイルを変換する方法",
+    "convert_step1": "ホームページから必要な変換ツールを選択",
+    "convert_step2": "「ファイルを選択」をクリックしてファイルを選択",
+    "convert_step3": "変換が完了するまで待機",
+    "convert_step4": "変換されたファイルをダウンロード",
+    "supported_formats": "対応フォーマット",
+    "video_formats": "動画フォーマット",
+    "audio_formats": "音声フォーマット",
+    "image_formats": "画像フォーマット",
+    "document_formats": "文書フォーマット",
+    "troubleshooting": "トラブルシューティング",
+    "upload_issues": "ファイルアップロードの問題",
+    "upload_issue1": "ファイルサイズを確認（最大100MB）",
+    "upload_issue2": "ファイル形式が対応していることを確認",
+    "upload_issue3": "ページを更新してみてください",
+    "upload_issue4": "インターネット接続を確認",
+    "conversion_failed": "変換に失敗",
+    "conversion_fail1": "ファイルが破損していないことを確認",
+    "conversion_fail2": "別のファイル形式を試す",
+    "conversion_fail3": "可能であればファイルサイズを縮小",
+    "conversion_fail4": "問題が続く場合はサポートに連絡"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "title_us": "ください",
+    "subtitle": "ご質問、ご意見、サポートが必要ですか？ぜひお聞かせください！",
+    "email_button": "メールを送信",
+    "form": {
+      "name": "お名前",
+      "name_placeholder": "あなたの名前",
+      "email": "メールアドレス",
+      "email_placeholder": "email@example.com",
+      "subject": "件名",
+      "subject_select": "件名を選択",
+      "general": "一般のお問い合わせ",
+      "support": "テクニカルサポート",
+      "bug": "バグ報告",
+      "feature": "機能リクエスト",
+      "business": "ビジネスのお問い合わせ",
+      "message": "メッセージ",
+      "message_placeholder": "どのようにお手伝いできるか教えてください...",
+      "send": "メッセージを送信"
+    },
+    "info": {
+      "email_title": "メールサポート",
+      "response_title": "返信時間",
+      "response_time": "24時間以内",
+      "help_title": "ヘルプセンター",
+      "help_link": "よくある質問をご覧ください"
+    }
+  },
+  "toast": {
+    "coming_soon": "このツールは近日公開予定です！ 🚀",
+    "tool_coming_soon": "ツールは近日公開予定です！ 🚀"
+  },
+  "soon": {
+    "title": "このツール",
+    "title_highlight": "近日公開！",
+    "subtitle": "この機能の開発に全力で取り組んでおり、できるだけ早く皆様にご利用いただけるよう準備を進めています。更新情報をぜひご期待ください！",
+    "back_button": "ホームに戻る",
+    "nav_all_tools": "すべてのツール"
+  },
+  "maintenance": {
+    "title": "現在",
+    "title_highlight": "メンテナンス中",
+    "subtitle": "当社サイトをより良くするために、短期間のメンテナンスを実施しています。ご理解いただきありがとうございます。"
+  },
+  "error404": {
+    "title": "ページが見つかりません",
+    "subtitle": "申し訳ございません、お探しのページは存在しません。移動または削除された可能性があります。または、誤ったリンクを使用している可能性があります。",
+    "back_home": "ホームに戻る",
+    "browse_tools": "ツールを閲覧",
+    "popular_tools": "人気ツール"
+  },
+  "language": {
+    "title": "言語を選択",
+    "subtitle": "Pushtoconverterの利用を続けるには、希望する言語を選択してください",
+    "back_home": "ホームに戻る"
+  }
+}

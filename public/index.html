@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pushtoconverter - Free Online File Converter</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Convert files online for free with Pushtoconverter. 40+ tools for video, audio, image, and document conversion. Fast, secure, and completely free file converter.">
+    <meta name="keywords" content="file converter, online converter, video converter, audio converter, image converter, document converter, free converter, MP4 to MP3, PDF to Word">
+    <meta name="author" content="Pushtoconverter">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pushtoconverter.com/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Pushtoconverter - Free Online File Converter">
+    <meta property="og:description" content="Convert files online for free with Pushtoconverter. 40+ tools for video, audio, image, and document conversion. Fast, secure, and completely free.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pushtoconverter.com/">
+    <meta property="og:image" content="https://pushtoconverter.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Pushtoconverter">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pushtoconverter - Free Online File Converter">
+    <meta name="twitter:description" content="Convert files online for free with Pushtoconverter. 40+ tools for video, audio, image, and document conversion.">
+    <meta name="twitter:image" content="https://pushtoconverter.com/images/twitter-card.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Pushtoconverter",
+        "description": "Free online file converter with 40+ tools for video, audio, image, and document conversion",
+        "url": "https://pushtoconverter.com",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Video Conversion",
+            "Audio Conversion", 
+            "Image Conversion",
+            "Document Conversion",
+            "Free to Use",
+            "No Registration Required",
+            "Secure Processing"
+        ],
+        "creator": {
+            "@type": "Organization",
+            "name": "Pushtoconverter"
+        }
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/i18n.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose': {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be185d'
+                        },
+                        'pink': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Work Sans', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    },
+                    // <CHANGE> Added custom animations and keyframes
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in-down': 'fadeInDown 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.4s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Toast Notification Styles */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            max-width: 400px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .toast.hide {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        
+        .toast-error {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border: 1px solid #fca5a5;
+            color: #dc2626;
+        }
+        
+        .toast-warning {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            color: #d97706;
+        }
+        
+        .toast-success {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 1px solid #10b981;
+            color: #059669;
+        }
+        
+        .toast-info {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 1px solid #3b82f6;
+            color: #2563eb;
+        }
+        
+        .toast-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .toast-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+        }
+        
+        .toast-message {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .toast-close {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        .toast-close:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 640px) {
+            .toast {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+                transform: translateY(-100%);
+            }
+            
+            .toast.show {
+                transform: translateY(0);
+            }
+            
+            .toast.hide {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+<body class="font-body bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen">
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+    
+    <!-- <CHANGE> Enhanced header with better backdrop blur and mobile menu -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-rose-200/50 sticky top-0 z-[100] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="animate-fade-in-down">
+                    <h1 class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Pushtoconverter</h1>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#tools" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.tools">Tools</a>
+                    <a href="#features" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.features">Features</a>
+                    <a href="#about" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.about">About</a>
+                    <a href="#contact" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.contact">Contact</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.faq" data-page="faq">FAQ</a>
+                </nav>
+                <!-- Language Switcher -->
+                <div class="hidden md:block relative" id="languageSwitcher">
+                    <!-- Language switcher will be populated by JavaScript -->
+                </div>
+                <!-- <CHANGE> Added mobile menu button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-rose-50 transition-colors" id="mobileMenuBtn">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- <CHANGE> Mobile menu dropdown -->
+        <div class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-rose-200/50" id="mobileMenu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#tools" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.tools">Tools</a>
+                <a href="#features" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.features">Features</a>
+                <a href="#about" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.about">About</a>
+                <a href="#contact" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.contact">Contact</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.faq" data-page="faq">FAQ</a>
+                <!-- Mobile Language Switcher -->
+                <div class="pt-3 border-t border-rose-200/50">
+                    <div class="text-sm text-gray-500 mb-2">Language / Dil</div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="/tr" class="block px-3 py-2 text-sm bg-rose-50 text-rose-600 rounded-lg text-center">Türkçe</a>
+                        <a href="/en" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">English</a>
+                        <a href="/de" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Deutsch</a>
+                        <a href="/ru" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Русский</a>
+                        <a href="/fr" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Français</a>
+                        <a href="/es" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Español</a>
+                        <a href="/it" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Italiano</a>
+                        <a href="/ja" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">日本語</a>
+                        <a href="/pt" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">Português</a>
+                        <a href="/zh" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- <CHANGE> Enhanced hero section with better animations and stats -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- <CHANGE> Added floating background elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-20 h-20 bg-rose-200/30 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-pink-200/30 rounded-full animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-rose-300/20 rounded-full animate-float" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="animate-fade-in-up">
+                <h2 class="font-heading text-5xl md:text-7xl font-bold text-gray-900 mb-6 text-balance leading-tight" data-i18n-html="hero.title">
+                    Convert Any File, 
+                    <span class="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow">Instantly</span>
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed" data-i18n-html="hero.subtitle">
+                    Access <strong class="text-rose-600">40+ powerful conversion tools</strong> in one place. Fast, secure, and completely free. No registration required.
+                </p>
+                
+                <!-- <CHANGE> Added stats row -->
+                <div class="flex flex-wrap justify-center gap-8 mb-10 text-sm text-gray-600">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span><strong class="text-gray-900">1M+</strong> <span data-i18n="hero.stats.files_converted">Files Converted</span></span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                        <span><strong class="text-gray-900">40+</strong> <span data-i18n="hero.stats.tools_available">Tools Available</span></span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                        <span><strong class="text-gray-900">100%</strong> <span data-i18n="hero.stats.free_forever">Free Forever</span></span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#tools" class="group bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform">
+                        <span class="flex items-center justify-center space-x-2">
+                            <span data-i18n="hero.button_primary">Browse All Tools</span>
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </span>
+                    </a>
+                    <button class="group border-2 border-rose-300 text-rose-600 px-8 py-4 rounded-xl font-semibold hover:bg-rose-50 hover:border-rose-400 transition-all duration-300 hover:scale-105 transform">
+                        <span class="flex items-center justify-center space-x-2">
+                            <span data-i18n="hero.button_secondary">Learn More</span>
+                            <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <CHANGE> Enhanced search bar with better styling and autocomplete suggestions -->
+    <section class="px-4 sm:px-6 lg:px-8 mb-16 relative z-[99]">
+        <div class="max-w-2xl mx-auto animate-scale-in">
+            <div class="relative z-[99]">
+                <input type="text" id="searchTools" placeholder="Search conversion tools... (e.g., MP4 to MP3)" class="w-full px-6 py-5 pl-14 rounded-2xl border-2 border-rose-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-200/50 outline-none text-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm relative z-[99]">
+                <svg class="absolute left-5 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400 z-[99]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <!-- <CHANGE> Added search suggestions dropdown -->
+                <div id="searchSuggestions" class="absolute top-full left-0 right-0 bg-white rounded-xl shadow-xl border border-rose-200 mt-2 hidden z-[99] max-h-60 overflow-y-auto">
+                    <!-- Suggestions will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section id="tools" class="px-4 sm:px-6 lg:px-8 pb-20 relative z-40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-fade-in-up relative z-40">
+                <h3 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-4 relative z-40" data-i18n="tools.title">Popular Conversion Tools</h3>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto relative z-40" data-i18n="tools.subtitle">Choose from our most popular file conversion tools, trusted by millions of users worldwide.</p>
+            </div>
+            
+            <!-- Video Converters -->
+            <div class="mb-16 animate-fade-in-up" style="animation-delay: 0.1s;">
+                <h4 class="font-heading text-2xl font-semibold text-gray-800 mb-8 flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-500 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <span data-i18n="tools.categories.video">Video Converters</span>
+                    <span class="ml-3 px-3 py-1 bg-rose-100 text-rose-600 text-sm font-medium rounded-full" data-i18n="tools.most_popular">Most Popular</span>
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="tool-card group bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-rose-100 hover:border-rose-300 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <span class="text-white font-bold text-sm">MP4</span>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-rose-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                        <h5 class="font-semibold text-gray-900 mb-2 text-lg" data-i18n="tools.items.mp4_to_mp3">MP4 to MP3</h5>
+                        <p class="text-sm text-gray-600 mb-4" data-i18n="tools.descriptions.mp4_to_mp3">Extract high-quality audio from video files</p>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            <span data-i18n="tools.labels.fast_conversion">Fast conversion</span>
+                        </div>
+                    </div>
+                    
+                    <!-- <CHANGE> Enhanced other tool cards with similar improvements -->
+                    <div class="tool-card group bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-rose-100 hover:border-rose-300 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <span class="text-white font-bold text-sm">AVI</span>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-rose-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                        <h5 class="font-semibold text-gray-900 mb-2 text-lg" data-i18n="tools.items.mp4_to_avi">MP4 to AVI</h5>
+                        <p class="text-sm text-gray-600 mb-4" data-i18n="tools.descriptions.mp4_to_avi">Convert MP4 to AVI format with quality preservation</p>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span data-i18n="tools.labels.high_quality">High quality</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card group bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-rose-100 hover:border-rose-300 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <span class="text-white font-bold text-sm">MOV</span>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-rose-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                        <h5 class="font-semibold text-gray-900 mb-2 text-lg" data-i18n="tools.items.mov_to_mp4">MOV to MP4</h5>
+                        <p class="text-sm text-gray-600 mb-4" data-i18n="tools.descriptions.mov_to_mp4">Convert QuickTime files to universal MP4</p>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945"/>
+                            </svg>
+                            <span data-i18n="tools.labels.universal_format">Universal format</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card group bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-rose-100 hover:border-rose-300 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:-translate-y-1">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <span class="text-white font-bold text-sm">WMV</span>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400 group-hover:text-rose-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                        <h5 class="font-semibold text-gray-900 mb-2 text-lg" data-i18n="tools.items.avi_to_mp4">AVI to MP4</h5>
+                        <p class="text-sm text-gray-600 mb-4" data-i18n="tools.descriptions.avi_to_mp4">Convert AVI to modern MP4 format</p>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                            <span data-i18n="tools.labels.most_loved">Most loved</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Converters -->
+            <div class="mb-12">
+                <h4 class="font-heading text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <div class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+                        </svg>
+                    </div>
+                    <span data-i18n="tools.categories.audio">Audio Converters</span>
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.mp3_to_wav">MP3 to WAV</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.mp3_to_wav">Convert MP3 to WAV format</p>
+                    </div>
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.wav_to_mp3">WAV to MP3</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.wav_to_mp3">Compress WAV to MP3</p>
+                    </div>
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.flac_to_mp3">FLAC to MP3</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.flac_to_mp3">Convert lossless to MP3</p>
+                    </div>
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.aac_to_mp3">AAC to MP3</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.aac_to_mp3">Convert AAC to MP3 format</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Converters -->
+            <div class="mb-12">
+                <h4 class="font-heading text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <div class="w-8 h-8 bg-rose-100 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <span data-i18n="tools.categories.image">Image Converters</span>
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.jpg_to_png">JPG to PNG</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.jpg_to_png">Convert JPEG to PNG format</p>
+                    </div>
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.png_to_jpg">PNG to JPG</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.png_to_jpg">Convert PNG to JPEG format</p>
+                    </div>
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.webp_to_png">WEBP to PNG</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.webp_to_png">Convert WebP to PNG format</p>
+                    </div>
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.svg_to_png">SVG to PNG</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.svg_to_png">Convert vector to raster</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Converters -->
+            <div class="mb-12">
+                <h4 class="font-heading text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <div class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <span data-i18n="tools.categories.document">Document Converters</span>
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.pdf_to_word">PDF to Word</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.pdf_to_word">Convert PDF to DOCX format</p>
+                    </div>
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.word_to_pdf">Word to PDF</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.word_to_pdf">Convert DOCX to PDF format</p>
+                    </div>
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.excel_to_csv">Excel to CSV</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.excel_to_csv">Convert XLSX to CSV format</p>
+                    </div>
+                    <div class="tool-card bg-white rounded-xl p-6 border border-rose-100 hover:border-rose-300 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                        <h5 class="font-semibold text-gray-900 mb-2" data-i18n="tools.items.ppt_to_pdf">PPT to PDF</h5>
+                        <p class="text-sm text-gray-600" data-i18n="tools.descriptions.ppt_to_pdf">Convert PowerPoint to PDF</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <CHANGE> Enhanced "View All Tools" section -->
+            <div class="text-center mt-16 animate-fade-in-up">
+                <div class="bg-gradient-to-r from-rose-500/10 to-pink-500/10 rounded-3xl p-8 mb-8">
+                    <h4 class="font-heading text-2xl font-bold text-gray-900 mb-4" data-i18n="tools.ready_title">Ready to convert your files?</h4>
+                    <p class="text-gray-600 mb-6 max-w-2xl mx-auto" data-i18n="tools.ready_subtitle">Join millions of users who trust Pushtoconverter for their file conversion needs. Fast, secure, and always free.</p>
+                    <button id="viewAllToolsBtn" class="group bg-gradient-to-r from-rose-500 to-pink-500 text-white px-10 py-5 rounded-2xl font-semibold hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
+                        <span class="flex items-center justify-center space-x-3">
+                            <span class="text-lg" data-i18n="tools.view_all_button">View All 40+ Tools</span>
+                            <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </div>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <CHANGE> Enhanced features section with better animations and icons -->
+    <section id="features" class="bg-white/60 backdrop-blur-sm py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h3 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-i18n="features.title">Why Choose Pushtoconverter?</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="features.subtitle">Experience the difference with our cutting-edge conversion technology and user-first approach.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center group animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-heading text-2xl font-semibold text-gray-900 mb-6" data-i18n="features.items.fast.title">Lightning Fast</h4>
+                    <p class="text-gray-600 text-lg leading-relaxed" data-i18n="features.items.fast.description">Convert files in seconds with our optimized processing engine powered by advanced algorithms</p>
+                    <div class="mt-4 flex items-center justify-center text-sm text-rose-600 font-medium">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span data-i18n="features.items.fast.detail">Average: 3 seconds</span>
+                    </div>
+                </div>
+                <div class="text-center group animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-heading text-2xl font-semibold text-gray-900 mb-6" data-i18n="features.items.secure.title">100% Secure</h4>
+                    <p class="text-gray-600 text-lg leading-relaxed" data-i18n="features.items.secure.description">Your files are processed securely with end-to-end encryption and automatically deleted after conversion</p>
+                    <div class="mt-4 flex items-center justify-center text-sm text-green-600 font-medium">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span data-i18n="features.items.secure.detail">SSL Encrypted</span>
+                    </div>
+                </div>
+                <div class="text-center group animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-heading text-2xl font-semibold text-gray-900 mb-6" data-i18n="features.items.free.title">Completely Free</h4>
+                    <p class="text-gray-600 text-lg leading-relaxed" data-i18n="features.items.free.description">No hidden fees, no registration required, unlimited conversions with premium quality results</p>
+                    <div class="mt-4 flex items-center justify-center text-sm text-blue-600 font-medium">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                        <span data-i18n="features.items.free.detail">Forever Free</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in-up">
+                    <img src="https://via.placeholder.com/500x400/f43f5e/ffffff?text=About+Us" alt="About Pushtoconverter" class="rounded-3xl shadow-2xl w-full">
+                </div>
+                <div class="animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <h3 class="font-heading text-4xl font-bold text-gray-900 mb-6" data-i18n="about.title">About Pushtoconverter</h3>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed" data-i18n="about.description1">
+                        Pushtoconverter is your go-to online platform for seamless and efficient file conversions. We are dedicated to providing a fast, secure, and user-friendly experience for all your file transformation needs. Our mission is to simplify the process of converting files, making it accessible to everyone, everywhere.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed" data-i18n="about.description2">
+                        With over 40 specialized tools, we cover a wide range of formats, from documents and images to audio and video. We continuously strive to improve our services and add new features to ensure you have the best conversion experience possible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-900/5 py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="animate-fade-in-up">
+                <h3 class="font-heading text-4xl font-bold text-gray-900 mb-6" data-i18n="contact.title">Get In Touch</h3>
+                <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto" data-i18n="contact.subtitle">
+                    Have questions, feedback, or need support? We'd love to hear from you!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:support@pushtoconverter.com" class="group bg-gradient-to-r from-rose-500 to-pink-500 text-white px-10 py-5 rounded-2xl font-semibold hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
+                        <span class="flex items-center justify-center space-x-3">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="text-lg" data-i18n="contact.email_button">Send us an Email</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer class="relative bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-20 -right-20 w-40 h-40 bg-rose-200/20 rounded-full animate-float"></div>
+            <div class="absolute -bottom-20 -left-20 w-32 h-32 bg-pink-200/20 rounded-full animate-float" style="animation-delay: 3s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-20 h-20 bg-rose-300/10 rounded-full animate-float" style="animation-delay: 1.5s;"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <!-- Main footer content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Brand section -->
+                <div class="md:col-span-1">
+                    <div class="mb-6">
+                        <h5 class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Pushtoconverter</h5>
+                    </div>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6" data-i18n="footer.description">The ultimate file conversion platform with 40+ powerful tools. Fast, secure, and completely free.</p>
+                </div>
+                
+                <!-- Popular Tools -->
+                <div>
+                    <h6 class="font-heading text-lg font-semibold text-gray-900 mb-6" data-i18n="footer.links.tools">Popular Tools</h6>
+                    <ul class="space-y-3">
+                        <li><a href="#" data-page="mp4-to-mp3" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="tools.items.mp4_to_mp3">MP4 to MP3</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="tools.items.pdf_to_word">PDF to Word</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="tools.items.jpg_to_png">JPG to PNG</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            MP3 to WAV
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h6 class="font-heading text-lg font-semibold text-gray-900 mb-6" data-i18n="footer.support.title">Support</h6>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="help">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.help">Help Center</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="contact">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.contact">Contact Us</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="privacy">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.privacy">Privacy Policy</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="terms">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.terms">Terms of Service</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="faq">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.faq">FAQ</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <!-- Bottom section -->
+            <div class="border-t border-rose-200/50 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-600 text-base" data-i18n="footer.copyright">&copy; 2024 Pushtoconverter. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toast Notification System
+        class ToastNotification {
+            constructor() {
+                this.container = document.getElementById('toastContainer');
+                this.toasts = [];
+            }
+
+            show(message, type = 'info', duration = 5000) {
+                const toast = this.createToast(message, type);
+                this.container.appendChild(toast);
+                this.toasts.push(toast);
+
+                // Show animation
+                setTimeout(() => {
+                    toast.classList.add('show');
+                }, 100);
+
+                // Auto hide
+                if (duration > 0) {
+                    setTimeout(() => {
+                        this.hide(toast);
+                    }, duration);
+                }
+
+                return toast;
+            }
+
+            createToast(message, type) {
+                const toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+                
+                const icons = {
+                    error: `<svg class="toast-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>`,
+                    warning: `<svg class="toast-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>`,
+                    success: `<svg class="toast-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>`,
+                    info: `<svg class="toast-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>`
+                };
+
+                toast.innerHTML = `
+                    <div class="toast-content">
+                        ${icons[type] || icons.info}
+                        <div class="toast-message">${message}</div>
+                        <svg class="toast-close" fill="currentColor" viewBox="0 0 20 20" onclick="toastNotification.hide(this.closest('.toast'))">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                `;
+
+                return toast;
+            }
+
+            hide(toast) {
+                if (!toast) return;
+                
+                toast.classList.remove('show');
+                toast.classList.add('hide');
+                
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                    const index = this.toasts.indexOf(toast);
+                    if (index > -1) {
+                        this.toasts.splice(index, 1);
+                    }
+                }, 300);
+            }
+
+            clear() {
+                this.toasts.forEach(toast => this.hide(toast));
+            }
+        }
+
+        // Initialize toast notification system
+        const toastNotification = new ToastNotification();
+
+        // <CHANGE> Enhanced search functionality with suggestions
+        const searchSuggestions = [
+            'MP4 to MP3', 'PDF to Word', 'JPG to PNG', 'MP3 to WAV', 'PNG to JPG',
+            'MOV to MP4', 'AVI to MP4', 'FLAC to MP3', 'WEBP to PNG', 'Word to PDF',
+            'Excel to CSV', 'PPT to PDF', 'WAV to MP3', 'AAC to MP3', 'SVG to PNG'
+        ];
+
+        const searchInput = document.getElementById('searchTools');
+        const suggestionsDiv = document.getElementById('searchSuggestions');
+
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            // Filter tool cards
+            toolCards.forEach(card => {
+                const title = card.querySelector('h5').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = searchTerm === '' ? 'block' : 'none';
+                }
+            });
+
+            // Show suggestions
+            if (searchTerm.length > 0) {
+                const filteredSuggestions = searchSuggestions.filter(suggestion => 
+                    suggestion.toLowerCase().includes(searchTerm)
+                ).slice(0, 5);
+
+                if (filteredSuggestions.length > 0) {
+                    suggestionsDiv.innerHTML = filteredSuggestions.map(suggestion => 
+                        `<div class="px-4 py-3 hover:bg-rose-50 cursor-pointer transition-colors border-b border-rose-100 last:border-b-0" onclick="selectSuggestion('${suggestion}')">${suggestion}</div>`
+                    ).join('');
+                    suggestionsDiv.classList.remove('hidden');
+                } else {
+                    suggestionsDiv.classList.add('hidden');
+                }
+            } else {
+                suggestionsDiv.classList.add('hidden');
+            }
+        });
+
+        function selectSuggestion(suggestion) {
+            searchInput.value = suggestion;
+            suggestionsDiv.classList.add('hidden');
+            searchInput.dispatchEvent(new Event('input'));
+        }
+
+        // Hide suggestions when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !suggestionsDiv.contains(e.target)) {
+                suggestionsDiv.classList.add('hidden');
+            }
+        });
+
+        // <CHANGE> Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // <CHANGE> Enhanced smooth scrolling with offset for sticky header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // <CHANGE> Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-fade-in-up, .animate-scale-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            observer.observe(el);
+        });
+
+        // <CHANGE> Add click functionality to tool cards
+        document.querySelectorAll('.tool-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('h5').textContent;
+                
+                // Handle different tool clicks
+                if (title.includes('MP4 to MP3') || title.includes('MP4\'ten MP3\'e')) {
+                    const currentPath = window.location.pathname;
+                    const language = currentPath.split('/')[1] || 'tr';
+                    window.location.href = `/${language}/mp4-to-mp3`;
+                } else {
+                    // For other tools, redirect to coming soon page
+                    const currentPath = window.location.pathname;
+                    const language = currentPath.split('/')[1] || 'tr';
+                    window.location.href = `/${language}/soon`;
+                }
+            });
+        });
+
+        // <CHANGE> Add click functionality to "View All Tools" button
+        document.getElementById('viewAllToolsBtn').addEventListener('click', function() {
+            const currentLang = window.location.pathname.split('/')[1] || 'tr';
+            window.location.href = `/${currentLang}/tools`;
+        });
+
+        // <CHANGE> Add dynamic URL handling for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current language from URL
+            const currentLang = window.location.pathname.split('/')[1] || 'tr';
+            
+            // Update all navigation links with data-page attribute
+            document.querySelectorAll('[data-page]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    
+                    // Special handling for mp4-to-mp3
+                    if (page === 'mp4-to-mp3') {
+                        window.location.href = `/${currentLang}/mp4-to-mp3`;
+                    } else {
+                        window.location.href = `/${currentLang}/${page}`;
+                    }
+                });
+            });
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+{
+    "tool": {
+        "title": "Convertidor de MP4 a MP3",
+        "subtitle": "Extrae fácilmente el audio de tus videos. Convierte tus archivos MP4 al formato de audio MP3 de alta calidad.",
+        "drag_drop": "Arrastra y suelta los archivos aquí",
+        "or": "o",
+        "browse_files": "Explorar Archivos",
+        "max_file_size": "Tamaño máximo del archivo: 100MB",
+        "waiting_upload": "Esperando carga...",
+        "how_it_works": {
+            "title": "¿Cómo convertir MP4 a MP3?",
+            "subtitle": "Convierte tus videos a audio en solo tres sencillos pasos.",
+            "step1": {
+                "title": "Subir Archivo",
+                "description": "Sube tu archivo de video MP4 o arrástralo y suéltalo"
+            },
+            "step2": {
+                "title": "Convertir",
+                "description": "El proceso de conversión automática comienza"
+            },
+            "step3": {
+                "title": "Descargar",
+                "description": "Descarga tu archivo MP3 inmediatamente"
+            }
+        },
+        "features": {
+            "title": "¿Por qué elegir Pushtoconverter?",
+            "subtitle": "Descubre nuestras herramientas confiables para conversiones de calidad profesional.",
+            "fast": {
+                "title": "Conversión Rápida",
+                "description": "Convierte tus archivos en segundos"
+            },
+            "secure": {
+                "title": "Procesamiento Seguro",
+                "description": "Tus archivos se procesan de forma segura y se eliminan automáticamente"
+            },
+            "free": {
+                "title": "Completamente Gratis",
+                "description": "Sin tarifas, registro ni costos ocultos"
+            }
+        },
+        "supported_formats": {
+            "title": "Formatos Soportados",
+            "subtitle": "Soportamos una amplia gama de formatos de video",
+            "input": "Formatos de Entrada",
+            "output": "Formatos de Salida"
+        },
+        "faq": {
+            "title": "Preguntas Frecuentes",
+            "q1": "¿Es seguro usar esta herramienta?",
+            "a1": "Sí, absolutamente. Tu privacidad es importante para nosotros. Todos los archivos subidos se eliminan automáticamente de nuestros servidores después de 1 hora.",
+            "q2": "¿Cuánto tiempo toma el proceso de conversión?",
+            "a2": "La velocidad de conversión depende del tamaño del archivo, pero gracias a nuestros potentes servidores, la mayoría de los archivos se procesan en menos de un minuto.",
+            "q3": "¿Disminuye la calidad del audio?",
+            "a3": "Utilizamos codificadores avanzados para mantener la mejor calidad de audio posible. La pérdida de calidad es insignificante."
+        },
+        "toast": {
+            "invalid_file": "Por favor, selecciona un archivo MP4 válido.",
+            "file_too_large": "El tamaño del archivo no puede exceder 100MB. Por favor, selecciona archivos más pequeños.",
+            "upload_success": "¡archivos subidos exitosamente!",
+            "conversion_started": "Proceso de conversión iniciado...",
+            "conversion_complete": "¡Todos los archivos convertidos exitosamente! 🎉"
+        },
+        "ui": {
+            "convert_button": "Convertir",
+            "convert_files": "Convertir ({count} archivos)",
+            "ready": "Listo",
+            "converting": "Convirtiendo...",
+            "download": "Descargar",
+            "completed": "¡Completado!",
+            "new_convert": "Convertir nuevo archivo",
+            "uploading": "Subiendo..."
+        }
+    },
+    "header": {
+        "nav": {
+            "tools": "Herramientas",
+            "features": "Características",
+            "about": "Acerca de",
+            "contact": "Contacto",
+            "faq": "Preguntas Frecuentes"
+        }
+    },
+    "footer": {
+        "description": "La plataforma definitiva para la conversión de archivos con más de 40 herramientas potentes. Rápida, segura y completamente gratuita.",
+        "links": {
+            "tools": "Herramientas Populares"
+        },
+        "support": {
+            "title": "Soporte",
+            "help": "Centro de Ayuda",
+            "contact": "Contáctanos",
+            "privacy": "Política de Privacidad",
+            "terms": "Términos de Uso",
+            "faq": "Preguntas Frecuentes"
+        },
+        "copyright": "© 2024 Pushtoconverter. Todos los derechos reservados."
+    }
+}

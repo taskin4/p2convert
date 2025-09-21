@@ -1,0 +1,444 @@
+{
+  "site": {
+    "title": "Pushtoconverter - 免费在线文件转换器",
+    "description": "免费转换您的文件。从MP4到MP3，从PDF到Word等等。"
+  },
+  "header": {
+    "brand": "Pushtoconverter",
+    "nav": {
+      "tools": "工具",
+      "features": "功能",
+      "about": "关于",
+      "contact": "联系",
+      "faq": "常见问题"
+    },
+    "language": "语言:"
+  },
+  "hero": {
+    "title": "即时<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow\">转换任何文件</span>",
+    "subtitle": "在一个地方访问<strong class=\"text-rose-600\">40多种强大的转换工具</strong>。快速、安全且完全免费。无需注册。",
+    "search_placeholder": "搜索转换工具... (例如：MP4转MP3)",
+    "button_primary": "查看所有工具",
+    "button_secondary": "了解更多",
+    "stats": {
+      "files_converted": "已转换文件",
+      "tools_available": "可用工具",
+      "free_forever": "永久免费"
+    }
+  },
+  "stats": {
+    "users": "百万用户",
+    "conversions": "百万次转换",
+    "formats": "支持的格式",
+    "countries": "国家"
+  },
+  "tools": {
+    "title": "热门转换工具",
+    "subtitle": "从我们最受欢迎的文件转换工具中选择，全球数百万用户信赖。",
+    "categories": {
+      "video": "视频转换器",
+      "audio": "音频转换器",
+      "image": "图像转换器",
+      "document": "文档转换器",
+      "archive": "归档转换器"
+    },
+    "items": {
+      "mp4_to_mp3": "MP4转MP3",
+      "mp4_to_avi": "MP4转AVI",
+      "avi_to_mp4": "AVI转MP4",
+      "mov_to_mp4": "MOV转MP4",
+      "wmv_to_mp4": "WMV转MP4",
+      "flv_to_mp4": "FLV转MP4",
+      "webm_to_mp4": "WebM转MP4",
+      "mkv_to_mp4": "MKV转MP4",
+      "mp3_to_wav": "MP3转WAV",
+      "wav_to_mp3": "WAV转MP3",
+      "flac_to_mp3": "FLAC转MP3",
+      "aac_to_mp3": "AAC转MP3",
+      "ogg_to_mp3": "OGG转MP3",
+      "wma_to_mp3": "WMA转MP3",
+      "m4a_to_mp3": "M4A转MP3",
+      "jpg_to_png": "JPG转PNG",
+      "png_to_jpg": "PNG转JPG",
+      "bmp_to_png": "BMP转PNG",
+      "gif_to_mp4": "GIF转MP4",
+      "webp_to_png": "WebP转PNG",
+      "tiff_to_jpg": "TIFF转JPG",
+      "svg_to_png": "SVG转PNG",
+      "pdf_to_word": "PDF转Word",
+      "word_to_pdf": "Word转PDF",
+      "excel_to_csv": "Excel转CSV",
+      "ppt_to_pdf": "PPT转PDF",
+      "powerpoint_to_pdf": "PowerPoint转PDF",
+      "pdf_to_excel": "PDF转Excel",
+      "pdf_to_powerpoint": "PDF转PowerPoint",
+      "zip_to_rar": "ZIP转RAR",
+      "rar_to_zip": "RAR转ZIP",
+      "7z_to_zip": "7Z转ZIP",
+      "tar_to_zip": "TAR转ZIP"
+    },
+    "ready_title": "准备好转换您的文件了吗？",
+    "ready_subtitle": "加入数百万信赖Pushtoconverter进行文件转换需求的用户。快速、安全且始终免费。",
+    "view_all_button": "查看40+工具",
+    "hero_title": "所有<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow\">转换工具</span>",
+    "hero_subtitle": "发现我们<strong class=\"text-rose-600\">40多种转换工具</strong>的完整集合。为任何文件转换任务找到您需要的工具。",
+    "complete_title": "完整工具集合",
+    "complete_subtitle": "探索我们文件转换工具的完整集合。点击任意工具开始转换您的文件。",
+    "back_to_home": "返回首页",
+    "learn_more": "了解更多",
+    "most_popular": "最受欢迎",
+    "help_title": "需要帮助选择工具吗？",
+    "help_subtitle": "访问我们的主页，了解我们的功能，并从我们最受欢迎的工具开始。",
+    "back_to_homepage": "返回主页",
+    "labels": {
+      "fast_conversion": "快速转换",
+      "high_quality": "高质量",
+      "universal_format": "通用格式",
+      "most_loved": "最受喜爱"
+    },
+    "descriptions": {
+      "mp4_to_mp3": "从视频文件中提取高质量音频",
+      "mp4_to_avi": "在保持质量的同时将MP4转换为AVI格式",
+      "mov_to_mp4": "将QuickTime文件转换为通用MP4",
+      "avi_to_mp4": "将AVI转换为现代MP4格式",
+      "mp3_to_wav": "将MP3转换为WAV格式",
+      "wav_to_mp3": "将WAV压缩为MP3",
+      "flac_to_mp3": "将无损音频转换为MP3",
+      "aac_to_mp3": "将AAC转换为MP3格式",
+      "jpg_to_png": "将JPEG转换为PNG格式",
+      "png_to_jpg": "将PNG转换为JPEG格式",
+      "webp_to_png": "将WebP转换为PNG格式",
+      "svg_to_png": "将矢量转换为栅格",
+      "pdf_to_word": "将PDF转换为DOCX格式",
+      "word_to_pdf": "将DOCX转换为PDF格式",
+      "excel_to_csv": "将XLSX转换为CSV格式",
+      "ppt_to_pdf": "将PowerPoint转换为PDF"
+    }
+  },
+  "features": {
+    "title": "为什么选择Pushtoconverter？",
+    "subtitle": "体验我们尖端的转换技术和以用户为中心的方法带来的不同。",
+    "items": {
+      "free": {
+        "title": "完全免费",
+        "description": "无隐藏费用，无需注册，无限次高质量转换",
+        "detail": "永久免费"
+      },
+      "fast": {
+        "title": "闪电般快速",
+        "description": "使用我们由先进算法驱动的优化处理引擎，在几秒钟内转换您的文件",
+        "detail": "平均：3秒"
+      },
+      "secure": {
+        "title": "100%安全",
+        "description": "您的文件通过端到端加密安全处理，并在转换后自动删除",
+        "detail": "SSL加密"
+      },
+      "no_limits": {
+        "title": "无限",
+        "description": "无文件大小或转换次数限制。"
+      }
+    }
+  },
+  "footer": {
+    "brand": "Pushtoconverter",
+    "description": "拥有40多种强大工具的终极文件转换平台。快速、安全且完全免费。",
+    "links": {
+      "tools": "热门工具",
+      "features": "功能",
+      "about": "关于",
+      "contact": "联系",
+      "faq": "常见问题"
+    },
+    "support": {
+      "title": "支持",
+      "help": "帮助中心",
+      "contact": "联系",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "faq": "常见问题"
+    },
+    "copyright": "© 2024 Pushtoconverter。保留所有权利。"
+  },
+  "privacy": {
+    "title": "隐私<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent\">政策</span>",
+    "subtitle": "您的隐私对我们很重要。了解我们如何收集、使用和保护您的信息。",
+    "last_updated": "最后更新：2024年12月",
+    "sections": {
+      "collect": {
+        "title": "我们收集的信息",
+        "description": "Pushtoconverter的设计以隐私为重。我们仅收集提供服务所需的最少信息：",
+        "item1": "您上传以进行转换的文件（临时，仅用于处理）",
+        "item2": "基本使用统计（匿名化）",
+        "item3": "IP地址和浏览器信息（用于安全目的）"
+      },
+      "use": {
+        "title": "我们如何使用您的信息",
+        "description": "我们仅将收集的信息用于以下目的：",
+        "item1": "执行您的文件转换操作",
+        "item2": "提高我们的服务质量",
+        "item3": "确保安全并防止滥用",
+        "item4": "在需要时提供客户支持"
+      },
+      "security": {
+        "title": "文件安全",
+        "description": "您上传的文件以最高安全级别进行处理：",
+        "item1": "所有文件传输均使用SSL/TLS加密",
+        "item2": "文件在转换后自动删除（24小时内）",
+        "item3": "我们从不永久存储您的文件",
+        "item4": "文件在安全、隔离的环境中处理"
+      },
+      "sharing": {
+        "title": "数据共享",
+        "description": "我们不会向第三方出售、交易或共享您的个人信息。唯一的例外是：",
+        "item1": "法律要求（法院命令、执法机构）",
+        "item2": "在严格保密下帮助我们运营平台的服务提供商"
+      },
+      "cookies": {
+        "title": "Cookie和跟踪",
+        "description": "我们使用最少的Cookie以实现基本功能：",
+        "item1": "用于文件处理的会话Cookie",
+        "item2": "分析Cookie（匿名化）",
+        "item3": "无广告跟踪Cookie"
+      },
+      "rights": {
+        "title": "您的权利",
+        "description": "您拥有以下权利：",
+        "item1": "请求有关我们持有的数据的信息",
+        "item2": "请求删除您的数据",
+        "item3": "选择不参与非必要数据收集",
+        "item4": "就任何隐私问题与我们联系"
+      },
+      "contact": {
+        "title": "联系我们",
+        "description": "如果您对本隐私政策有任何疑问，请联系我们：",
+        "email_label": "邮箱：",
+        "subject_label": "主题：",
+        "subject": "隐私政策咨询"
+      },
+      "changes": {
+        "title": "本政策的变更",
+        "description": "我们可能会不时更新本隐私政策。我们将通过在本页面发布新政策并更新“最后更新”日期来通知用户重大变更。"
+      }
+    }
+  },
+  "terms": {
+    "title": "服务<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent\">条款</span>",
+    "subtitle": "在使用我们的文件转换服务之前，请仔细阅读这些条款。",
+    "last_updated": "最后更新：2024年12月",
+    "sections": {
+      "acceptance": {
+        "title": "条款的接受",
+        "description": "通过访问和使用Pushtoconverter，您同意并接受本协议的条款和规定。"
+      },
+      "service": {
+        "title": "服务描述",
+        "description": "Pushtoconverter提供在线文件转换服务。我们提供各种工具，用于在不同格式之间转换文件，包括视频、音频、图像和文档格式。"
+      },
+      "responsibilities": {
+        "title": "用户责任",
+        "description": "作为我们服务的用户，您同意：",
+        "item1": "仅将服务用于合法目的",
+        "item2": "不上传包含恶意代码或非法内容的文件",
+        "item3": "尊重知识产权",
+        "item4": "不试图对我们的系统进行逆向工程或破坏",
+        "item5": "未经许可不将服务用于商业转售"
+      },
+      "upload": {
+        "title": "文件上传和处理",
+        "description": "关于文件上传：",
+        "item1": "每个文件的最大文件大小为100MB",
+        "item2": "文件在24小时后自动删除",
+        "item3": "我们不保证所有文件类型的转换成功",
+        "item4": "确保您有权转换上传的文件是您的责任"
+      },
+      "availability": {
+        "title": "服务可用性",
+        "description": "虽然我们努力保持高服务可用性，但我们不保证不间断的访问。我们可能会进行维护、更新或更改，这些可能会暂时影响服务可用性。"
+      },
+      "liability": {
+        "title": "责任限制",
+        "description": "Pushtoconverter不对任何间接、偶然、特殊、后果性或惩罚性损害负责，包括利润损失、数据丢失、使用损失、商誉损失或其他无形损失。"
+      },
+      "property": {
+        "title": "知识产权",
+        "description": "服务及其原始内容、功能和特性归Pushtoconverter所有，并受国际版权、商标、专利、商业秘密和其他知识产权法保护。"
+      },
+      "termination": {
+        "title": "终止",
+        "description": "我们可因任何原因（包括您违反条款）立即终止或暂停您对我们服务的访问，无需事先通知或承担责任。"
+      },
+      "changes": {
+        "title": "条款的变更",
+        "description": "我们保留随时修改或替换这些条款的权利。如果修订是重大的，我们将尝试在新条款生效前至少提供30天的通知。"
+      },
+      "contact": {
+        "title": "联系信息",
+        "description": "如果您对这些服务条款有任何疑问，请联系我们：",
+        "email_label": "邮箱：",
+        "subject_label": "主题：",
+        "subject": "服务条款咨询"
+      }
+    }
+  },
+  "contact": {
+    "title": "联系",
+    "title_us": "我们",
+    "subtitle": "您有问题、反馈或需要支持吗？我们很乐意收到您的消息！",
+    "form": {
+      "name": "姓名",
+      "name_placeholder": "您的姓名",
+      "email": "邮箱",
+      "email_placeholder": "email@example.com",
+      "subject": "主题",
+      "subject_select": "选择主题",
+      "general": "一般咨询",
+      "support": "技术支持",
+      "bug": "错误报告",
+      "feature": "功能请求",
+      "business": "商业咨询",
+      "message": "消息",
+      "message_placeholder": "告诉我们如何帮助您...",
+      "send": "发送消息"
+    },
+    "info": {
+      "email_title": "电子邮件支持",
+      "response_title": "响应时间",
+      "response_time": "24小时内",
+      "help_title": "帮助中心",
+      "help_link": "访问我们的常见问题"
+    }
+  },
+  "about": {
+    "title": "关于Pushtoconverter",
+    "description1": "Pushtoconverter是您无缝高效文件转换的首选在线平台。我们致力于为您提供快速、安全且用户友好的体验，满足您所有的文件转换需求。我们的使命是简化文件转换过程，使其对每个人、在任何地方都易于访问。",
+    "description2": "凭借40多种专业工具，我们涵盖了从文档和图像到音频和视频的广泛格式。我们不断努力改进我们的服务并添加新功能，以确保您获得最佳的转换体验。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "您有问题、反馈或需要支持吗？我们很乐意收到您的消息！",
+    "email_button": "给我们发邮件"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "success": "成功",
+    "download": "下载",
+    "convert": "转换",
+    "upload": "上传",
+    "select_file": "选择文件",
+    "drag_drop": "将文件拖到此处"
+  },
+  "faq": {
+    "title": "常见",
+    "title_questions": "问题",
+    "subtitle": "找到关于我们文件转换服务最常见问题的答案。",
+    "q1": "如何在Pushtoconverter上转换文件？",
+    "a1": "文件转换非常简单！从我们的主页选择您需要的工具，上传您的文件，然后点击转换。该过程是自动的，您的转换文件将在几秒钟内准备好下载。",
+    "q2": "Pushtoconverter真的是免费的吗？",
+    "a2": "是的！Pushtoconverter完全免费。我们不收取任何费用，不要求注册，也没有隐藏成本。我们所有的转换工具都是永久免费的。",
+    "q3": "我的数据安全吗？",
+    "a3": "绝对安全！我们非常重视您的隐私。所有文件都通过SSL加密安全处理，并在转换后自动从我们的服务器删除。我们从不存储或共享您的个人文件。",
+    "q4": "你们支持哪些文件格式？",
+    "a4": "我们支持40多种不同的文件格式，包括视频（MP4、AVI、MOV）、音频（MP3、WAV、FLAC）、图像（JPG、PNG、WEBP）和文档（PDF、DOCX、XLSX）。请查看我们的工具页面以获取完整列表。",
+    "q5": "有文件大小限制吗？",
+    "a5": "是的，我们每个文件的最大文件大小限制为100MB。这确保了所有用户的快速处理和最佳性能。我们建议在上传前压缩较大的文件。",
+    "q6": "转换后的文件可用多久？",
+    "a6": "转换后的文件在转换后24小时内可供下载。在此之后，它们将自动从我们的服务器删除，以确保安全并释放存储空间。",
+    "q7": "我可以在移动设备上使用Pushtoconverter吗？",
+    "a7": "可以！我们的网站完全响应式，在手机、平板电脑和台式电脑上都能完美运行。您可以从任何有互联网连接的设备转换文件。",
+    "q8": "如果转换失败怎么办？",
+    "a8": "如果转换失败，请检查您的文件是否为支持的格式且小于100MB。如果问题仍然存在，请尝试刷新页面或联系我们的支持团队以获得帮助。",
+    "contact_title": "还有问题吗？",
+    "contact_subtitle": "找不到您要的答案？我们的支持团队随时为您提供帮助！",
+    "contact_button": "联系支持"
+  },
+  "help": {
+    "title": "帮助",
+    "title_center": "中心",
+    "subtitle": "获取有关使用我们的文件转换工具的帮助，并找到常见问题的解决方案。",
+    "faq_title": "常见问题",
+    "faq_subtitle": "找到常见问题的答案",
+    "contact_title": "联系支持",
+    "contact_subtitle": "从我们的支持团队获得帮助",
+    "getting_started": "入门",
+    "convert_title": "如何转换文件",
+    "convert_step1": "从我们的主页选择您需要的转换工具",
+    "convert_step2": "点击“选择文件”并选择您的文件",
+    "convert_step3": "等待转换完成",
+    "convert_step4": "下载您的转换文件",
+    "supported_formats": "支持的格式",
+    "video_formats": "视频格式",
+    "audio_formats": "音频格式",
+    "image_formats": "图像格式",
+    "document_formats": "文档格式",
+    "troubleshooting": "故障排除",
+    "upload_issues": "文件上传问题",
+    "upload_issue1": "检查文件大小（最大100MB）",
+    "upload_issue2": "确保文件格式受支持",
+    "upload_issue3": "尝试刷新页面",
+    "upload_issue4": "检查您的互联网连接",
+    "conversion_failed": "转换失败",
+    "conversion_fail1": "验证文件未损坏",
+    "conversion_fail2": "尝试不同的文件格式",
+    "conversion_fail3": "如果可能，减小文件大小",
+    "conversion_fail4": "如果问题仍然存在，请联系支持"
+  },
+  "contact": {
+    "title": "联系",
+    "title_us": "我们",
+    "subtitle": "您有问题、反馈或需要支持吗？我们很乐意收到您的消息！",
+    "email_button": "给我们发邮件",
+    "form": {
+      "name": "姓名",
+      "name_placeholder": "您的姓名",
+      "email": "邮箱",
+      "email_placeholder": "email@example.com",
+      "subject": "主题",
+      "subject_select": "选择主题",
+      "general": "一般咨询",
+      "support": "技术支持",
+      "bug": "错误报告",
+      "feature": "功能请求",
+      "business": "商业咨询",
+      "message": "消息",
+      "message_placeholder": "告诉我们如何帮助您...",
+      "send": "发送消息"
+    },
+    "info": {
+      "email_title": "电子邮件支持",
+      "response_title": "响应时间",
+      "response_time": "24小时内",
+      "help_title": "帮助中心",
+      "help_link": "访问我们的常见问题"
+    }
+  },
+  "toast": {
+    "coming_soon": "此工具即将推出！ 🚀",
+    "tool_coming_soon": "工具即将推出！ 🚀"
+  },
+  "soon": {
+    "title": "此工具",
+    "title_highlight": "即将推出！",
+    "subtitle": "我们正在努力开发此功能，并迫不及待地希望尽快为您提供。请继续关注我们的更新！",
+    "back_button": "返回首页",
+    "nav_all_tools": "所有工具"
+  },
+  "maintenance": {
+    "title": "目前",
+    "title_highlight": "正在维护",
+    "subtitle": "我们正在进行短暂的维护，以使我们的网站对您更好。感谢您的理解。"
+  },
+  "error404": {
+    "title": "页面未找到",
+    "subtitle": "抱歉，您要查找的页面不存在。它可能已被移动、删除，或者您使用的是错误的链接。",
+    "back_home": "返回首页",
+    "browse_tools": "浏览工具",
+    "popular_tools": "热门工具"
+  },
+  "language": {
+    "title": "选择语言",
+    "subtitle": "选择您喜欢的语言以继续使用Pushtoconverter",
+    "back_home": "返回首页"
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "site": {
+    "title": "Pushtoconverter - Free Online File Converter",
+    "description": "Convert your files for free. From MP4 to MP3, PDF to Word, and more."
+  },
+  "header": {
+    "brand": "Pushtoconverter",
+    "nav": {
+      "tools": "Tools",
+      "features": "Features",
+      "about": "About",
+      "contact": "Contact",
+      "faq": "FAQ"
+    },
+    "language": "Language:"
+  },
+  "hero": {
+    "title": "Convert Any File<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow\">Instantly</span>",
+    "subtitle": "Access <strong class=\"text-rose-600\">40+ powerful conversion tools</strong> in one place. Fast, secure, and completely free. No registration required.",
+    "search_placeholder": "Search conversion tools... (e.g: MP4 to MP3)",
+    "button_primary": "View All Tools",
+    "button_secondary": "Learn More",
+    "stats": {
+      "files_converted": "Files Converted",
+      "tools_available": "Tools Available",
+      "free_forever": "Free Forever"
+    }
+  },
+  "stats": {
+    "users": "Million Users",
+    "conversions": "Million Conversions",
+    "formats": "Supported Formats",
+    "countries": "Countries"
+  },
+  "tools": {
+    "title": "Popular Conversion Tools",
+    "subtitle": "Choose from our most popular file conversion tools, trusted by millions of users worldwide.",
+    "categories": {
+      "video": "Video Converters",
+      "audio": "Audio Converters",
+      "image": "Image Converters",
+      "document": "Document Converters",
+      "archive": "Archive Converters"
+    },
+    "items": {
+      "mp4_to_mp3": "MP4 to MP3",
+      "mp4_to_avi": "MP4 to AVI",
+      "avi_to_mp4": "AVI to MP4",
+      "mov_to_mp4": "MOV to MP4",
+      "wmv_to_mp4": "WMV to MP4",
+      "flv_to_mp4": "FLV to MP4",
+      "webm_to_mp4": "WebM to MP4",
+      "mkv_to_mp4": "MKV to MP4",
+      "mp3_to_wav": "MP3 to WAV",
+      "wav_to_mp3": "WAV to MP3",
+      "flac_to_mp3": "FLAC to MP3",
+      "aac_to_mp3": "AAC to MP3",
+      "ogg_to_mp3": "OGG to MP3",
+      "wma_to_mp3": "WMA to MP3",
+      "m4a_to_mp3": "M4A to MP3",
+      "jpg_to_png": "JPG to PNG",
+      "png_to_jpg": "PNG to JPG",
+      "bmp_to_png": "BMP to PNG",
+      "gif_to_mp4": "GIF to MP4",
+      "webp_to_png": "WebP to PNG",
+      "tiff_to_jpg": "TIFF to JPG",
+      "svg_to_png": "SVG to PNG",
+      "pdf_to_word": "PDF to Word",
+      "word_to_pdf": "Word to PDF",
+      "excel_to_csv": "Excel to CSV",
+      "ppt_to_pdf": "PPT to PDF",
+      "powerpoint_to_pdf": "PowerPoint to PDF",
+      "pdf_to_excel": "PDF to Excel",
+      "pdf_to_powerpoint": "PDF to PowerPoint",
+      "zip_to_rar": "ZIP to RAR",
+      "rar_to_zip": "RAR to ZIP",
+      "7z_to_zip": "7Z to ZIP",
+      "tar_to_zip": "TAR to ZIP"
+    },
+    "ready_title": "Ready to convert your files?",
+    "ready_subtitle": "Join millions of users who trust Pushtoconverter for their file conversion needs. Fast, secure, and always free.",
+    "view_all_button": "View 40+ Tools",
+    "hero_title": "All Conversion<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow\">Tools</span>",
+    "hero_subtitle": "Discover the complete collection of our <strong class=\"text-rose-600\">40+ conversion tools</strong>. Find exactly what you need for any file conversion task.",
+    "complete_title": "Complete Tool Collection",
+    "complete_subtitle": "Explore the complete collection of our file conversion tools. Click on any tool to start converting your files.",
+    "back_to_home": "Back to Home",
+    "learn_more": "Learn More",
+    "most_popular": "Most Popular",
+    "help_title": "Need help choosing a tool?",
+    "help_subtitle": "Visit our homepage to learn more about our features and get started with our most popular tools.",
+    "back_to_homepage": "Back to Homepage",
+    "labels": {
+      "fast_conversion": "Fast conversion",
+      "high_quality": "High quality",
+      "universal_format": "Universal format",
+      "most_loved": "Most loved"
+    },
+    "descriptions": {
+      "mp4_to_mp3": "Extract high-quality audio from video files",
+      "mp4_to_avi": "Convert MP4 to AVI format while preserving quality",
+      "mov_to_mp4": "Convert QuickTime files to universal MP4",
+      "avi_to_mp4": "Convert AVI to modern MP4 format",
+      "mp3_to_wav": "Convert MP3 to WAV format",
+      "wav_to_mp3": "Compress WAV to MP3",
+      "flac_to_mp3": "Convert lossless audio to MP3",
+      "aac_to_mp3": "Convert AAC to MP3 format",
+      "jpg_to_png": "Convert JPEG to PNG format",
+      "png_to_jpg": "Convert PNG to JPEG format",
+      "webp_to_png": "Convert WebP to PNG format",
+      "svg_to_png": "Convert vector to raster",
+      "pdf_to_word": "Convert PDF to DOCX format",
+      "word_to_pdf": "Convert DOCX to PDF format",
+      "excel_to_csv": "Convert XLSX to CSV format",
+      "ppt_to_pdf": "Convert PowerPoint to PDF"
+    }
+  },
+  "features": {
+    "title": "Why Choose Pushtoconverter?",
+    "subtitle": "Experience the difference with our cutting-edge conversion technology and user-centric approach.",
+    "items": {
+      "free": {
+        "title": "Completely Free",
+        "description": "No hidden fees, no registration required, unlimited conversions with premium quality",
+        "detail": "Free Forever"
+      },
+      "fast": {
+        "title": "Lightning Fast",
+        "description": "Convert your files in seconds with our optimized processing engine powered by advanced algorithms",
+        "detail": "Average: 3 seconds"
+      },
+      "secure": {
+        "title": "100% Secure",
+        "description": "Your files are processed securely with end-to-end encryption and automatically deleted after conversion",
+        "detail": "SSL Encrypted"
+      },
+      "no_limits": {
+        "title": "Unlimited",
+        "description": "No limits on file size or number of conversions."
+      }
+    }
+  },
+  "footer": {
+    "brand": "Pushtoconverter",
+    "description": "The ultimate file conversion platform with 40+ powerful tools. Fast, secure, and completely free.",
+    "links": {
+      "tools": "Popular Tools",
+      "features": "Features",
+      "about": "About",
+      "contact": "Contact",
+      "faq": "FAQ"
+    },
+    "support": {
+      "title": "Support",
+      "help": "Help Center",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "faq": "FAQ"
+    },
+    "copyright": "© 2024 Pushtoconverter. All rights reserved."
+  },
+  "privacy": {
+    "title": "Privacy<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent\">Policy</span>",
+    "subtitle": "Your privacy is important to us. Learn how we collect, use, and protect your information.",
+    "last_updated": "Last updated: December 2024",
+    "sections": {
+      "collect": {
+        "title": "Information We Collect",
+        "description": "Pushtoconverter is designed with privacy in mind. We collect only the minimum information necessary to provide our services:",
+        "item1": "Files you upload for conversion (temporarily, for processing only)",
+        "item2": "Basic usage statistics (anonymized)",
+        "item3": "IP address and browser information (for security purposes)"
+      },
+      "use": {
+        "title": "How We Use Your Information",
+        "description": "We use the information we collect only for the following purposes:",
+        "item1": "To perform your file conversion operations",
+        "item2": "To improve our service quality",
+        "item3": "To ensure security and prevent abuse",
+        "item4": "To provide customer support when needed"
+      },
+      "security": {
+        "title": "File Security",
+        "description": "Your uploaded files are processed with the highest level of security:",
+        "item1": "All file transfers are encrypted using SSL/TLS",
+        "item2": "Files are automatically deleted after conversion (within 24 hours)",
+        "item3": "We never store your files permanently",
+        "item4": "Files are processed in secure, isolated environments"
+      },
+      "sharing": {
+        "title": "Data Sharing",
+        "description": "We do not sell, trade, or share your personal information with third parties. The only exceptions are:",
+        "item1": "Legal requirements (court orders, law enforcement)",
+        "item2": "Service providers who help us operate our platform (under strict confidentiality)"
+      },
+      "cookies": {
+        "title": "Cookies and Tracking",
+        "description": "We use minimal cookies for essential functionality:",
+        "item1": "Session cookies for file processing",
+        "item2": "Analytics cookies (anonymized)",
+        "item3": "No tracking cookies for advertising"
+      },
+      "rights": {
+        "title": "Your Rights",
+        "description": "You have the following rights:",
+        "item1": "To request information about the data we hold",
+        "item2": "To request deletion of your data",
+        "item3": "To opt-out of non-essential data collection",
+        "item4": "To contact us with any privacy concerns"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "description": "If you have any questions about this Privacy Policy, please contact us:",
+        "email_label": "Email:",
+        "subject_label": "Subject:",
+        "subject": "Privacy Policy Inquiry"
+      },
+      "changes": {
+        "title": "Changes to This Policy",
+        "description": "We may update this Privacy Policy from time to time. We will notify users of significant changes by posting the new policy on this page and updating the \"Last updated\" date."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent\">Service</span>",
+    "subtitle": "Please read these terms carefully before using our file conversion services.",
+    "last_updated": "Last updated: December 2024",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "description": "By accessing and using Pushtoconverter, you accept and agree to be bound by the terms and provisions of this agreement."
+      },
+      "service": {
+        "title": "Service Description",
+        "description": "Pushtoconverter provides online file conversion services. We offer various tools for converting files between different formats, including video, audio, image, and document formats."
+      },
+      "responsibilities": {
+        "title": "User Responsibilities",
+        "description": "As a user of our service, you agree to:",
+        "item1": "Use the service only for lawful purposes",
+        "item2": "Not upload files containing malicious code or illegal content",
+        "item3": "Respect intellectual property rights",
+        "item4": "Not attempt to reverse engineer or compromise our systems",
+        "item5": "Not use the service for commercial resale without permission"
+      },
+      "upload": {
+        "title": "File Upload and Processing",
+        "description": "Regarding file uploads:",
+        "item1": "Maximum file size is 100MB per file",
+        "item2": "Files are automatically deleted after 24 hours",
+        "item3": "We do not guarantee conversion success for all file types",
+        "item4": "It is your responsibility to ensure you have the right to convert uploaded files"
+      },
+      "availability": {
+        "title": "Service Availability",
+        "description": "While we strive to maintain high service availability, we do not guarantee uninterrupted access. We may perform maintenance, updates, or changes that temporarily affect service availability."
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "description": "Pushtoconverter shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, use, goodwill, or other intangible losses."
+      },
+      "property": {
+        "title": "Intellectual Property",
+        "description": "The service and its original content, features, and functionality are owned by Pushtoconverter and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws."
+      },
+      "termination": {
+        "title": "Termination",
+        "description": "We may terminate or suspend your access to our service immediately, without prior notice or liability, for any reason whatsoever, including if you breach the Terms."
+      },
+      "changes": {
+        "title": "Changes to Terms",
+        "description": "We reserve the right to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days' notice prior to any new terms taking effect."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "description": "If you have any questions about these Terms of Service, please contact us:",
+        "email_label": "Email:",
+        "subject_label": "Subject:",
+        "subject": "Terms of Service Inquiry"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "title_us": "Us",
+    "subtitle": "Do you have questions, feedback, or need support? We'd love to hear from you!",
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Your name",
+      "email": "Email",
+      "email_placeholder": "email@example.com",
+      "subject": "Subject",
+      "subject_select": "Select a subject",
+      "general": "General Inquiry",
+      "support": "Technical Support",
+      "bug": "Bug Report",
+      "feature": "Feature Request",
+      "business": "Business Inquiry",
+      "message": "Message",
+      "message_placeholder": "Tell us how we can help you...",
+      "send": "Send Message"
+    },
+    "info": {
+      "email_title": "Email Support",
+      "response_title": "Response Time",
+      "response_time": "Within 24 hours",
+      "help_title": "Help Center",
+      "help_link": "Visit our FAQ"
+    }
+  },
+  "about": {
+    "title": "About Pushtoconverter",
+    "description1": "Pushtoconverter is your go-to online platform for seamless and efficient file conversions. We are dedicated to providing you with a fast, secure, and user-friendly experience for all your file conversion needs. Our mission is to simplify the file conversion process and make it accessible to everyone, everywhere.",
+    "description2": "With over 40 specialized tools, we cover a wide range of formats, from documents and images to audio and video. We continuously strive to improve our services and add new features to ensure you have the best possible conversion experience."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Do you have questions, feedback, or need support? We'd love to hear from you!",
+    "email_button": "Email Us"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "download": "Download",
+    "convert": "Convert",
+    "upload": "Upload",
+    "select_file": "Select File",
+    "drag_drop": "Drag files here"
+  },
+  "faq": {
+    "title": "Frequently Asked",
+    "title_questions": "Questions",
+    "subtitle": "Find answers to the most common questions about our file conversion services.",
+    "q1": "How do I convert files on Pushtoconverter?",
+    "a1": "File conversion is very simple! Select the tool you need from our homepage, upload your file, and click convert. The process is automatic and your converted file will be ready for download in seconds.",
+    "q2": "Is Pushtoconverter really free?",
+    "a2": "Yes! Pushtoconverter is completely free. We don't charge any fees, require registration, or have hidden costs. All our conversion tools are free forever.",
+    "q3": "Is my data safe?",
+    "a3": "Absolutely! We take your privacy seriously. All files are processed securely with SSL encryption and automatically deleted from our servers after conversion. We never store or share your personal files.",
+    "q4": "What file formats do you support?",
+    "a4": "We support over 40 different file formats, including video (MP4, AVI, MOV), audio (MP3, WAV, FLAC), images (JPG, PNG, WEBP), and documents (PDF, DOCX, XLSX). Check our tools page for the complete list.",
+    "q5": "Is there a file size limit?",
+    "a5": "Yes, we have a maximum file size limit of 100MB per file. This ensures fast processing and optimal performance for all users. We recommend compressing larger files before uploading.",
+    "q6": "How long are converted files available?",
+    "a6": "Converted files are available for download for 24 hours after conversion. After this period, they are automatically deleted from our servers to ensure security and free up storage space.",
+    "q7": "Can I use Pushtoconverter on mobile devices?",
+    "a7": "Yes! Our website is fully responsive and works perfectly on mobile phones, tablets, and desktop computers. You can convert files from any device with an internet connection.",
+    "q8": "What if the conversion fails?",
+    "a8": "If conversion fails, check that your file is in a supported format and under 100MB. If the problem persists, try refreshing the page or contact our support team for assistance.",
+    "contact_title": "Still have questions?",
+    "contact_subtitle": "Can't find the answer you're looking for? Our support team is here to help!",
+    "contact_button": "Contact Support"
+  },
+  "help": {
+    "title": "Help",
+    "title_center": "Center",
+    "subtitle": "Get help using our file conversion tools and find solutions to common issues.",
+    "faq_title": "Frequently Asked Questions",
+    "faq_subtitle": "Find answers to common questions",
+    "contact_title": "Contact Support",
+    "contact_subtitle": "Get help from our support team",
+    "getting_started": "Getting Started",
+    "convert_title": "How to convert files",
+    "convert_step1": "Select the conversion tool you need from our homepage",
+    "convert_step2": "Click \"Select File\" and choose your file",
+    "convert_step3": "Wait for the conversion to complete",
+    "convert_step4": "Download your converted file",
+    "supported_formats": "Supported Formats",
+    "video_formats": "Video Formats",
+    "audio_formats": "Audio Formats",
+    "image_formats": "Image Formats",
+    "document_formats": "Document Formats",
+    "troubleshooting": "Troubleshooting",
+    "upload_issues": "File upload issues",
+    "upload_issue1": "Check file size (max 100MB)",
+    "upload_issue2": "Ensure file format is supported",
+    "upload_issue3": "Try refreshing the page",
+    "upload_issue4": "Check your internet connection",
+    "conversion_failed": "Conversion failed",
+    "conversion_fail1": "Verify file is not corrupted",
+    "conversion_fail2": "Try a different file format",
+    "conversion_fail3": "Reduce file size if possible",
+    "conversion_fail4": "Contact support if issue persists"
+  },
+  "contact": {
+    "title": "Contact",
+    "title_us": "Us",
+    "subtitle": "Do you have questions, feedback, or need support? We'd love to hear from you!",
+    "email_button": "Email Us",
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Your name",
+      "email": "Email",
+      "email_placeholder": "email@example.com",
+      "subject": "Subject",
+      "subject_select": "Select a subject",
+      "general": "General Inquiry",
+      "support": "Technical Support",
+      "bug": "Bug Report",
+      "feature": "Feature Request",
+      "business": "Business Inquiry",
+      "message": "Message",
+      "message_placeholder": "Tell us how we can help you...",
+      "send": "Send Message"
+    },
+    "info": {
+      "email_title": "Email Support",
+      "response_title": "Response Time",
+      "response_time": "Within 24 hours",
+      "help_title": "Help Center",
+      "help_link": "Visit our FAQ"
+    }
+  },
+  "toast": {
+    "coming_soon": "This tool is coming soon! 🚀",
+    "tool_coming_soon": "tool is coming soon! 🚀"
+  },
+  "soon": {
+    "title": "This Tool",
+    "title_highlight": "Coming Soon!",
+    "subtitle": "We're working hard on this feature and can't wait to make it available to you as soon as possible. Keep following us for updates!",
+    "back_button": "Back to Home",
+    "nav_all_tools": "All Tools"
+  },
+  "maintenance": {
+    "title": "Currently",
+    "title_highlight": "Under Maintenance",
+    "subtitle": "We're performing a brief maintenance to make our site even better for you. Thank you for your understanding."
+  },
+  "error404": {
+    "title": "Page Not Found",
+    "subtitle": "Sorry, the page you are looking for does not exist. It may have been moved, deleted, or you may be using an incorrect link.",
+    "back_home": "Back to Home",
+    "browse_tools": "Explore Tools",
+    "popular_tools": "Popular Tools"
+  },
+  "language": {
+    "title": "Select Language",
+    "subtitle": "Choose your preferred language to continue using Pushtoconverter",
+    "back_home": "Back to Home"
+  }
+}

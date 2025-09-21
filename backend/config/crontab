@@ -1,0 +1,35 @@
+# P2Convert Cron Jobs
+# Automated tasks for maintenance and monitoring
+
+# Backup system daily at 2 AM
+0 2 * * * /var/www/p2convert/backend/scripts/backup.sh >> /var/log/p2convert-backup.log 2>&1
+
+# Clean old converted files every 6 hours
+0 */6 * * * find /var/www/p2convert/converted -type f -mtime +1 -delete
+
+# Clean old upload files every hour
+0 * * * * find /var/www/p2convert/uploads -type f -mtime +1 -delete
+
+# Clean old temp files every 30 minutes
+*/30 * * * * find /var/www/p2convert/temp -type f -mmin +60 -delete
+
+# Update ClamAV database daily at 3 AM
+0 3 * * * /usr/bin/freshclam
+
+# Monitor disk space every hour
+0 * * * * df -h | awk '$5 > 80 {print "Disk usage warning: " $0}' | mail -s "Disk Usage Alert" admin@yourdomain.com
+
+# Check service health every 5 minutes
+*/5 * * * * curl -f http://localhost:3001/health || echo "Backend health check failed" | mail -s "Service Alert" admin@yourdomain.com
+
+# Rotate logs weekly
+0 0 * * 0 /usr/sbin/logrotate /etc/logrotate.d/p2convert
+
+# Update system packages weekly
+0 2 * * 0 apt update && apt upgrade -y
+
+# Clean PM2 logs monthly
+0 0 1 * * pm2 flush
+
+# Generate system report weekly
+0 1 * * 0 /var/www/p2convert/backend/scripts/system-report.sh

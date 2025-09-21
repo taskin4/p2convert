@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pushtoconverter - Sayfa Bulunamadı</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose': {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be185d'
+                        },
+                        'pink': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Work Sans', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
+                        'scale-in': 'scaleIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)',
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px) scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'translateY(0) scale(1)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg border-b border-rose-200/50 sticky top-0 z-[100] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div>
+                    <a href="/" class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Pushtoconverter</a>
+                </div>
+                <nav>
+                    <a href="#" data-page="tools" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.tools">Araçlar</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div class="w-full max-w-4xl mx-auto text-center">
+            
+            <!-- 404 Number -->
+            <div class="mb-8 animate-fade-in-up">
+                <h1 class="font-heading text-9xl md:text-[12rem] font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent leading-none">
+                    404
+                </h1>
+            </div>
+
+
+            <!-- Error Message -->
+            <div class="mb-12 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="error404.title">
+                    Sayfa Bulunamadı
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed" data-i18n="error404.subtitle">
+                    Üzgünüz, aradığınız sayfa mevcut değil. Sayfa taşınmış, silinmiş veya yanlış bir bağlantı kullanıyor olabilirsiniz.
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up" style="animation-delay: 0.6s;">
+                <a href="#" data-page="home" class="group bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 transform">
+                    <span class="flex items-center justify-center space-x-2">
+                        <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        <span data-i18n="error404.back_home">Ana Sayfaya Dön</span>
+                    </span>
+                </a>
+                
+                <a href="#" data-page="tools" class="group bg-white/80 backdrop-blur-sm text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-rose-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform border border-gray-200/50">
+                    <span class="flex items-center justify-center space-x-2">
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                        <span data-i18n="error404.browse_tools">Araçları Keşfet</span>
+                    </span>
+                </a>
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-transparent py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="border-t border-rose-200/50 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-600 text-base" data-i18n="footer.copyright">&copy; 2024 Pushtoconverter. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- i18n Script -->
+    <script src="/js/i18n.js"></script>
+    
+    <!-- Navigation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle navigation links
+            document.querySelectorAll('a[data-page]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    const currentPath = window.location.pathname;
+                    const language = currentPath.split('/')[1] || 'tr';
+                    
+                    let targetUrl = '';
+                    if (page === 'home') {
+                        targetUrl = `/${language}`;
+                    } else if (page === 'tools') {
+                        targetUrl = `/${language}/tools`;
+                    } else if (page === 'mp4-to-mp3') {
+                        targetUrl = `/${language}/mp4-to-mp3`;
+                    }
+                    
+                    if (targetUrl) {
+                        window.location.href = targetUrl;
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+

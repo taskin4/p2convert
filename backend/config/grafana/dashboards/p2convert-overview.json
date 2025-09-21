@@ -1,0 +1,157 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "P2Convert Overview",
+    "tags": ["p2convert", "video-conversion"],
+    "style": "dark",
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "System Overview",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "up{job=\"p2convert-backend\"}",
+            "legendFormat": "Backend Status"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {
+                  "color": "red",
+                  "value": 0
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": 2,
+        "title": "Queue Statistics",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "bullmq_jobs_waiting",
+            "legendFormat": "Waiting Jobs"
+          },
+          {
+            "expr": "bullmq_jobs_active",
+            "legendFormat": "Active Jobs"
+          },
+          {
+            "expr": "bullmq_jobs_completed",
+            "legendFormat": "Completed Jobs"
+          },
+          {
+            "expr": "bullmq_jobs_failed",
+            "legendFormat": "Failed Jobs"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        }
+      },
+      {
+        "id": 3,
+        "title": "Memory Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "process_resident_memory_bytes{job=\"p2convert-backend\"}",
+            "legendFormat": "Backend Memory"
+          },
+          {
+            "expr": "process_resident_memory_bytes{job=\"p2convert-workers\"}",
+            "legendFormat": "Worker Memory"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        }
+      },
+      {
+        "id": 4,
+        "title": "CPU Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(process_cpu_seconds_total{job=\"p2convert-backend\"}[5m]) * 100",
+            "legendFormat": "Backend CPU"
+          },
+          {
+            "expr": "rate(process_cpu_seconds_total{job=\"p2convert-workers\"}[5m]) * 100",
+            "legendFormat": "Worker CPU"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        }
+      },
+      {
+        "id": 5,
+        "title": "Redis Memory Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "redis_memory_used_bytes",
+            "legendFormat": "Redis Memory"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        }
+      },
+      {
+        "id": 6,
+        "title": "Request Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(http_requests_total{job=\"p2convert-backend\"}[5m])",
+            "legendFormat": "Requests/sec"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        }
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "5s"
+  }
+}

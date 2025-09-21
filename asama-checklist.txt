@@ -1,0 +1,190 @@
+# Video Converter Sitesi - İmplementasyon Checklist
+**Google Cloud n2-standard-4 VPS için Adım Adım Uygulama Rehberi**
+
+---
+
+## 🚀 **ADIM 1: Temel Altyapı Kurulumu**
+*Bu adımları sırasıyla tamamlayın. Her adım bir sonrakinin ön koşuludur.*
+
+### **1.1 Sunucu Hazırlık İşlemleri**
+- [ ] **1.1.1** Ubuntu sistem güncellemesi: `sudo apt update && sudo apt upgrade -y`
+- [ ] **1.1.2** Node.js kurulumu: `curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -`
+- [ ] **1.1.3** Node.js yükleme: `sudo apt-get install -y nodejs`
+- [ ] **1.1.4** PM2 global kurulum: `sudo npm install -g pm2`
+- [ ] **1.1.5** FFmpeg kurulumu: `sudo apt install ffmpeg -y`
+
+### **1.2 Güvenlik Katmanı Kurulumu**
+- [ ] **1.2.1** ClamAV antivirüs kurulumu: `sudo apt install clamav clamav-daemon -y`
+- [ ] **1.2.2** ClamAV veritabanı güncelleme: `sudo freshclam`
+- [ ] **1.2.3** ClamAV servisini başlatma: `sudo systemctl start clamav-daemon`
+- [ ] **1.2.4** ClamAV otomatik başlatma: `sudo systemctl enable clamav-daemon`
+
+### **1.3 Redis Kurulumu**
+- [ ] **1.3.1** Redis server kurulumu: `sudo apt install redis-server -y`
+- [ ] **1.3.2** Redis konfigürasyonu: `sudo nano /etc/redis/redis.conf`
+- [ ] **1.3.3** Redis şifre ayarlama: `requirepass your_strong_password`
+- [ ] **1.3.4** Redis restart: `sudo systemctl restart redis-server`
+- [ ] **1.3.5** Redis otomatik başlatma: `sudo systemctl enable redis-server`
+
+---
+
+## 📦 **ADIM 2: Proje Kütüphaneleri**
+*Proje klasöründe bu komutları çalıştırın.*
+
+### **2.1 Gerekli NPM Paketleri**
+- [ ] **2.1.1** BullMQ kurulumu: `npm install bullmq`
+- [ ] **2.1.2** Dosya kontrol araçları: `npm install file-type multer`
+- [ ] **2.1.3** Rate limiting: `npm install express-rate-limit`
+- [ ] **2.1.4** Redis client: `npm install redis`
+- [ ] **2.1.5** ClamAV wrapper: `npm install clamscan`
+
+---
+
+## 🛡️ **ADIM 3: Güvenlik ve Doğrulama Sistemi**
+
+### **3.1 Dosya Boyut ve Format Kontrolü**
+- [ ] **3.1.1** Multer middleware'ini 250MB limit ile yapılandır
+- [ ] **3.1.2** `file-type` ile gerçek MIME type kontrolü ekle
+- [ ] **3.1.3** Sadece video formatlarına izin ver (mp4, avi, mov, mkv)
+- [ ] **3.1.4** Antivirüs taramasını upload sonrası ekle
+
+### **3.2 Rate Limiting Sistemi**
+- [ ] **3.2.1** IP bazlı rate limiting ekle (15 dakikada 5 istek)
+- [ ] **3.2.2** Rate limit aşımında uyarı mesajı göster
+- [ ] **3.2.3** Redis ile rate limit verilerini sakla
+
+### **3.3 Geçici Dosya Temizleme**
+- [ ] **3.3.1** Dönüştürme sonrası otomatik silme sistemi yaz
+- [ ] **3.3.2** Başarısız işlemler için de temizlik ekle
+- [ ] **3.3.3** Sistem başlatılırken eski dosyaları temizle
+
+---
+
+## 🏭 **ADIM 4: Santral ve Fabrika Mimarisi**
+
+### **4.1 Worker (İşçi) Sistemi Kurulumu**
+- [ ] **4.1.1** `worker.js` dosyasını oluştur
+- [ ] **4.1.2** Redis queue dinleme sistemini yaz
+- [ ] **4.1.3** FFmpeg dönüştürme işlemini worker'a taşı
+- [ ] **4.1.4** Hata yönetimi ve logging ekle
+
+### **4.2 Web Server (Santral) Güncelleme**
+- [ ] **4.2.1** `routes/mp4-mp3.js` dosyasını güncelle
+- [ ] **4.2.2** FFmpeg komutunu kaldır, job queue ekle
+- [ ] **4.2.3** İş durumu takip sistemi ekle
+- [ ] **4.2.4** WebSocket ile real-time durum güncellemesi
+
+### **4.3 PM2 Proses Yöneticisi**
+- [ ] **4.3.1** PM2 ecosystem dosyası oluştur
+- [ ] **4.3.2** Server.js ve worker.js'i PM2'ye ekle
+- [ ] **4.3.3** PM2 startup script kurulumu
+- [ ] **4.3.4** PM2 monitoring ve restart policy ayarla
+
+---
+
+## ⚡ **ADIM 5: Performans Optimizasyonları**
+
+### **5.1 RAM Disk Kurulumu**
+- [ ] **5.1.1** 4GB tmpfs oluştur: `sudo mount -t tmpfs -o size=4G,mode=1777 tmpfs /tmp/videoconv`
+- [ ] **5.1.2** /etc/fstab'a kalıcı mount ekle
+- [ ] **5.1.3** Uygulama kodunda tmpfs path kullanımını ayarla
+- [ ] **5.1.4** RAM disk doluluk kontrolü ekle
+
+### **5.2 Multi-Worker Sistemi**
+- [ ] **5.2.1** PM2'yi 3 worker instance ile ayarla
+- [ ] **5.2.2** CPU affinity ayarlama: `taskset` kullan
+- [ ] **5.2.3** Worker load balancing stratejisi belirle
+- [ ] **5.2.4** Worker health check sistemi ekle
+
+### **5.3 Intel Cascade Lake Optimizasyonu**
+- [ ] **5.3.1** FFmpeg parametrelerini Intel CPU için optimize et
+- [ ] **5.3.2** AVX-512 instruction set kullanımını aktifleştir
+- [ ] **5.3.3** Thread sayısını 3 olarak ayarla
+- [ ] **5.3.4** Memory buffer boyutlarını artır
+
+### **5.4 Akıllı Queue Sistemi**
+- [ ] **5.4.1** 3 farklı queue oluştur (express, normal, heavy)
+- [ ] **5.4.2** Dosya boyutuna göre queue routing ekle
+- [ ] **5.4.3** Priority-based job processing
+- [ ] **5.4.4** Queue monitoring dashboard
+
+---
+
+## 🌐 **ADIM 6: Network ve CDN Optimizasyonu**
+
+### **6.1 Static IP ve Domain Setup**
+- [ ] **6.1.1** Domain'i static IP'ye yönlendir (34.118.206.112)
+- [ ] **6.1.2** SSL sertifikası kurulumu (Let's Encrypt)
+- [ ] **6.1.3** HTTPS redirect'leri ayarla
+- [ ] **6.1.4** Security headers ekle
+
+### **6.2 Cloudflare CDN Entegrasyonu**
+- [ ] **6.2.1** Cloudflare account kurulumu
+- [ ] **6.2.2** A record yapılandırması
+- [ ] **6.2.3** Caching rules ayarlama
+- [ ] **6.2.4** DDoS protection aktifleştirme
+
+### **6.3 Parallel Upload Sistemi**
+- [ ] **6.3.1** Multer'da chunk upload ayarları
+- [ ] **6.3.2** Progress bar implementasyonu
+- [ ] **6.3.3** Upload retry mechanism
+- [ ] **6.3.4** Bandwidth optimization
+
+---
+
+## 🔒 **ADIM 7: Gelişmiş Güvenlik** 
+
+### **7.1 Docker İzolasyonu**
+- [ ] **7.1.1** FFmpeg için Docker image oluştur
+- [ ] **7.1.2** Container resource limits ayarla
+- [ ] **7.1.3** Worker'ları container'da çalıştır
+- [ ] **7.1.4** Container monitoring ekle
+
+### **7.2 Sistem Güvenliği**
+- [ ] **7.2.1** Düşük yetkili user oluştur
+- [ ] **7.2.2** Worker process'leri restricted user ile çalıştır
+- [ ] **7.2.3** Firewall kuralları ayarla
+- [ ] **7.2.4** Log rotation ve monitoring
+
+---
+
+## ✅ **ADIM 8: Test ve Deployment**
+
+### **8.1 Sistem Testleri**
+- [ ] **8.1.1** Küçük dosya (5MB) dönüştürme testi
+- [ ] **8.1.2** Büyük dosya (250MB) dönüştürme testi
+- [ ] **8.1.3** 3 paralel dönüştürme stress testi
+- [ ] **8.1.4** Rate limiting testi
+- [ ] **8.1.5** Antivirüs tarama testi
+
+### **8.2 Monitoring ve Logging**
+- [ ] **8.2.1** PM2 monitoring kurulumu
+- [ ] **8.2.2** System resource monitoring (htop, iotop)
+- [ ] **8.2.3** Error logging sistemi
+- [ ] **8.2.4** Performance metrics toplama
+
+### **8.3 Backup ve Recovery**
+- [ ] **8.3.1** Kod backup stratejisi
+- [ ] **8.3.2** Redis data backup
+- [ ] **8.3.3** System snapshot alma
+- [ ] **8.3.4** Recovery prosedürü dökümantasyonu
+
+---
+
+## 📊 **Beklenen Sonuçlar**
+- ✅ **Günlük Kapasite**: 1,000-1,500 dönüştürme
+- ✅ **Dönüştürme Hızı**: 5dk video → 45-60 saniye
+- ✅ **Paralel İşlem**: 3 eşzamanlı dönüştürme
+- ✅ **Uptime**: %99.9+ (PM2 + monitoring ile)
+- ✅ **Güvenlik**: Enterprise-level koruma
+
+---
+
+## 🎯 **Critical Path (En Önemli Adımlar)**
+Bu adımları öncelikle tamamlayın:
+1. **ADIM 1-3**: Temel sistem + güvenlik
+2. **ADIM 4**: Worker sistemi (en kritik!)
+3. **ADIM 5.1-5.2**: RAM disk + multi-worker
+4. **ADIM 8.1**: Test etme
+
+Bu checklist'i tamamladığınızda production-ready bir converter siteniz olacak! 🚀

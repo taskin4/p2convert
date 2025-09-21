@@ -1,0 +1,99 @@
+{
+    "tool": {
+        "title": "MP4转MP3转换器",
+        "subtitle": "轻松从视频中提取音频。将您的MP4文件转换为高质量MP3音频格式。",
+        "drag_drop": "将文件拖放到此处",
+        "or": "或",
+        "browse_files": "浏览文件",
+        "max_file_size": "最大文件大小：100MB",
+        "waiting_upload": "等待上传...",
+        "how_it_works": {
+            "title": "如何将MP4转换为MP3？",
+            "subtitle": "仅需三个简单步骤即可将视频转换为音频。",
+            "step1": {
+                "title": "上传文件",
+                "description": "上传您的MP4视频文件或将其拖放"
+            },
+            "step2": {
+                "title": "转换",
+                "description": "自动转换过程开始"
+            },
+            "step3": {
+                "title": "下载",
+                "description": "立即下载您的MP3文件"
+            }
+        },
+        "features": {
+            "title": "为什么选择Pushtoconverter？",
+            "subtitle": "探索我们为专业级转换提供的可靠工具。",
+            "fast": {
+                "title": "快速转换",
+                "description": "在几秒钟内转换您的文件"
+            },
+            "secure": {
+                "title": "安全处理",
+                "description": "您的文件将安全处理并自动删除"
+            },
+            "free": {
+                "title": "完全免费",
+                "description": "无费用、无需注册、无隐藏成本"
+            }
+        },
+        "supported_formats": {
+            "title": "支持的格式",
+            "subtitle": "我们支持多种视频格式",
+            "input": "输入格式",
+            "output": "输出格式"
+        },
+        "faq": {
+            "title": "常见问题",
+            "q1": "使用这个工具安全吗？",
+            "a1": "是的，绝对安全。您的隐私对我们很重要。所有上传的文件将在1小时后从我们的服务器自动删除。",
+            "q2": "转换过程需要多长时间？",
+            "a2": "转换速度取决于文件大小，但凭借我们强大的服务器，大多数文件可在不到一分钟内处理完成。",
+            "q3": "音频质量会下降吗？",
+            "a3": "我们使用高级编码器来保持最佳音频质量。质量损失几乎可以忽略不计。"
+        },
+        "toast": {
+            "invalid_file": "请选择有效的MP4文件。",
+            "file_too_large": "文件大小不能超过100MB。请选择较小的文件。",
+            "upload_success": "文件上传成功！",
+            "conversion_started": "转换过程已开始...",
+            "conversion_complete": "所有文件转换成功！🎉"
+        },
+        "ui": {
+            "convert_button": "转换",
+            "convert_files": "转换 ({count} 个文件)",
+            "ready": "准备就绪",
+            "converting": "转换中...",
+            "download": "下载",
+            "completed": "完成！",
+            "new_convert": "转换新文件",
+            "uploading": "上传中..."
+        }
+    },
+    "header": {
+        "nav": {
+            "tools": "工具",
+            "features": "功能",
+            "about": "关于我们",
+            "contact": "联系我们",
+            "faq": "常见问题"
+        }
+    },
+    "footer": {
+        "description": "拥有40多种强大工具的终极文件转换平台。快速、安全、完全免费。",
+        "links": {
+            "tools": "热门工具"
+        },
+        "support": {
+            "title": "支持",
+            "help": "帮助中心",
+            "contact": "联系我们",
+            "privacy": "隐私政策",
+            "terms": "使用条款",
+            "faq": "常见问题"
+        },
+        "copyright": "© 2024 Pushtoconverter. 保留所有权利。"
+    }
+}

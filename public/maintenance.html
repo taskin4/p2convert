@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pushtoconverter - Bakımdayız</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose': {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be185d'
+                        },
+                        'pink': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Work Sans', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.4s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-rose-200/50 sticky top-0 z-[100] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div>
+                     <a href="/" class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Pushtoconverter</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center animate-fade-in-up">
+            <h1 class="font-heading text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                <span data-i18n="maintenance.title">Şu Anda</span> <span class="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent" data-i18n="maintenance.title_highlight">Bakımdayız</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-10 max-w-xl mx-auto leading-relaxed" data-i18n="maintenance.subtitle">
+                Sitemizi sizin için daha iyi bir hale getirmek amacıyla kısa bir süreliğine bakım çalışması yapıyoruz. Anlayışınız için teşekkür ederiz.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-transparent py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="border-t border-rose-200/50 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-600 text-base" data-i18n="footer.copyright">&copy; 2024 Pushtoconverter. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- i18n Script -->
+    <script src="/js/i18n.js"></script>
+
+</body>
+</html>
+

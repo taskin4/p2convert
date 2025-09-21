@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pushtoconverter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/i18n.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose': {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be185d'
+                        },
+                        'pink': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Work Sans', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-rose-200/50 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="animate-fade-in-down">
+                    <a href="#" class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent" data-page="home">Pushtoconverter</a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/tools" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.tools">Tools</a>
+                    <a href="/#features" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.features">Features</a>
+                    <a href="/#about" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.about">About</a>
+                    <a href="#" class="text-rose-600 font-medium" data-i18n="header.nav.contact" data-page="contact">Contact</a>
+                    <a href="#" class="text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" data-i18n="header.nav.faq" data-page="faq">FAQ</a>
+                </nav>
+                <!-- Language Switcher -->
+                <div class="hidden md:block relative" id="languageSwitcher">
+                    <button class="flex items-center space-x-2 text-gray-600 hover:text-rose-600 font-medium transition-all duration-200 hover:scale-105" id="languageBtn">
+                        <span id="currentLanguage">TR</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-rose-200 hidden" id="languageDropdown">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="tr">Türkçe</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="en">English</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="de">Deutsch</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="ru">Русский</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="fr">Français</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="es">Español</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="it">Italiano</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="ja">日本語</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="pt">Português</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600" data-lang="zh">中文</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-rose-50 transition-colors" id="mobileMenuBtn">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu dropdown -->
+        <div class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-rose-200/50" id="mobileMenu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="/tools" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.tools">Tools</a>
+                <a href="/#features" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.features">Features</a>
+                <a href="/#about" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.about">About</a>
+                <a href="#" class="block text-rose-600 font-medium" data-i18n="header.nav.contact" data-page="contact">Contact</a>
+                <a href="#" class="block text-gray-600 hover:text-rose-600 font-medium transition-colors" data-i18n="header.nav.faq" data-page="faq">FAQ</a>
+                <div class="border-t border-rose-200/50 pt-3">
+                    <div class="text-sm text-gray-500 mb-2">Language / Dil</div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="tr">Türkçe</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="en">English</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="de">Deutsch</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="ru">Русский</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="fr">Français</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="es">Español</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="it">Italiano</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="ja">日本語</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="pt">Português</a>
+                        <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded-lg text-center transition-colors" data-lang="zh">中文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header Section -->
+            <div class="text-center mb-16">
+                <h1 class="font-heading text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    <span data-i18n="contact.title">Contact</span> 
+                    <span class="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent" data-i18n="contact.title_us">Us</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-i18n="contact.subtitle">
+                    Have questions, feedback, or need support? We'd love to hear from you!
+                </p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-rose-100 mb-12">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.name">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-xl border-2 border-rose-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-200/50 outline-none text-base bg-white/80 backdrop-blur-sm" data-i18n="contact.form.name_placeholder">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.email">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl border-2 border-rose-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-200/50 outline-none text-base bg-white/80 backdrop-blur-sm" data-i18n="contact.form.email_placeholder">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.subject">Subject</label>
+                        <select id="subject" name="subject" class="w-full px-4 py-3 rounded-xl border-2 border-rose-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-200/50 outline-none text-base bg-white/80 backdrop-blur-sm">
+                            <option value="" data-i18n="contact.form.subject_select">Select a subject</option>
+                            <option value="general" data-i18n="contact.form.general">General Inquiry</option>
+                            <option value="support" data-i18n="contact.form.support">Technical Support</option>
+                            <option value="bug" data-i18n="contact.form.bug">Bug Report</option>
+                            <option value="feature" data-i18n="contact.form.feature">Feature Request</option>
+                            <option value="business" data-i18n="contact.form.business">Business Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.message">Message</label>
+                        <textarea id="message" name="message" rows="6" class="w-full px-4 py-3 rounded-xl border-2 border-rose-200 focus:border-rose-500 focus:ring-4 focus:ring-rose-200/50 outline-none text-base bg-white/80 backdrop-blur-sm" data-i18n="contact.form.message_placeholder"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-rose-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="contact.form.send">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-rose-100 text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-lg font-semibold text-gray-900 mb-2" data-i18n="contact.info.email_title">Email Support</h3>
+                    <p class="text-gray-600 text-sm">support@pushtoconverter.com</p>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-rose-100 text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-lg font-semibold text-gray-900 mb-2" data-i18n="contact.info.response_title">Response Time</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="contact.info.response_time">Within 24 hours</p>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-rose-100 text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-lg font-semibold text-gray-900 mb-2" data-i18n="contact.info.help_title">Help Center</h3>
+                    <p class="text-gray-600 text-sm"><a href="#" class="text-rose-600 hover:text-rose-700" data-i18n="contact.info.help_link" data-page="help">Visit our FAQ</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-20 -right-20 w-40 h-40 bg-rose-200/20 rounded-full animate-float"></div>
+            <div class="absolute -bottom-20 -left-20 w-32 h-32 bg-pink-200/20 rounded-full animate-float" style="animation-delay: 3s;"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="md:col-span-1">
+                    <div class="mb-6">
+                        <a href="#" class="font-heading text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent" data-page="home">Pushtoconverter</a>
+                    </div>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6" data-i18n="footer.description">The ultimate file conversion platform with 40+ powerful tools. Fast, secure, and completely free.</p>
+                </div>
+                
+                <div>
+                    <h6 class="font-heading text-lg font-semibold text-gray-900 mb-6" data-i18n="footer.links.tools">Popular Tools</h6>
+                    <ul class="space-y-3">
+                        <li><a href="/mp4-to-mp3" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            MP4 to MP3
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            PDF to Word
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h6 class="font-heading text-lg font-semibold text-gray-900 mb-6" data-i18n="footer.support.title">Support</h6>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="help">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.help">Help Center</span>
+                        </a></li>
+                        <li><a href="#" class="text-rose-600 font-medium text-base flex items-center group" data-page="contact">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.contact">Contact Us</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="privacy">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.privacy">Privacy Policy</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="terms">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.terms">Terms of Service</span>
+                        </a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-rose-600 transition-colors text-base flex items-center group" data-page="faq">
+                            <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                            <span data-i18n="footer.support.faq">FAQ</span>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-rose-200/50 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-600 text-base" data-i18n="footer.copyright">&copy; 2024 Pushtoconverter. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language switcher functionality
+        document.getElementById('languageBtn').addEventListener('click', function() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const languageBtn = document.getElementById('languageBtn');
+            const dropdown = document.getElementById('languageDropdown');
+            
+            if (!languageBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Language switching
+        document.querySelectorAll('[data-lang]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                const currentPath = window.location.pathname;
+                
+                // Remove existing language prefix if any
+                let pathWithoutLang = currentPath.replace(/^\/[a-z]{2}(\/|$)/, '/');
+                
+                // If path is just "/" after removing language prefix, keep it as is
+                if (pathWithoutLang === '/') {
+                    pathWithoutLang = '';
+                }
+                
+                // Add new language prefix
+                const newPath = `/${lang}${pathWithoutLang}`;
+                
+                window.location.href = newPath;
+            });
+        });
+
+        // <CHANGE> Add dynamic URL handling for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current language from URL
+            const currentLang = window.location.pathname.split('/')[1] || 'tr';
+            
+            // Update all navigation links with data-page attribute
+            document.querySelectorAll('[data-page]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    if (page === 'home') {
+                        window.location.href = `/${currentLang}`;
+                    } else {
+                        window.location.href = `/${currentLang}/${page}`;
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

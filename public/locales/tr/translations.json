@@ -1,0 +1,444 @@
+{
+  "site": {
+    "title": "Pushtoconverter - Ücretsiz Online Dosya Dönüştürücü",
+    "description": "Dosyalarınızı ücretsiz olarak dönüştürün. MP4'ten MP3'e, PDF'den Word'e ve daha fazlası."
+  },
+  "header": {
+    "brand": "Pushtoconverter",
+    "nav": {
+      "tools": "Araçlar",
+      "features": "Özellikler",
+      "about": "Hakkında",
+      "contact": "İletişim",
+      "faq": "SSS"
+    },
+    "language": "Dil:"
+  },
+  "hero": {
+    "title": "Herhangi Bir Dosyayı<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow\">Anında</span> Dönüştürün",
+    "subtitle": "Tek yerde <strong class=\"text-rose-600\">40+ güçlü dönüştürme aracı</strong>na erişin. Hızlı, güvenli ve tamamen ücretsiz. Kayıt gerekmez.",
+    "search_placeholder": "Dönüştürme araçlarını arayın... (örn: MP4'ten MP3'e)",
+    "button_primary": "Tüm Araçları Görüntüle",
+    "button_secondary": "Daha Fazla Bilgi",
+    "stats": {
+      "files_converted": "Dosya Dönüştürüldü",
+      "tools_available": "Araç Mevcut",
+      "free_forever": "Sonsuza Kadar Ücretsiz"
+    }
+  },
+  "stats": {
+    "users": "Milyon Kullanıcı",
+    "conversions": "Milyon Dönüştürme",
+    "formats": "Desteklenen Format",
+    "countries": "Ülke"
+  },
+  "tools": {
+    "title": "Popüler Dönüştürme Araçları",
+    "subtitle": "En popüler dosya dönüştürme araçlarımızı seçin, dünya çapında milyonlarca kullanıcı tarafından güvenilir.",
+    "categories": {
+      "video": "Video Dönüştürücüler",
+      "audio": "Ses Dönüştürücüler",
+      "image": "Resim Dönüştürücüler",
+      "document": "Belge Dönüştürücüler",
+      "archive": "Arşiv Dönüştürücüler"
+    },
+    "items": {
+      "mp4_to_mp3": "MP4'ten MP3'e",
+      "mp4_to_avi": "MP4'ten AVI'ye",
+      "avi_to_mp4": "AVI'den MP4'e",
+      "mov_to_mp4": "MOV'dan MP4'e",
+      "wmv_to_mp4": "WMV'den MP4'e",
+      "flv_to_mp4": "FLV'den MP4'e",
+      "webm_to_mp4": "WebM'den MP4'e",
+      "mkv_to_mp4": "MKV'den MP4'e",
+      "mp3_to_wav": "MP3'ten WAV'a",
+      "wav_to_mp3": "WAV'dan MP3'e",
+      "flac_to_mp3": "FLAC'tan MP3'e",
+      "aac_to_mp3": "AAC'den MP3'e",
+      "ogg_to_mp3": "OGG'den MP3'e",
+      "wma_to_mp3": "WMA'dan MP3'e",
+      "m4a_to_mp3": "M4A'dan MP3'e",
+      "jpg_to_png": "JPG'den PNG'ye",
+      "png_to_jpg": "PNG'den JPG'ye",
+      "bmp_to_png": "BMP'den PNG'ye",
+      "gif_to_mp4": "GIF'den MP4'e",
+      "webp_to_png": "WebP'den PNG'ye",
+      "tiff_to_jpg": "TIFF'den JPG'ye",
+      "svg_to_png": "SVG'den PNG'ye",
+      "pdf_to_word": "PDF'den Word'e",
+      "word_to_pdf": "Word'den PDF'e",
+      "excel_to_csv": "Excel'den CSV'ye",
+      "ppt_to_pdf": "PPT'den PDF'e",
+      "powerpoint_to_pdf": "PowerPoint'ten PDF'e",
+      "pdf_to_excel": "PDF'den Excel'e",
+      "pdf_to_powerpoint": "PDF'den PowerPoint'e",
+      "zip_to_rar": "ZIP'den RAR'a",
+      "rar_to_zip": "RAR'dan ZIP'e",
+      "7z_to_zip": "7Z'den ZIP'e",
+      "tar_to_zip": "TAR'dan ZIP'e"
+    },
+    "ready_title": "Dosyalarınızı dönüştürmeye hazır mısınız?",
+    "ready_subtitle": "Dosya dönüştürme ihtiyaçları için Pushtoconverter'a güvenen milyonlarca kullanıcıya katılın. Hızlı, güvenli ve her zaman ücretsiz.",
+    "view_all_button": "40+ Aracı Görüntüle",
+    "hero_title": "Tüm Dönüştürme<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent animate-pulse-slow\">Araçları</span>",
+    "hero_subtitle": "<strong class=\"text-rose-600\">40+ dönüştürme aracı</strong>mızın tam koleksiyonunu keşfedin. Herhangi bir dosya dönüştürme görevi için tam olarak ihtiyacınız olanı bulun.",
+    "complete_title": "Tam Araç Koleksiyonu",
+    "complete_subtitle": "Dosya dönüştürme araçlarımızın tam koleksiyonunu keşfedin. Dosyalarınızı dönüştürmeye başlamak için herhangi bir araca tıklayın.",
+    "back_to_home": "Ana Sayfaya Dön",
+    "learn_more": "Daha Fazla Bilgi",
+    "most_popular": "En Popüler",
+    "help_title": "Araç seçiminde yardıma mı ihtiyacınız var?",
+    "help_subtitle": "Özelliklerimiz hakkında daha fazla bilgi edinmek ve en popüler araçlarla başlamak için ana sayfamızı ziyaret edin.",
+    "back_to_homepage": "Ana Sayfaya Dön",
+    "labels": {
+      "fast_conversion": "Hızlı dönüştürme",
+      "high_quality": "Yüksek kalite",
+      "universal_format": "Evrensel format",
+      "most_loved": "En sevilen"
+    },
+    "descriptions": {
+      "mp4_to_mp3": "Video dosyalarından yüksek kaliteli ses çıkarın",
+      "mp4_to_avi": "Kalite korunarak MP4'ü AVI formatına dönüştürün",
+      "mov_to_mp4": "QuickTime dosyalarını evrensel MP4'e dönüştürün",
+      "avi_to_mp4": "AVI'yi modern MP4 formatına dönüştürün",
+      "mp3_to_wav": "MP3'ü WAV formatına dönüştürün",
+      "wav_to_mp3": "WAV'ı MP3'e sıkıştırın",
+      "flac_to_mp3": "Kayıpsız sesi MP3'e dönüştürün",
+      "aac_to_mp3": "AAC'i MP3 formatına dönüştürün",
+      "jpg_to_png": "JPEG'i PNG formatına dönüştürün",
+      "png_to_jpg": "PNG'yi JPEG formatına dönüştürün",
+      "webp_to_png": "WebP'yi PNG formatına dönüştürün",
+      "svg_to_png": "Vektörü raster'e dönüştürün",
+      "pdf_to_word": "PDF'i DOCX formatına dönüştürün",
+      "word_to_pdf": "DOCX'i PDF formatına dönüştürün",
+      "excel_to_csv": "XLSX'i CSV formatına dönüştürün",
+      "ppt_to_pdf": "PowerPoint'i PDF'e dönüştürün"
+    }
+  },
+  "features": {
+    "title": "Neden Pushtoconverter'ı Seçmelisiniz?",
+    "subtitle": "En son teknoloji dönüştürme teknolojimiz ve kullanıcı odaklı yaklaşımımızla farkı yaşayın.",
+    "items": {
+      "free": {
+        "title": "Tamamen Ücretsiz",
+        "description": "Gizli ücret yok, kayıt gerekmez, premium kalitede sınırsız dönüştürme",
+        "detail": "Sonsuza Kadar Ücretsiz"
+      },
+      "fast": {
+        "title": "Şimşek Hızında",
+        "description": "Gelişmiş algoritmalarla desteklenen optimize edilmiş işleme motorumuzla dosyalarınızı saniyeler içinde dönüştürün",
+        "detail": "Ortalama: 3 saniye"
+      },
+      "secure": {
+        "title": "%100 Güvenli",
+        "description": "Dosyalarınız uçtan uca şifreleme ile güvenli bir şekilde işlenir ve dönüştürme sonrası otomatik olarak silinir",
+        "detail": "SSL Şifreli"
+      },
+      "no_limits": {
+        "title": "Sınırsız",
+        "description": "Dosya boyutu veya dönüştürme sayısı sınırı yoktur."
+      }
+    }
+  },
+  "footer": {
+    "brand": "Pushtoconverter",
+    "description": "40+ güçlü araçla en üst düzey dosya dönüştürme platformu. Hızlı, güvenli ve tamamen ücretsiz.",
+    "links": {
+      "tools": "Popüler Araçlar",
+      "features": "Özellikler",
+      "about": "Hakkında",
+      "contact": "İletişim",
+      "faq": "SSS"
+    },
+    "support": {
+      "title": "Destek",
+      "help": "Yardım Merkezi",
+      "contact": "İletişim",
+      "privacy": "Gizlilik Politikası",
+      "terms": "Kullanım Şartları",
+      "faq": "SSS"
+    },
+    "copyright": "© 2024 Pushtoconverter. Tüm hakları saklıdır."
+  },
+  "privacy": {
+    "title": "Gizlilik<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent\">Politikası</span>",
+    "subtitle": "Gizliliğiniz bizim için önemlidir. Bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu öğrenin.",
+    "last_updated": "Son güncelleme: Aralık 2024",
+    "sections": {
+      "collect": {
+        "title": "Topladığımız Bilgiler",
+        "description": "Pushtoconverter gizlilik odaklı olarak tasarlanmıştır. Hizmetlerimizi sağlamak için gerekli minimum bilgiyi topluyoruz:",
+        "item1": "Dönüştürme için yüklediğiniz dosyalar (geçici olarak, sadece işleme için)",
+        "item2": "Temel kullanım istatistikleri (anonimleştirilmiş)",
+        "item3": "IP adresi ve tarayıcı bilgileri (güvenlik amaçlı)"
+      },
+      "use": {
+        "title": "Bilgilerinizi Nasıl Kullanıyoruz",
+        "description": "Topladığımız bilgileri sadece şu amaçlarla kullanıyoruz:",
+        "item1": "Dosya dönüştürme işlemlerinizi gerçekleştirmek",
+        "item2": "Hizmet kalitemizi artırmak",
+        "item3": "Güvenliği sağlamak ve kötüye kullanımı önlemek",
+        "item4": "Gerektiğinde müşteri desteği sağlamak"
+      },
+      "security": {
+        "title": "Dosya Güvenliği",
+        "description": "Yüklediğiniz dosyalar en yüksek güvenlik seviyesiyle işlenir:",
+        "item1": "Tüm dosya transferleri SSL/TLS kullanılarak şifrelenir",
+        "item2": "Dosyalar dönüştürme sonrası otomatik olarak silinir (24 saat içinde)",
+        "item3": "Dosyalarınızı asla kalıcı olarak saklamayız",
+        "item4": "Dosyalar güvenli, izole ortamlarda işlenir"
+      },
+      "sharing": {
+        "title": "Veri Paylaşımı",
+        "description": "Kişisel bilgilerinizi üçüncü taraflarla satmaz, takas etmez veya paylaşmayız. Tek istisnalar:",
+        "item1": "Yasal gereklilikler (mahkeme emirleri, kolluk kuvvetleri)",
+        "item2": "Platformumuzu işletmemize yardımcı olan hizmet sağlayıcıları (katı gizlilik altında)"
+      },
+      "cookies": {
+        "title": "Çerezler ve Takip",
+        "description": "Temel işlevsellik için minimum çerez kullanıyoruz:",
+        "item1": "Dosya işleme için oturum çerezleri",
+        "item2": "Analitik çerezleri (anonimleştirilmiş)",
+        "item3": "Reklam için takip çerezi yok"
+      },
+      "rights": {
+        "title": "Haklarınız",
+        "description": "Şu haklara sahipsiniz:",
+        "item1": "Tuttuğumuz veriler hakkında bilgi talep etmek",
+        "item2": "Verilerinizin silinmesini talep etmek",
+        "item3": "Temel olmayan veri toplamadan çıkmak",
+        "item4": "Gizlilik endişelerinizle bize ulaşmak"
+      },
+      "contact": {
+        "title": "İletişime Geçin",
+        "description": "Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin:",
+        "email_label": "E-posta:",
+        "subject_label": "Konu:",
+        "subject": "Gizlilik Politikası Sorgusu"
+      },
+      "changes": {
+        "title": "Bu Politika Değişiklikleri",
+        "description": "Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikleri bu sayfada yeni politikayı yayınlayarak ve \"Son güncelleme\" tarihini güncelleyerek kullanıcılara bildireceğiz."
+      }
+    }
+  },
+  "terms": {
+    "title": "Kullanım<br><span class=\"bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 bg-clip-text text-transparent\">Şartları</span>",
+    "subtitle": "Dosya dönüştürme hizmetlerimizi kullanmadan önce lütfen bu şartları dikkatlice okuyun.",
+    "last_updated": "Son güncelleme: Aralık 2024",
+    "sections": {
+      "acceptance": {
+        "title": "Şartların Kabulü",
+        "description": "Pushtoconverter'a erişerek ve kullanarak, bu anlaşmanın şartları ve hükümleriyle bağlı olmayı kabul eder ve kabul edersiniz."
+      },
+      "service": {
+        "title": "Hizmet Açıklaması",
+        "description": "Pushtoconverter online dosya dönüştürme hizmetleri sağlar. Video, ses, resim ve belge formatları dahil olmak üzere farklı formatlar arasında dosya dönüştürme için çeşitli araçlar sunuyoruz."
+      },
+      "responsibilities": {
+        "title": "Kullanıcı Sorumlulukları",
+        "description": "Hizmetimizin bir kullanıcısı olarak, şunları kabul edersiniz:",
+        "item1": "Hizmeti sadece yasal amaçlar için kullanmak",
+        "item2": "Kötü amaçlı kod veya yasadışı içerik içeren dosyaları yüklememek",
+        "item3": "Fikri mülkiyet haklarına saygı göstermek",
+        "item4": "Sistemlerimizi tersine mühendislik yapmaya veya tehlikeye atmaya çalışmamak",
+        "item5": "İzin olmadan ticari yeniden satış için hizmeti kullanmamak"
+      },
+      "upload": {
+        "title": "Dosya Yükleme ve İşleme",
+        "description": "Dosya yüklemeleri konusunda:",
+        "item1": "Dosya başına maksimum dosya boyutu 100MB'dır",
+        "item2": "Dosyalar 24 saat sonra otomatik olarak silinir",
+        "item3": "Tüm dosya türleri için dönüştürme başarısını garanti etmiyoruz",
+        "item4": "Yüklenen dosyaları dönüştürme haklarınızın olduğundan emin olmak sizin sorumluluğunuzdadır"
+      },
+      "availability": {
+        "title": "Hizmet Erişilebilirliği",
+        "description": "Yüksek hizmet erişilebilirliğini sürdürmeye çalışırken, kesintisiz erişimi garanti etmiyoruz. Hizmet erişilebilirliğini geçici olarak etkileyebilecek bakım, güncelleme veya değişiklikler yapabiliriz."
+      },
+      "liability": {
+        "title": "Sorumluluk Sınırlaması",
+        "description": "Pushtoconverter, kar kaybı, veri, kullanım, itibar veya diğer maddi olmayan kayıplar dahil olmak üzere, dolaylı, tesadüfi, özel, sonuçsal veya cezai zararlardan sorumlu olmayacaktır."
+      },
+      "property": {
+        "title": "Fikri Mülkiyet",
+        "description": "Hizmet ve orijinal içeriği, özellikleri ve işlevselliği Pushtoconverter'a aittir ve uluslararası telif hakkı, ticari marka, patent, ticari sır ve diğer fikri mülkiyet yasalarıyla korunmaktadır."
+      },
+      "termination": {
+        "title": "Sonlandırma",
+        "description": "Şartları ihlal etmeniz dahil olmak üzere, herhangi bir nedenle, önceden bildirim veya sorumluluk olmaksızın hizmetimize erişiminizi derhal sonlandırabilir veya askıya alabiliriz."
+      },
+      "changes": {
+        "title": "Şartlardaki Değişiklikler",
+        "description": "Bu Şartları istediğimiz zaman değiştirme veya değiştirme hakkını saklı tutuyoruz. Bir revizyon önemliyse, yeni şartların yürürlüğe girmeden önce en az 30 gün önceden bildirim sağlamaya çalışacağız."
+      },
+      "contact": {
+        "title": "İletişim Bilgileri",
+        "description": "Bu Kullanım Şartları hakkında herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin:",
+        "email_label": "E-posta:",
+        "subject_label": "Konu:",
+        "subject": "Kullanım Şartları Sorgusu"
+      }
+    }
+  },
+  "contact": {
+    "title": "İletişime",
+    "title_us": "Geçin",
+    "subtitle": "Sorularınız, geri bildirimleriniz veya destek ihtiyacınız mı var? Sizden haber almayı çok isteriz!",
+    "form": {
+      "name": "Ad",
+      "name_placeholder": "Adınız",
+      "email": "E-posta",
+      "email_placeholder": "email@example.com",
+      "subject": "Konu",
+      "subject_select": "Bir konu seçin",
+      "general": "Genel Sorgu",
+      "support": "Teknik Destek",
+      "bug": "Hata Raporu",
+      "feature": "Özellik İsteği",
+      "business": "İş Sorgusu",
+      "message": "Mesaj",
+      "message_placeholder": "Size nasıl yardımcı olabileceğimizi söyleyin...",
+      "send": "Mesaj Gönder"
+    },
+    "info": {
+      "email_title": "E-posta Desteği",
+      "response_title": "Yanıt Süresi",
+      "response_time": "24 saat içinde",
+      "help_title": "Yardım Merkezi",
+      "help_link": "SSS'mizi ziyaret edin"
+    }
+  },
+  "about": {
+    "title": "Pushtoconverter Hakkında",
+    "description1": "Pushtoconverter, sorunsuz ve verimli dosya dönüştürmeleri için tercih ettiğiniz online platformdur. Tüm dosya dönüştürme ihtiyaçlarınız için hızlı, güvenli ve kullanıcı dostu bir deneyim sunmaya kendimizi adadık. Misyonumuz, dosya dönüştürme sürecini basitleştirmek ve herkes için, her yerde erişilebilir kılmaktır.",
+    "description2": "40'tan fazla özelleşmiş araçla, belgeler ve resimlerden ses ve videoya kadar geniş bir format yelpazesini kapsıyoruz. Hizmetlerimizi sürekli geliştirmeye ve mümkün olan en iyi dönüştürme deneyimini yaşamanızı sağlamak için yeni özellikler eklemeye çalışıyoruz."
+  },
+  "contact": {
+    "title": "İletişime Geçin",
+    "subtitle": "Sorularınız, geri bildirimleriniz veya destek ihtiyacınız mı var? Sizden haber almayı çok isteriz!",
+    "email_button": "Bize E-posta Gönderin"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata oluştu",
+    "success": "Başarılı",
+    "download": "İndir",
+    "convert": "Dönüştür",
+    "upload": "Yükle",
+    "select_file": "Dosya Seç",
+    "drag_drop": "Dosyaları buraya sürükleyin"
+  },
+  "faq": {
+    "title": "Sıkça Sorulan",
+    "title_questions": "Sorular",
+    "subtitle": "Dosya dönüştürme hizmetlerimiz hakkında en yaygın soruların yanıtlarını bulun.",
+    "q1": "Pushtoconverter'da dosyaları nasıl dönüştürürüm?",
+    "a1": "Dosya dönüştürme çok basit! Ana sayfamızdan ihtiyacınız olan aracı seçin, dosyanızı yükleyin ve dönüştür'e tıklayın. Süreç otomatiktir ve dönüştürülmüş dosyanız saniyeler içinde indirilmeye hazır olacak.",
+    "q2": "Pushtoconverter gerçekten ücretsiz mi?",
+    "a2": "Evet! Pushtoconverter tamamen ücretsizdir. Hiçbir ücret almıyoruz, kayıt gerektirmiyoruz veya gizli maliyetlerimiz yok. Tüm dönüştürme araçlarımız sonsuza kadar ücretsizdir.",
+    "q3": "Verilerim güvenli mi?",
+    "a3": "Kesinlikle! Gizliliğinizi ciddiye alıyoruz. Tüm dosyalar SSL şifreleme ile güvenli bir şekilde işlenir ve dönüştürme sonrası sunucularımızdan otomatik olarak silinir. Kişisel dosyalarınızı asla saklamaz veya paylaşmayız.",
+    "q4": "Hangi dosya formatlarını destekliyorsunuz?",
+    "a4": "Video (MP4, AVI, MOV), ses (MP3, WAV, FLAC), resim (JPG, PNG, WEBP) ve belgeler (PDF, DOCX, XLSX) dahil olmak üzere 40'tan fazla farklı dosya formatını destekliyoruz. Tam liste için araçlar sayfamızı kontrol edin.",
+    "q5": "Dosya boyutu sınırı var mı?",
+    "a5": "Evet, dosya başına maksimum 100MB dosya boyutu sınırımız var. Bu, tüm kullanıcılar için hızlı işleme ve optimal performans sağlar. Daha büyük dosyalar için önce sıkıştırmanızı öneririz.",
+    "q6": "Dönüştürülmüş dosyalar ne kadar süre kullanılabilir?",
+    "a6": "Dönüştürülmüş dosyalar dönüştürme sonrası 24 saat boyunca indirilebilir. Bu süre sonunda güvenlik sağlamak ve depolama alanını boşaltmak için sunucularımızdan otomatik olarak silinir.",
+    "q7": "Pushtoconverter'ı mobil cihazlarda kullanabilir miyim?",
+    "a7": "Evet! Web sitemiz tamamen duyarlıdır ve mobil telefonlar, tabletler ve masaüstü bilgisayarlarda mükemmel çalışır. İnternet bağlantısı olan herhangi bir cihazdan dosya dönüştürebilirsiniz.",
+    "q8": "Dönüştürme başarısız olursa ne olur?",
+    "a8": "Dönüştürme başarısız olursa, dosyanızın desteklenen bir formatta ve 100MB'ın altında olduğunu kontrol edin. Sorun devam ederse sayfayı yenilemeyi deneyin veya yardım için destek ekibimizle iletişime geçin.",
+    "contact_title": "Hala sorularınız var mı?",
+    "contact_subtitle": "Aradığınız yanıtı bulamıyor musunuz? Destek ekibimiz size yardımcı olmak için burada!",
+    "contact_button": "Destekle İletişime Geç"
+  },
+  "help": {
+    "title": "Yardım",
+    "title_center": "Merkezi",
+    "subtitle": "Dosya dönüştürme araçlarımızı kullanma konusunda yardım alın ve yaygın sorunlara çözümler bulun.",
+    "faq_title": "Sıkça Sorulan Sorular",
+    "faq_subtitle": "Yaygın soruların yanıtlarını bulun",
+    "contact_title": "Destekle İletişime Geç",
+    "contact_subtitle": "Destek ekibimizden yardım alın",
+    "getting_started": "Başlarken",
+    "convert_title": "Dosyaları nasıl dönüştürürüm",
+    "convert_step1": "Ana sayfamızdan ihtiyacınız olan dönüştürme aracını seçin",
+    "convert_step2": "\"Dosya Seç\"e tıklayın ve dosyanızı seçin",
+    "convert_step3": "Dönüştürme tamamlanmasını bekleyin",
+    "convert_step4": "Dönüştürülmüş dosyanızı indirin",
+    "supported_formats": "Desteklenen Formatlar",
+    "video_formats": "Video Formatları",
+    "audio_formats": "Ses Formatları",
+    "image_formats": "Resim Formatları",
+    "document_formats": "Belge Formatları",
+    "troubleshooting": "Sorun Giderme",
+    "upload_issues": "Dosya yükleme sorunları",
+    "upload_issue1": "Dosya boyutunu kontrol edin (maks 100MB)",
+    "upload_issue2": "Dosya formatının desteklendiğinden emin olun",
+    "upload_issue3": "Sayfayı yenilemeyi deneyin",
+    "upload_issue4": "İnternet bağlantınızı kontrol edin",
+    "conversion_failed": "Dönüştürme başarısız",
+    "conversion_fail1": "Dosyanın bozuk olmadığını doğrulayın",
+    "conversion_fail2": "Farklı bir dosya formatı deneyin",
+    "conversion_fail3": "Mümkünse dosya boyutunu küçültün",
+    "conversion_fail4": "Sorun devam ederse destekle iletişime geçin"
+  },
+  "contact": {
+    "title": "İletişime",
+    "title_us": "Geçin",
+    "subtitle": "Sorularınız, geri bildirimleriniz veya destek ihtiyacınız mı var? Sizden haber almayı çok isteriz!",
+    "email_button": "Bize E-posta Gönderin",
+    "form": {
+      "name": "Ad",
+      "name_placeholder": "Adınız",
+      "email": "E-posta",
+      "email_placeholder": "email@example.com",
+      "subject": "Konu",
+      "subject_select": "Bir konu seçin",
+      "general": "Genel Sorgu",
+      "support": "Teknik Destek",
+      "bug": "Hata Raporu",
+      "feature": "Özellik İsteği",
+      "business": "İş Sorgusu",
+      "message": "Mesaj",
+      "message_placeholder": "Size nasıl yardımcı olabileceğimizi söyleyin...",
+      "send": "Mesaj Gönder"
+    },
+    "info": {
+      "email_title": "E-posta Desteği",
+      "response_title": "Yanıt Süresi",
+      "response_time": "24 saat içinde",
+      "help_title": "Yardım Merkezi",
+      "help_link": "SSS'mizi ziyaret edin"
+    }
+  },
+  "toast": {
+    "coming_soon": "Bu araç yakında eklenecek! 🚀",
+    "tool_coming_soon": "aracı yakında eklenecek! 🚀"
+  },
+  "soon": {
+    "title": "Bu Araç",
+    "title_highlight": "Çok Yakında!",
+    "subtitle": "Bu özellik üzerinde sıkı bir şekilde çalışıyoruz ve en kısa sürede kullanımınıza sunmak için sabırsızlanıyoruz. Gelişmeler için bizi takip etmeye devam edin!",
+    "back_button": "Ana Sayfaya Dön",
+    "nav_all_tools": "Tüm Araçlar"
+  },
+  "maintenance": {
+    "title": "Şu Anda",
+    "title_highlight": "Bakımdayız",
+    "subtitle": "Sitemizi sizin için daha iyi bir hale getirmek amacıyla kısa bir süreliğine bakım çalışması yapıyoruz. Anlayışınız için teşekkür ederiz."
+  },
+  "error404": {
+    "title": "Sayfa Bulunamadı",
+    "subtitle": "Üzgünüz, aradığınız sayfa mevcut değil. Sayfa taşınmış, silinmiş veya yanlış bir bağlantı kullanıyor olabilirsiniz.",
+    "back_home": "Ana Sayfaya Dön",
+    "browse_tools": "Araçları Keşfet",
+    "popular_tools": "Popüler Araçlar"
+  },
+  "language": {
+    "title": "Dil Seçin",
+    "subtitle": "Pushtoconverter'ı kullanmaya devam etmek için tercih ettiğiniz dili seçin",
+    "back_home": "Ana Sayfaya Dön"
+  }
+}
