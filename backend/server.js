@@ -73,7 +73,7 @@ app.use('/converted', express.static(path.join(__dirname, '../converted')));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // Rate limiting
-app.use(rateLimiter);
+// app.use(rateLimiter);
 
 // Initialize metrics service
 metricsService.initialize();
@@ -143,6 +143,31 @@ app.get('/pdf-to-word', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/pages/tools/pdf-to-word/index.html'));
 });
 
+// Frontend routing - serve HTML files directly
+app.get('/faq', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/support/faq.html'));
+});
+
+app.get('/tools', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/index.html'));
+});
+
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/support/contact.html'));
+});
+
+app.get('/help', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/support/help.html'));
+});
+
+app.get('/privacy', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/legal/privacy.html'));
+});
+
+app.get('/terms', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/legal/terms.html'));
+});
+
 // Language-based routing
 app.get('/:lang/mp4-to-mp3', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/pages/tools/mp4-to-mp3/index.html'));
@@ -158,6 +183,40 @@ app.get('/:lang/jpg-to-png', (req, res) => {
 
 app.get('/:lang/pdf-to-word', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/pages/tools/pdf-to-word/index.html'));
+});
+
+app.get('/:lang/faq', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/support/faq.html'));
+});
+
+app.get('/:lang/tools', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/index.html'));
+});
+
+app.get('/:lang/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/support/contact.html'));
+});
+
+app.get('/:lang/help', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/support/help.html'));
+});
+
+app.get('/:lang/privacy', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/legal/privacy.html'));
+});
+
+app.get('/:lang/terms', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/legal/terms.html'));
+});
+
+// Language-specific home pages
+app.get('/:lang', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
+// Root redirect to Turkish
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 // Error handling middleware
@@ -181,9 +240,13 @@ app.use((err, req, res, next) => {
     });
 });
 
-// 404 handler
+// 404 handler - serve 404.html for frontend routes, JSON for API routes
 app.use('*', (req, res) => {
-    res.status(404).json({ error: 'Endpoint bulunamadı' });
+    if (req.path.startsWith('/api/')) {
+        res.status(404).json({ error: 'API endpoint bulunamadı' });
+    } else {
+        res.status(404).sendFile(path.join(__dirname, '../public/404.html'));
+    }
 });
 
 // Graceful shutdown
