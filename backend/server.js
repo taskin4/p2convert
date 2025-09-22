@@ -63,6 +63,15 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
+// Serve static files from public directory
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Serve converted files
+app.use('/converted', express.static(path.join(__dirname, '../converted')));
+
+// Serve uploads for preview (temporary)
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
 // Rate limiting
 app.use(rateLimiter);
 
@@ -90,8 +99,66 @@ app.get('/metrics', async (req, res) => {
     }
 });
 
+// Translation API endpoint
+app.get('/api/translations/:lang', (req, res) => {
+    const { lang } = req.params;
+    const fs = require('fs');
+    const path = require('path');
+    
+    try {
+        const translationPath = path.join(__dirname, '../public/locales', lang, 'translations.json');
+        
+        if (fs.existsSync(translationPath)) {
+            const translations = JSON.parse(fs.readFileSync(translationPath, 'utf8'));
+            res.json(translations);
+        } else {
+            // Fallback to Turkish if language not found
+            const fallbackPath = path.join(__dirname, '../public/locales/tr/translations.json');
+            const fallbackTranslations = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+            res.json(fallbackTranslations);
+        }
+    } catch (error) {
+        console.error('Translation error:', error);
+        res.status(500).json({ error: 'Translation not found' });
+    }
+});
+
 // API routes
 app.use('/api/conversion', conversionRoutes);
+
+// Frontend routing - serve static pages
+app.get('/mp4-to-mp3', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/mp4-to-mp3/index.html'));
+});
+
+app.get('/mp3-to-wav', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/mp3-to-wav/index.html'));
+});
+
+app.get('/jpg-to-png', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/jpg-to-png/index.html'));
+});
+
+app.get('/pdf-to-word', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/pdf-to-word/index.html'));
+});
+
+// Language-based routing
+app.get('/:lang/mp4-to-mp3', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/mp4-to-mp3/index.html'));
+});
+
+app.get('/:lang/mp3-to-wav', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/mp3-to-wav/index.html'));
+});
+
+app.get('/:lang/jpg-to-png', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/jpg-to-png/index.html'));
+});
+
+app.get('/:lang/pdf-to-word', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/pages/tools/pdf-to-word/index.html'));
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {

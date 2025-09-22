@@ -1,100 +1,52 @@
 {
-    "tool": {
-        "title": "MP4'ten MP3'e Dönüştürücü",
-        "subtitle": "Videolarınızdan sesi kolayca çıkarın. MP4 dosyalarınızı yüksek kaliteli MP3 ses formatına dönüştürün.",
-        "drag_drop": "Dosyaları buraya sürükleyip bırakın",
-        "or": "veya",
-        "browse_files": "Dosya Seç",
-        "max_file_size": "Maksimum dosya boyutu: 100MB",
-        "waiting_upload": "Yükleme bekleniyor...",
-        "how_it_works": {
-            "title": "MP4'ü MP3'e Nasıl Dönüştürülür?",
-            "subtitle": "Sadece üç basit adımda videolarınızı sese dönüştürün.",
-            "step1": {
-                "title": "Dosya Yükle",
-                "description": "MP4 video dosyanızı yükleyin veya sürükleyip bırakın"
-            },
-            "step2": {
-                "title": "Dönüştür",
-                "description": "Otomatik dönüştürme işlemi başlar"
-            },
-            "step3": {
-                "title": "İndir",
-                "description": "MP3 dosyanızı hemen indirin"
-            }
-        },
-        "features": {
-            "title": "Neden Pushtoconverter'ı Seçmelisiniz?",
-            "subtitle": "Profesyonel kalitede dönüştürme için güvenilir araçlarımızı keşfedin.",
-            "fast": {
-                "title": "Hızlı Dönüştürme",
-                "description": "Dosyalarınızı saniyeler içinde dönüştürün"
-            },
-            "secure": {
-                "title": "Güvenli İşlem",
-                "description": "Dosyalarınız güvenli şekilde işlenir ve otomatik silinir"
-            },
-            "free": {
-                "title": "Tamamen Ücretsiz",
-                "description": "Hiçbir ücret, kayıt veya gizli maliyet yok"
-            }
-        },
-        "supported_formats": {
-            "title": "Desteklenen Formatlar",
-            "subtitle": "Çok çeşitli video formatlarını destekliyoruz",
-            "input": "Giriş Formatları",
-            "output": "Çıkış Formatları"
-        },
-        "faq": {
-            "title": "Sıkça Sorulan Sorular",
-            "q1": "Bu aracı kullanmak güvenli mi?",
-            "a1": "Evet, kesinlikle. Gizliliğiniz bizim için önemlidir. Yüklenen tüm dosyalar sunucularımızdan 1 saat sonra otomatik olarak silinir.",
-            "q2": "Dönüştürme işlemi ne kadar sürer?",
-            "a2": "Dönüştürme hızı dosya boyutuna bağlıdır, ancak güçlü sunucularımız sayesinde çoğu dosya bir dakikadan az sürede işlenir.",
-            "q3": "Ses kalitesi düşer mi?",
-            "a3": "Mümkün olan en iyi ses kalitesini korumak için gelişmiş kodlayıcılar kullanıyoruz. Kalite kaybı fark edilmeyecek kadar azdır."
-        },
-        "toast": {
-            "invalid_file": "Lütfen geçerli bir MP4 dosyası seçin.",
-            "file_too_large": "Dosya boyutu 100MB'dan büyük olamaz. Lütfen daha küçük dosyalar seçin.",
-            "upload_success": "dosya başarıyla yüklendi!",
-            "conversion_started": "Dönüştürme işlemi başlatıldı...",
-            "conversion_complete": "Tüm dosyalar başarıyla dönüştürüldü! 🎉"
-        },
-        "ui": {
-            "convert_button": "Dönüştür",
-            "convert_files": "Dönüştür ({count} Dosya)",
-            "ready": "Hazır",
-            "converting": "Dönüştürülüyor...",
-            "download": "İndir",
-            "completed": "Tamamlandı!",
-            "new_convert": "Yeni Dosya Dönüştür",
-            "uploading": "Yükleniyor..."
-        }
+  "tool": {
+    "title": "MP4'ten MP3'e Dönüştürücü",
+    "subtitle": "Videolarınızdan sesi kolayca çıkarın. MP4 dosyalarınızı yüksek kaliteli MP3 ses formatına dönüştürün.",
+    "drag_drop": "Dosyaları buraya sürükleyip bırakın",
+    "or": "veya",
+    "browse_files": "Dosya Seç",
+    "max_file_size": "Maksimum dosya boyutu: 100MB",
+    "waiting_upload": "Yükleme bekleniyor...",
+    "how_it_works": {
+      "title": "MP4'ü MP3'e Nasıl Dönüştürülür?",
+      "subtitle": "Sadece üç basit adımda videolarınızı sese dönüştürün.",
+      "step1": {
+        "title": "MP4 Dosyanızı Seçin",
+        "description": "\"Dosya Seç\" düğmesine tıklayın veya videonuzu yükleme alanına sürükleyip bırakın."
+      },
+      "step2": {
+        "title": "Dönüştür'e Tıklayın",
+        "description": "\"Dönüştür\" düğmesine basarak videonuzdan sesi çıkarma işlemini başlatın."
+      },
+      "step3": {
+        "title": "MP3'ünüzü İndirin",
+        "description": "Dönüştürme tamamlandığında, yeni MP3 dosyanızı indirmek için \"İndir\" düğmesi görünecektir."
+      }
     },
-    "header": {
-        "nav": {
-            "tools": "Araçlar",
-            "features": "Özellikler",
-            "about": "Hakkında",
-            "contact": "İletişim",
-            "faq": "SSS"
-        }
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "q1": "Bu aracı kullanmak güvenli mi?",
+      "a1": "Evet, kesinlikle. Gizliliğiniz bizim için önemlidir. Yüklenen tüm dosyalar sunucularımızdan 1 saat sonra otomatik olarak silinir.",
+      "q2": "Dönüştürme işlemi ne kadar sürer?",
+      "a2": "Dönüştürme hızı dosya boyutuna bağlıdır, ancak güçlü sunucularımız sayesinde çoğu dosya bir dakikadan az sürede işlenir.",
+      "q3": "Ses kalitesi düşer mi?",
+      "a3": "Mümkün olan en iyi ses kalitesini korumak için gelişmiş kodlayıcılar kullanıyoruz. Kalite kaybı fark edilmeyecek kadar azdır."
     },
-    "footer": {
-        "description": "40+ güçlü araçla nihai dosya dönüştürme platformu. Hızlı, güvenli ve tamamen ücretsiz.",
-        "links": {
-            "tools": "Popüler Araçlar"
-        },
-        "support": {
-            "title": "Destek",
-            "help": "Yardım Merkezi",
-            "contact": "İletişime Geçin",
-            "privacy": "Gizlilik Politikası",
-            "terms": "Kullanım Şartları",
-            "faq": "SSS"
-        },
-        "copyright": "© 2024 Pushtoconverter. Tüm hakları saklıdır."
+    "ui": {
+      "uploading": "Yükleniyor...",
+      "ready": "Hazır",
+      "converting": "Dönüştürülüyor...",
+      "download": "İndir",
+      "completed": "Tamamlandı!",
+      "new_convert": "Yeni Dosya Dönüştür",
+      "convert_files": "Dönüştür ({count} Dosya)"
+    },
+    "toast": {
+      "invalid_file": "Lütfen geçerli bir MP4 dosyası seçin.",
+      "file_too_large": "Dosya boyutu çok büyük. Maksimum 100MB desteklenir.",
+      "upload_success": "dosya başarıyla yüklendi",
+      "conversion_started": "Dönüştürme işlemi başlatıldı...",
+      "conversion_complete": "Tüm dosyalar başarıyla dönüştürüldü!"
     }
+  }
 }
-

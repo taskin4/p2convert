@@ -1,1 +1,52 @@
-
+{
+  "tool": {
+    "title": "MP4 to MP3 Converter",
+    "subtitle": "Easily extract audio from your videos. Convert your MP4 files to high-quality MP3 audio format.",
+    "drag_drop": "Drag and drop files here",
+    "or": "or",
+    "browse_files": "Browse Files",
+    "max_file_size": "Maximum file size: 100MB",
+    "waiting_upload": "Waiting for upload...",
+    "how_it_works": {
+      "title": "How to Convert MP4 to MP3?",
+      "subtitle": "Convert your videos to audio in just three simple steps.",
+      "step1": {
+        "title": "Select Your MP4 File",
+        "description": "Click the \"Browse Files\" button or drag and drop your video into the upload area."
+      },
+      "step2": {
+        "title": "Click Convert",
+        "description": "Press the \"Convert\" button to start extracting audio from your video."
+      },
+      "step3": {
+        "title": "Download Your MP3",
+        "description": "When conversion is complete, the \"Download\" button will appear to download your new MP3 file."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is it safe to use this tool?",
+      "a1": "Yes, absolutely. Your privacy is important to us. All uploaded files are automatically deleted from our servers after 1 hour.",
+      "q2": "How long does the conversion process take?",
+      "a2": "Conversion speed depends on file size, but thanks to our powerful servers, most files are processed in less than a minute.",
+      "q3": "Does the audio quality decrease?",
+      "a3": "We use advanced encoders to maintain the best possible audio quality. Quality loss is negligible."
+    },
+    "ui": {
+      "uploading": "Uploading...",
+      "ready": "Ready",
+      "converting": "Converting...",
+      "download": "Download",
+      "completed": "Completed!",
+      "new_convert": "Convert New File",
+      "convert_files": "Convert ({count} Files)"
+    },
+    "toast": {
+      "invalid_file": "Please select a valid MP4 file.",
+      "file_too_large": "File size is too large. Maximum 100MB is supported.",
+      "upload_success": "files uploaded successfully",
+      "conversion_started": "Conversion process started...",
+      "conversion_complete": "All files converted successfully!"
+    }
+  }
+}
